@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 22215040}
   - component: {fileID: 22215039}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_52
+  m_Name: Bin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -231,12 +231,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 22215038}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 6.46, y: -4.2494316, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1084429830}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &29442730
 GameObject:
@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 29442731}
   - component: {fileID: 29442732}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (2)
+  m_Name: Floor (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 231323331}
   - component: {fileID: 231323332}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (12)
+  m_Name: Floor (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -501,7 +501,7 @@ GameObject:
   - component: {fileID: 274881978}
   - component: {fileID: 274881977}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_18
+  m_Name: Armchair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -570,12 +570,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274881976}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 4.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1084429830}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &279016230
 GameObject:
@@ -588,7 +588,7 @@ GameObject:
   - component: {fileID: 279016232}
   - component: {fileID: 279016231}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_8
+  m_Name: Desk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -637,7 +637,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1790682264551540933, guid: dc753c81d03a3bf4b857361e1d273efe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -657,12 +657,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279016230}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.41, y: 2.0900002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1102253770}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &345425942
 GameObject:
@@ -675,7 +675,7 @@ GameObject:
   - component: {fileID: 345425943}
   - component: {fileID: 345425944}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (17)
+  m_Name: Floor (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -762,7 +762,7 @@ GameObject:
   - component: {fileID: 497703009}
   - component: {fileID: 497703010}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (21)
+  m_Name: Floor (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -894,7 +894,7 @@ GameObject:
   - component: {fileID: 541920210}
   - component: {fileID: 541920211}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (16)
+  m_Name: Floor (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1164,7 +1164,7 @@ GameObject:
   - component: {fileID: 631448692}
   - component: {fileID: 631448693}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (10)
+  m_Name: Floor (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1361,7 +1361,7 @@ GameObject:
   - component: {fileID: 687304919}
   - component: {fileID: 687304918}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_13 (2)
+  m_Name: Plant (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1430,12 +1430,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687304917}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.78, y: 3.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 874499194}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &707321647
 GameObject:
@@ -3500,7 +3500,7 @@ GameObject:
   - component: {fileID: 827923187}
   - component: {fileID: 827923186}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_13
+  m_Name: Plant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3569,12 +3569,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 827923185}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -7.66, y: 3.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 874499194}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &831533678
 GameObject:
@@ -3665,7 +3665,7 @@ GameObject:
   - component: {fileID: 833305230}
   - component: {fileID: 833305231}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (8)
+  m_Name: Floor (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3752,7 +3752,7 @@ GameObject:
   - component: {fileID: 869535408}
   - component: {fileID: 869535407}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_13 (1)
+  m_Name: Plant (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3821,12 +3821,49 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 869535406}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.91, y: 3.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 874499194}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &874499193
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 874499194}
+  m_Layer: 0
+  m_Name: Plants
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &874499194
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874499193}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 827923187}
+  - {fileID: 869535408}
+  - {fileID: 687304919}
+  - {fileID: 2046914912}
+  - {fileID: 1405453718}
+  - {fileID: 1832540332}
+  m_Father: {fileID: 1084429830}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &881835698
 GameObject:
@@ -3839,7 +3876,7 @@ GameObject:
   - component: {fileID: 881835699}
   - component: {fileID: 881835700}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (5)
+  m_Name: Floor (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3926,7 +3963,7 @@ GameObject:
   - component: {fileID: 956589770}
   - component: {fileID: 956589771}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (27)
+  m_Name: Floor (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4013,7 +4050,7 @@ GameObject:
   - component: {fileID: 999820074}
   - component: {fileID: 999820075}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (15)
+  m_Name: Floor (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4213,7 +4250,7 @@ GameObject:
   - component: {fileID: 1063841457}
   - component: {fileID: 1063841458}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (25)
+  m_Name: Floor (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4405,10 +4442,49 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1102253770}
+  - {fileID: 274881978}
+  - {fileID: 874499194}
+  - {fileID: 1190709095}
+  - {fileID: 22215040}
   - {fileID: 823352097}
   - {fileID: 1081307813}
-  - {fileID: 1396815645}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1102253769
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1102253770}
+  m_Layer: 0
+  m_Name: Clerk
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1102253770
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102253769}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1396815645}
+  - {fileID: 279016232}
+  - {fileID: 1874305635}
+  - {fileID: 1349996495}
+  m_Father: {fileID: 1084429830}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1117317906
 GameObject:
@@ -4499,7 +4575,7 @@ GameObject:
   - component: {fileID: 1167207971}
   - component: {fileID: 1167207972}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (13)
+  m_Name: Floor (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4586,7 +4662,7 @@ GameObject:
   - component: {fileID: 1190709095}
   - component: {fileID: 1190709094}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_12
+  m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4655,12 +4731,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1190709093}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.16, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1084429830}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1205572283
 GameObject:
@@ -4673,7 +4749,7 @@ GameObject:
   - component: {fileID: 1205572284}
   - component: {fileID: 1205572285}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (19)
+  m_Name: Floor (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4792,7 +4868,7 @@ GameObject:
   - component: {fileID: 1215432207}
   - component: {fileID: 1215432208}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (1)
+  m_Name: Floor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4879,7 +4955,7 @@ GameObject:
   - component: {fileID: 1349996495}
   - component: {fileID: 1349996494}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_34
+  m_Name: Document
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4928,7 +5004,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 5104892911730743447, guid: dc753c81d03a3bf4b857361e1d273efe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4948,12 +5024,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1349996493}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6.1289997, y: 2.196, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1102253770}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1356717465
 GameObject:
@@ -4966,7 +5042,7 @@ GameObject:
   - component: {fileID: 1356717466}
   - component: {fileID: 1356717467}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10
+  m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5053,7 +5129,7 @@ GameObject:
   - component: {fileID: 1396815645}
   - component: {fileID: 1396815646}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_43
+  m_Name: Worker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5072,7 +5148,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1084429830}
+  m_Father: {fileID: 1102253770}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1396815646
 SpriteRenderer:
@@ -5117,7 +5193,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 4863692313126216162, guid: dc753c81d03a3bf4b857361e1d273efe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5140,7 +5216,7 @@ GameObject:
   - component: {fileID: 1398601340}
   - component: {fileID: 1398601341}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (20)
+  m_Name: Floor (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5227,7 +5303,7 @@ GameObject:
   - component: {fileID: 1405453718}
   - component: {fileID: 1405453717}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_13 (4)
+  m_Name: Plant (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5296,12 +5372,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405453716}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -7.9947157, y: -4.153995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 874499194}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1478701801
 GameObject:
@@ -5443,7 +5519,7 @@ GameObject:
   - component: {fileID: 1529930313}
   - component: {fileID: 1529930314}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (18)
+  m_Name: Floor (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5530,7 +5606,7 @@ GameObject:
   - component: {fileID: 1553499645}
   - component: {fileID: 1553499646}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (4)
+  m_Name: Floor (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5696,7 +5772,7 @@ GameObject:
   - component: {fileID: 1587501589}
   - component: {fileID: 1587501590}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (7)
+  m_Name: Floor (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5783,7 +5859,7 @@ GameObject:
   - component: {fileID: 1632591059}
   - component: {fileID: 1632591060}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (26)
+  m_Name: Floor (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5870,7 +5946,7 @@ GameObject:
   - component: {fileID: 1654881545}
   - component: {fileID: 1654881546}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (6)
+  m_Name: Floor (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6864,7 +6940,7 @@ GameObject:
   - component: {fileID: 1683316140}
   - component: {fileID: 1683316141}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (24)
+  m_Name: Floor (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6951,7 +7027,7 @@ GameObject:
   - component: {fileID: 1708078856}
   - component: {fileID: 1708078857}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (22)
+  m_Name: Floor (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7038,7 +7114,7 @@ GameObject:
   - component: {fileID: 1743166641}
   - component: {fileID: 1743166642}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (14)
+  m_Name: Floor (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7272,7 +7348,7 @@ GameObject:
   - component: {fileID: 1832540332}
   - component: {fileID: 1832540331}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_13 (5)
+  m_Name: Plant (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7341,12 +7417,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832540330}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 7.656849, y: -4.153995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 874499194}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1870972075
 GameObject:
@@ -7405,7 +7481,7 @@ GameObject:
   - component: {fileID: 1874305635}
   - component: {fileID: 1874305634}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_22
+  m_Name: Cup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7454,7 +7530,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 4485465026094667126, guid: dc753c81d03a3bf4b857361e1d273efe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -7474,12 +7550,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1874305633}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.782, y: 2.209, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1102253770}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1905585627
 GameObject:
@@ -7492,7 +7568,7 @@ GameObject:
   - component: {fileID: 1905585628}
   - component: {fileID: 1905585629}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (9)
+  m_Name: Floor (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9568,7 +9644,7 @@ GameObject:
   - component: {fileID: 1987261714}
   - component: {fileID: 1987261715}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (11)
+  m_Name: Floor (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9655,7 +9731,7 @@ GameObject:
   - component: {fileID: 2029202306}
   - component: {fileID: 2029202307}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (3)
+  m_Name: Floor (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9742,7 +9818,7 @@ GameObject:
   - component: {fileID: 2046914912}
   - component: {fileID: 2046914911}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_13 (3)
+  m_Name: Plant (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9811,12 +9887,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046914910}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 7.52, y: 3.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 874499194}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2130533830
 GameObject:
@@ -9829,7 +9905,7 @@ GameObject:
   - component: {fileID: 2130533831}
   - component: {fileID: 2130533832}
   m_Layer: 0
-  m_Name: PixelOfficeAssets_10 (23)
+  m_Name: Floor (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10000,15 +10076,3 @@ SceneRoots:
   - {fileID: 1564342335}
   - {fileID: 6306293483711688206}
   - {fileID: 1084429830}
-  - {fileID: 827923187}
-  - {fileID: 869535408}
-  - {fileID: 687304919}
-  - {fileID: 2046914912}
-  - {fileID: 274881978}
-  - {fileID: 279016232}
-  - {fileID: 1874305635}
-  - {fileID: 1349996495}
-  - {fileID: 1190709095}
-  - {fileID: 1405453718}
-  - {fileID: 1832540332}
-  - {fileID: 22215040}
