@@ -559,7 +559,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wal
+      name: wall
       rect:
         serializedVersion: 2
         x: 84
@@ -1596,7 +1596,7 @@ TextureImporter:
       e: -965188444248818786
       indianflag: -4576943631702441962
       plant: -7851682181384933989
-      wal: 1234045625099090367
+      wall: 1234045625099090367
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
