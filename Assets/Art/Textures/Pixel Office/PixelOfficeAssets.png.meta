@@ -317,7 +317,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PixelOfficeAssets_0
+      name: Sky
       rect:
         serializedVersion: 2
         x: 0
@@ -325,7 +325,7 @@ TextureImporter:
         width: 256
         height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -339,7 +339,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_1
+      name: chair1
       rect:
         serializedVersion: 2
         x: 6
@@ -347,7 +347,7 @@ TextureImporter:
         width: 11
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -361,7 +361,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_2
+      name: chair2
       rect:
         serializedVersion: 2
         x: 19
@@ -369,7 +369,7 @@ TextureImporter:
         width: 11
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -383,7 +383,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_3
+      name: chair3
       rect:
         serializedVersion: 2
         x: 32
@@ -391,7 +391,7 @@ TextureImporter:
         width: 11
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -405,7 +405,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_4
+      name: Chair4
       rect:
         serializedVersion: 2
         x: 45
@@ -413,7 +413,7 @@ TextureImporter:
         width: 11
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -427,7 +427,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_5
+      name: chair5
       rect:
         serializedVersion: 2
         x: 58
@@ -435,7 +435,7 @@ TextureImporter:
         width: 11
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -449,7 +449,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_6
+      name: chair6
       rect:
         serializedVersion: 2
         x: 71
@@ -457,7 +457,7 @@ TextureImporter:
         width: 11
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -471,7 +471,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_7
+      name: Desktable
       rect:
         serializedVersion: 2
         x: 85
@@ -479,7 +479,7 @@ TextureImporter:
         width: 26
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -493,7 +493,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_8
+      name: Desktablelarge
       rect:
         serializedVersion: 2
         x: 115
@@ -501,7 +501,7 @@ TextureImporter:
         width: 40
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -515,7 +515,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_9
+      name: cubiclesfron
       rect:
         serializedVersion: 2
         x: 171
@@ -523,7 +523,7 @@ TextureImporter:
         width: 79
         height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -537,7 +537,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_10
+      name: Floor
       rect:
         serializedVersion: 2
         x: 3
@@ -545,7 +545,7 @@ TextureImporter:
         width: 73
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -559,7 +559,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_11
+      name: wal
       rect:
         serializedVersion: 2
         x: 84
@@ -567,7 +567,7 @@ TextureImporter:
         width: 26
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -581,7 +581,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_12
+      name: Sofa1
       rect:
         serializedVersion: 2
         x: 119
@@ -589,7 +589,7 @@ TextureImporter:
         width: 33
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -603,7 +603,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_13
+      name: plant
       rect:
         serializedVersion: 2
         x: 170
@@ -611,7 +611,7 @@ TextureImporter:
         width: 14
         height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -625,7 +625,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_14
+      name: desktableleftpart
       rect:
         serializedVersion: 2
         x: 188
@@ -633,7 +633,7 @@ TextureImporter:
         width: 17
         height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -647,7 +647,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_15
+      name: cubiclesleft
       rect:
         serializedVersion: 2
         x: 207
@@ -655,7 +655,7 @@ TextureImporter:
         width: 4
         height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -669,7 +669,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_16
+      name: desktablerightpart
       rect:
         serializedVersion: 2
         x: 213
@@ -677,7 +677,7 @@ TextureImporter:
         width: 17
         height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -691,7 +691,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_17
+      name: calendar
       rect:
         serializedVersion: 2
         x: 234
@@ -699,7 +699,7 @@ TextureImporter:
         width: 17
         height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -713,7 +713,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_18
+      name: Window1
       rect:
         serializedVersion: 2
         x: 59
@@ -721,7 +721,7 @@ TextureImporter:
         width: 26
         height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -735,7 +735,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_19
+      name: Window2
       rect:
         serializedVersion: 2
         x: 88
@@ -743,7 +743,7 @@ TextureImporter:
         width: 26
         height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -757,7 +757,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_20
+      name: Sofa2
       rect:
         serializedVersion: 2
         x: 120
@@ -765,7 +765,7 @@ TextureImporter:
         width: 33
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -779,7 +779,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_21
+      name: caffeemaker
       rect:
         serializedVersion: 2
         x: 159
@@ -787,7 +787,7 @@ TextureImporter:
         width: 7
         height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -801,7 +801,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_22
+      name: coffee
       rect:
         serializedVersion: 2
         x: 169
@@ -809,7 +809,7 @@ TextureImporter:
         width: 8
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -823,7 +823,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_23
+      name: indianflag
       rect:
         serializedVersion: 2
         x: 179
@@ -831,7 +831,7 @@ TextureImporter:
         width: 12
         height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -845,7 +845,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_24
+      name: britishflag
       rect:
         serializedVersion: 2
         x: 193
@@ -853,7 +853,7 @@ TextureImporter:
         width: 12
         height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -867,7 +867,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_25
+      name: EEUUflag
       rect:
         serializedVersion: 2
         x: 207
@@ -875,7 +875,7 @@ TextureImporter:
         width: 12
         height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -897,7 +897,7 @@ TextureImporter:
         width: 6
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -919,7 +919,7 @@ TextureImporter:
         width: 6
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -941,7 +941,7 @@ TextureImporter:
         width: 11
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -955,7 +955,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_29
+      name: Men1
       rect:
         serializedVersion: 2
         x: 2
@@ -963,7 +963,7 @@ TextureImporter:
         width: 15
         height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -977,7 +977,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_30
+      name: Men2
       rect:
         serializedVersion: 2
         x: 19
@@ -985,7 +985,7 @@ TextureImporter:
         width: 19
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -999,7 +999,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_31
+      name: Men3
       rect:
         serializedVersion: 2
         x: 40
@@ -1007,7 +1007,7 @@ TextureImporter:
         width: 13
         height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1021,7 +1021,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_32
+      name: Sofa3
       rect:
         serializedVersion: 2
         x: 120
@@ -1029,7 +1029,7 @@ TextureImporter:
         width: 33
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1043,7 +1043,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_33
+      name: Digitalclock
       rect:
         serializedVersion: 2
         x: 159
@@ -1051,7 +1051,7 @@ TextureImporter:
         width: 19
         height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1065,7 +1065,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_34
+      name: Paper1
       rect:
         serializedVersion: 2
         x: 183
@@ -1073,7 +1073,7 @@ TextureImporter:
         width: 6
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1087,7 +1087,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_35
+      name: Paper2
       rect:
         serializedVersion: 2
         x: 192
@@ -1095,7 +1095,7 @@ TextureImporter:
         width: 6
         height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1109,7 +1109,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_36
+      name: PaperPrinter
       rect:
         serializedVersion: 2
         x: 200
@@ -1117,7 +1117,7 @@ TextureImporter:
         width: 9
         height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1131,7 +1131,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_37
+      name: OldComputer
       rect:
         serializedVersion: 2
         x: 233
@@ -1139,7 +1139,7 @@ TextureImporter:
         width: 15
         height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1153,7 +1153,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_38
+      name: Doorpart
       rect:
         serializedVersion: 2
         x: 98
@@ -1161,7 +1161,7 @@ TextureImporter:
         width: 16
         height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1175,7 +1175,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_39
+      name: Sofa4
       rect:
         serializedVersion: 2
         x: 120
@@ -1183,7 +1183,7 @@ TextureImporter:
         width: 33
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1197,7 +1197,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_40
+      name: FoodMachine
       rect:
         serializedVersion: 2
         x: 159
@@ -1205,7 +1205,7 @@ TextureImporter:
         width: 24
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1219,7 +1219,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_41
+      name: Library
       rect:
         serializedVersion: 2
         x: 184
@@ -1227,7 +1227,7 @@ TextureImporter:
         width: 24
         height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1241,7 +1241,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_42
+      name: Folder1
       rect:
         serializedVersion: 2
         x: 211
@@ -1249,7 +1249,7 @@ TextureImporter:
         width: 11
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1263,7 +1263,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_43
+      name: Women1
       rect:
         serializedVersion: 2
         x: 3
@@ -1271,7 +1271,7 @@ TextureImporter:
         width: 17
         height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1285,7 +1285,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_44
+      name: Women2
       rect:
         serializedVersion: 2
         x: 22
@@ -1293,7 +1293,7 @@ TextureImporter:
         width: 17
         height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1307,7 +1307,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_45
+      name: Cat
       rect:
         serializedVersion: 2
         x: 65
@@ -1315,7 +1315,7 @@ TextureImporter:
         width: 16
         height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1329,7 +1329,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_46
+      name: Folder2
       rect:
         serializedVersion: 2
         x: 211
@@ -1337,7 +1337,7 @@ TextureImporter:
         width: 11
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1351,7 +1351,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_47
+      name: NewComputer
       rect:
         serializedVersion: 2
         x: 233
@@ -1359,7 +1359,7 @@ TextureImporter:
         width: 13
         height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1373,7 +1373,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_49
+      name: Dog
       rect:
         serializedVersion: 2
         x: 59
@@ -1381,7 +1381,7 @@ TextureImporter:
         width: 24
         height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1395,7 +1395,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_50
+      name: Trashcan1
       rect:
         serializedVersion: 2
         x: 116
@@ -1403,7 +1403,7 @@ TextureImporter:
         width: 9
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1417,7 +1417,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_51
+      name: Trashcan2
       rect:
         serializedVersion: 2
         x: 126
@@ -1425,7 +1425,7 @@ TextureImporter:
         width: 9
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1439,7 +1439,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_52
+      name: Trashcan3
       rect:
         serializedVersion: 2
         x: 136
@@ -1447,7 +1447,7 @@ TextureImporter:
         width: 9
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1461,7 +1461,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_53
+      name: Waterdispenser
       rect:
         serializedVersion: 2
         x: 147
@@ -1469,7 +1469,7 @@ TextureImporter:
         width: 9
         height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1483,7 +1483,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelOfficeAssets_54
+      name: Folder3
       rect:
         serializedVersion: 2
         x: 211
@@ -1491,7 +1491,7 @@ TextureImporter:
         width: 11
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1513,7 +1513,7 @@ TextureImporter:
         width: 10
         height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1540,62 +1540,63 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PixelOfficeAssets_0: -7271763527299383784
-      PixelOfficeAssets_1: 3676147891487690484
-      PixelOfficeAssets_10: -2777367087475402831
-      PixelOfficeAssets_11: 1234045625099090367
-      PixelOfficeAssets_12: -195785525709385407
-      PixelOfficeAssets_13: -7851682181384933989
-      PixelOfficeAssets_14: -342301325801493883
-      PixelOfficeAssets_15: 4761254373709036940
-      PixelOfficeAssets_16: -6736183305252478953
-      PixelOfficeAssets_17: -821808532107802635
-      PixelOfficeAssets_18: -5646501864941631083
-      PixelOfficeAssets_19: 4752718965130528658
-      PixelOfficeAssets_2: -6477493617829449613
-      PixelOfficeAssets_20: 6663607382090127383
-      PixelOfficeAssets_21: -965188444248818786
-      PixelOfficeAssets_22: 4485465026094667126
-      PixelOfficeAssets_23: -4576943631702441962
-      PixelOfficeAssets_24: 5132571747697680498
-      PixelOfficeAssets_25: 4563191688391546345
+      Cat: -5607137567527353434
+      Chair4: -1670024694500576332
+      Desktable: 5276665719044959393
+      Desktablelarge: -1790682264551540933
+      Digitalclock: 8337764890687534412
+      Dog: 7800556918131655672
+      Doorpart: 7144587705238411963
+      EEUUflag: 4563191688391546345
+      Floor: -2777367087475402831
+      Folder1: 1164198214596868580
+      Folder2: -386728607022801062
+      Folder3: 39153548765281415
+      FoodMachine: -7179098694952198742
+      Library: 3119051065560786289
+      Men1: -4435885805887634418
+      Men2: -8066190925033470020
+      Men3: 2692148016969119746
+      NewComputer: -8482251252452995244
+      OldComputer: -1255217664399373725
+      Paper1: 5104892911730743447
+      Paper2: 6120954501006694737
+      PaperPrinter: -4930726930409121452
       PixelOfficeAssets_26: -6577931756215185911
       PixelOfficeAssets_27: 5419390883246644464
       PixelOfficeAssets_28: 5000613781093252364
-      PixelOfficeAssets_29: -4435885805887634418
-      PixelOfficeAssets_3: 4083885089593249691
-      PixelOfficeAssets_30: -8066190925033470020
-      PixelOfficeAssets_31: 2692148016969119746
-      PixelOfficeAssets_32: 3467554412643907554
-      PixelOfficeAssets_33: 8337764890687534412
-      PixelOfficeAssets_34: 5104892911730743447
-      PixelOfficeAssets_35: 6120954501006694737
-      PixelOfficeAssets_36: -4930726930409121452
-      PixelOfficeAssets_37: -1255217664399373725
-      PixelOfficeAssets_38: 7144587705238411963
-      PixelOfficeAssets_39: -4503781077620338201
-      PixelOfficeAssets_4: -1670024694500576332
-      PixelOfficeAssets_40: -7179098694952198742
-      PixelOfficeAssets_41: 3119051065560786289
-      PixelOfficeAssets_42: 1164198214596868580
-      PixelOfficeAssets_43: 4863692313126216162
-      PixelOfficeAssets_44: -8458901710768802028
-      PixelOfficeAssets_45: -5607137567527353434
-      PixelOfficeAssets_46: -386728607022801062
-      PixelOfficeAssets_47: -8482251252452995244
       PixelOfficeAssets_48: 6750547504434444062
-      PixelOfficeAssets_49: 7800556918131655672
-      PixelOfficeAssets_5: -2324927289413320140
-      PixelOfficeAssets_50: 7057848806957298190
-      PixelOfficeAssets_51: -3630164164910445282
-      PixelOfficeAssets_52: 8295066425557332125
-      PixelOfficeAssets_53: -2885904433027117117
-      PixelOfficeAssets_54: 39153548765281415
       PixelOfficeAssets_55: 2421527390207758791
-      PixelOfficeAssets_6: 8556382469748982914
-      PixelOfficeAssets_7: 5276665719044959393
-      PixelOfficeAssets_8: -1790682264551540933
-      PixelOfficeAssets_9: -8603951370828081914
+      Sky: -7271763527299383784
+      Sofa1: -195785525709385407
+      Sofa2: 6663607382090127383
+      Sofa3: 3467554412643907554
+      Sofa4: -4503781077620338201
+      Trashcan1: 7057848806957298190
+      Trashcan2: -3630164164910445282
+      Trashcan3: 8295066425557332125
+      Waterdispenser: -2885904433027117117
+      Window1: -5646501864941631083
+      Window2: 4752718965130528658
+      Women1: 4863692313126216162
+      Women2: -8458901710768802028
+      britishflag: 5132571747697680498
+      caffeemaker: -965188444248818786
+      calendar: -821808532107802635
+      chair1: 3676147891487690484
+      chair2: -6477493617829449613
+      chair3: 4083885089593249691
+      chair5: -2324927289413320140
+      chair6: 8556382469748982914
+      coffee: 4485465026094667126
+      cubiclesfron: -8603951370828081914
+      cubiclesleft: 4761254373709036940
+      desktableleftpart: -342301325801493883
+      desktablerightpart: -6736183305252478953
+      e: -965188444248818786
+      indianflag: -4576943631702441962
+      plant: -7851682181384933989
+      wal: 1234045625099090367
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
