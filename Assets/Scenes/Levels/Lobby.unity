@@ -325,6 +325,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &195229184 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9179658030818164876, guid: f04b6b3915743d84caeba89503028761, type: 3}
+  m_PrefabInstance: {fileID: 1357932006}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &231323330
 GameObject:
   m_ObjectHideFlags: 0
@@ -5118,6 +5123,136 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1357932006
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 906870224231147973, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: dialogueBox
+      value: 
+      objectReference: {fileID: 195229184}
+    - target: {fileID: 906870224231147973, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: dialogueLines.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 906870224231147973, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: dialogueLines.Array.data[0].line
+      value: " \xA1Atenci\xF3n!\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 906870224231147973, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: dialogueLines.Array.data[1].line
+      value: Como puede ser que el Cybertrash tenga tantos bugs, quiero hablar con
+        el jefe ya mismo
+      objectReference: {fileID: 0}
+    - target: {fileID: 906870224231147973, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: dialogueLines.Array.data[3].line
+      value: "C\xF3mo se atreven a ignorarme"
+      objectReference: {fileID: 0}
+    - target: {fileID: 906870224231147973, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: dialogueLines.Array.data[4].line
+      value: Ya callate por favor, me duele la cabeza
+      objectReference: {fileID: 0}
+    - target: {fileID: 906870224231147973, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: dialogueLines.Array.data[5].line
+      value: "Quisiera hablar con el jefe de la compa\xF1\xEDa, no puede ser que
+        mi juego favorito el Cybertrash no tenga autos flotadores y objetos que atraviesan
+        las paredes. Necesito una explicaci\xF3n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 906870224231147973, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: dialogueLines.Array.data[6].line
+      value: "Ese es el problema, la empresa no puede trabajar bien, hubo un mosquito
+        que estuvo molestando a todo el personal. Tendr\xE1s que detenerlo y ayudar
+        a la empresa si quieres lograr hablar con el jefe"
+      objectReference: {fileID: 0}
+    - target: {fileID: 906870224231147973, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: dialogueLines.Array.data[0].speakerName
+      value: Fan
+      objectReference: {fileID: 0}
+    - target: {fileID: 906870224231147973, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: dialogueLines.Array.data[1].speakerName
+      value: Fan
+      objectReference: {fileID: 0}
+    - target: {fileID: 906870224231147973, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: dialogueLines.Array.data[2].speakerName
+      value: Recepcionista
+      objectReference: {fileID: 0}
+    - target: {fileID: 906870224231147973, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: dialogueLines.Array.data[3].speakerName
+      value: Fan
+      objectReference: {fileID: 0}
+    - target: {fileID: 906870224231147973, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: dialogueLines.Array.data[4].speakerName
+      value: Recepcionista
+      objectReference: {fileID: 0}
+    - target: {fileID: 906870224231147973, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: dialogueLines.Array.data[5].speakerName
+      value: Fan
+      objectReference: {fileID: 0}
+    - target: {fileID: 906870224231147973, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: dialogueLines.Array.data[6].speakerName
+      value: Recepcionista
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578926655633718080, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 349.6936
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578926655633718080, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 82.27762
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578926655633718080, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.1270897
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578926655633718080, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578926655633718080, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578926655633718080, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578926655633718080, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578926655633718080, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578926655633718080, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578926655633718080, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2478582734314615212, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: m_Name
+      value: DialogueManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512031755257273243, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.14990234
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512031755257273243, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -135.45001
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f04b6b3915743d84caeba89503028761, type: 3}
 --- !u!1 &1396815644
 GameObject:
   m_ObjectHideFlags: 0
@@ -5265,7 +5400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 125e9920691cdaa4bba80921123e11d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueManager: {fileID: 0}
+  dialogueManager: {fileID: 1971301504}
 --- !u!1 &1398601339
 GameObject:
   m_ObjectHideFlags: 0
@@ -7705,6 +7840,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1971301504 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 906870224231147973, guid: f04b6b3915743d84caeba89503028761, type: 3}
+  m_PrefabInstance: {fileID: 1357932006}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34e01125e6bf8e4aaabf6067fce21ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1987043883
 GameObject:
   m_ObjectHideFlags: 0
@@ -10052,3 +10198,4 @@ SceneRoots:
   - {fileID: 1478701803}
   - {fileID: 1564342335}
   - {fileID: 1084429830}
+  - {fileID: 1357932006}
