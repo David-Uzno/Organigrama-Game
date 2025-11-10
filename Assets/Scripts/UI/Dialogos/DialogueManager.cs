@@ -4,18 +4,11 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class DialogoManager : MonoBehaviour
+public class DialogueManager : MonoBehaviour
 {
     #region Variables
-    [System.Serializable]
-    public class DialogueLine
-    {
-        public string SpeakerName;
-        [TextArea(2, 5)] public string Line;
-    }
-
     [Header("Dialogue Settings")]
-    [SerializeField] private List<DialogueLine> _dialogueLines;
+    [SerializeField] private DialogueData _dialogueData;
     [SerializeField] private WaitForSeconds _delayDuration = new(0.02f);
 
     [Header("UI References")]
@@ -71,11 +64,11 @@ public class DialogoManager : MonoBehaviour
     
     private void ShowLine()
     {
-        if (_currentLine < _dialogueLines.Count)
+        if (_dialogueData != null && _currentLine < _dialogueData.dialogueLines.Count)
         {
-            _speakerText.text = _dialogueLines[_currentLine].SpeakerName;
+            _speakerText.text = _dialogueData.dialogueLines[_currentLine].SpeakerName;
             StopAllCoroutines();
-            StartCoroutine(TypeLine(_dialogueLines[_currentLine].Line));
+            StartCoroutine(TypeLine(_dialogueData.dialogueLines[_currentLine].Line));
         }
         else
         {
@@ -106,18 +99,15 @@ public class DialogoManager : MonoBehaviour
         _dialogueBox.SetActive(false);
         _isDialogueActive = false;
 
-        // Buscar PlayerInput si aún no está referenciado
         if (_playerInput == null)
         {
             _playerInput = FindFirstObjectByType<PlayerInput>();
-            if (_playerInput != null)
-                Debug.Log("[DialogoManager] PlayerInput found at EndDialogue: " + _playerInput.gameObject.name);
-            else
-                Debug.LogWarning("[DialogoManager] PlayerInput not found at EndDialogue.");
         }
 
         if (_playerInput != null)
-            _playerInput.enabled = true; // Reactiva el InputSystem
+        {
+            _playerInput.enabled = true;
+        }
     }
     #endregion
 }

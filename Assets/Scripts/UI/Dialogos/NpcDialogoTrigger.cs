@@ -1,32 +1,32 @@
 using UnityEngine;
 
-public class NpcDialogoTrigger : MonoBehaviour
+public class NPCDialogueTrigger : MonoBehaviour
 {
-    public DialogoManager dialogueManager;
-    private bool playerInRange = false;
+    public DialogueManager DialogueManager;
+    private bool _playerInRange = false;
 
-    void Update()
+    private void Update()
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.E))
+        if (_playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            dialogueManager.StartDialogue();
+            DialogueManager.StartDialogue();
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            playerInRange = true;
+            _playerInRange = true;
             Debug.Log("Presiona E para hablar");
         }
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            playerInRange = false;
+            _playerInRange = false;
         }
     }
 }
