@@ -6,6 +6,21 @@ using UnityEngine.InputSystem;
 
 public class DialogueManager : MonoBehaviour
 {
+    #region Singleton
+    public static DialogueManager Instance { get; private set; }
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    #endregion
+
     #region Variables
     [Header("Dialogue Settings")]
     [SerializeField] private DialogueData _dialogueData;
