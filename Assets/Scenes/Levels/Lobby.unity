@@ -1215,7 +1215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 125e9920691cdaa4bba80921123e11d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueManager: {fileID: 0}
+  _dialogueData: {fileID: 0}
 --- !u!1 &631448691
 GameObject:
   m_ObjectHideFlags: 0
@@ -5290,6 +5290,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1886556828}
     - target: {fileID: 906870224231147973, guid: f04b6b3915743d84caeba89503028761, type: 3}
+      propertyPath: _dialogueData
+      value: 
+      objectReference: {fileID: 11400000, guid: 2c4478580f09ee24094c59fab394b1cf, type: 2}
+    - target: {fileID: 906870224231147973, guid: f04b6b3915743d84caeba89503028761, type: 3}
       propertyPath: _dialogueText
       value: 
       objectReference: {fileID: 80255629}
@@ -5624,7 +5628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 125e9920691cdaa4bba80921123e11d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueManager: {fileID: 1971301504}
+  _dialogueData: {fileID: 11400000, guid: 2c4478580f09ee24094c59fab394b1cf, type: 2}
 --- !u!61 &1396815649
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5872,7 +5876,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: acd41e5fc077eb149a25c0754416ee0c, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: acd41e5fc077eb149a25c0754416ee0c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -8121,17 +8125,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1971301504 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 906870224231147973, guid: f04b6b3915743d84caeba89503028761, type: 3}
-  m_PrefabInstance: {fileID: 1357932006}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c34e01125e6bf8e4aaabf6067fce21ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1987043883
 GameObject:
   m_ObjectHideFlags: 0

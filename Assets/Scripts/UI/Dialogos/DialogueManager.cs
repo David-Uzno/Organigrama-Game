@@ -23,7 +23,6 @@ public class DialogueManager : MonoBehaviour
 
     #region Variables
     [Header("Dialogue Settings")]
-    [SerializeField] private DialogueData _dialogueData;
     [SerializeField] private WaitForSeconds _delayDuration = new(0.02f);
 
     [Header("UI References")]
@@ -36,6 +35,8 @@ public class DialogueManager : MonoBehaviour
     private int _currentLine = 0;
     private bool _isDialogueActive = false;
     private bool _isTyping = false;
+
+    private DialogueData _dialogueData; // Ahora privado y no serializado
     #endregion
 
     #region UnityMethods
@@ -58,12 +59,14 @@ public class DialogueManager : MonoBehaviour
     #endregion
 
     #region InternalDialogueLogic
-    public void StartDialogue()
+    public void StartDialogue(DialogueData dialogueData)
     {
         if (_isDialogueActive) return; // Evita reiniciar si ya está abierto
         _isDialogueActive = true;
         _currentLine = 0;
         _dialogueBox.SetActive(true);
+
+        _dialogueData = dialogueData; // Asigna el DialogueData recibido
 
         // Buscar PlayerInput si aún no está referenciado
         if (_playerInput == null)

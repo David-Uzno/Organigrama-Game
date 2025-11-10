@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class NPCDialogueTrigger : MonoBehaviour
 {
+    [SerializeField] private DialogueData _dialogueData;
+
     private bool _playerInRange = false;
 
     private void Update()
     {
         if (_playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            DialogueManager.Instance.StartDialogue();
+            DialogueManager.Instance.StartDialogue(_dialogueData);
         }
     }
 
