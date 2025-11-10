@@ -2,14 +2,13 @@ using UnityEngine;
 
 public class NPCDialogueTrigger : MonoBehaviour
 {
-    public DialogueManager DialogueManager;
     private bool _playerInRange = false;
 
     private void Update()
     {
         if (_playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            DialogueManager.StartDialogue();
+            DialogueManager.Instance.StartDialogue();
         }
     }
 
