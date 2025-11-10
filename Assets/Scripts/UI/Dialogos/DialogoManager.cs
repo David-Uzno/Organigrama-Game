@@ -1,57 +1,81 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using System.Collections;
+using UnityEngine.InputSystem;
+
 public class DialogoManager : MonoBehaviour
 {
-
+    #region Variables
     [System.Serializable]
     public class DialogueLine
     {
-        public string speakerName;
-        [TextArea(2, 5)] public string line;
+        public string SpeakerName;
+        [TextArea(2, 5)] public string Line;
     }
 
-    public TextMeshProUGUI speakerText;
-    public TextMeshProUGUI dialogueText;
-    public GameObject dialogueBox;
+    [Header("Dialogue Settings")]
+    [SerializeField] private List<DialogueLine> _dialogueLines;
+    [SerializeField] private WaitForSeconds _delayDuration = new(0.02f);
 
-    public List<DialogueLine> dialogueLines;
-    private int currentLine = 0;
-    private bool isDialogueActive = false;
-    private bool isTyping = false;
+    [Header("UI References")]
+    [SerializeField] private TextMeshProUGUI _speakerText;
+    [SerializeField] private TextMeshProUGUI _dialogueText;
+    [SerializeField] private GameObject _dialogueBox;
 
-    void Start()
+    private PlayerInput _playerInput;
+
+    private int _currentLine = 0;
+    private bool _isDialogueActive = false;
+    private bool _isTyping = false;
+    #endregion
+
+    #region UnityMethods
+    private void Start()
     {
-        dialogueBox.SetActive(false);
+        _dialogueBox.SetActive(false);
     }
 
-    void Update()
+    private void Update()
     {
-        // Si hay un di�logo activo, presionar E o Space pasa al siguiente texto
-        if (isDialogueActive && (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space)))
+        // Si hay un diálogo activo, presionar E o Space pasa al siguiente texto
+        if (_isDialogueActive && (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space)))
         {
-            if (!isTyping)
+            if (!_isTyping)
+            {
                 NextLine();
+            }
         }
     }
+    #endregion
 
+    #region InternalDialogueLogic
     public void StartDialogue()
     {
-        if (isDialogueActive) return; // Evita reiniciar si ya est� abierto
-        isDialogueActive = true;
-        currentLine = 0;
-        dialogueBox.SetActive(true);
+        if (_isDialogueActive) return; // Evita reiniciar si ya está abierto
+        _isDialogueActive = true;
+        _currentLine = 0;
+        _dialogueBox.SetActive(true);
+
+        // Buscar PlayerInput si aún no está referenciado
+        if (_playerInput == null)
+        {
+            _playerInput = FindFirstObjectByType<PlayerInput>();
+        }
+
+        if (_playerInput != null)
+            _playerInput.enabled = false; // Desactiva el InputSystem
+
         ShowLine();
     }
-
-    void ShowLine()
+    
+    private void ShowLine()
     {
-        if (currentLine < dialogueLines.Count)
+        if (_currentLine < _dialogueLines.Count)
         {
-            speakerText.text = dialogueLines[currentLine].speakerName;
+            _speakerText.text = _dialogueLines[_currentLine].SpeakerName;
             StopAllCoroutines();
-            StartCoroutine(TypeLine(dialogueLines[currentLine].line));
+            StartCoroutine(TypeLine(_dialogueLines[_currentLine].Line));
         }
         else
         {
@@ -61,26 +85,39 @@ public class DialogoManager : MonoBehaviour
 
     IEnumerator TypeLine(string line)
     {
-        isTyping = true;
-        dialogueText.text = "";
+        _isTyping = true;
+        _dialogueText.text = "";
         foreach (char c in line.ToCharArray())
         {
-            dialogueText.text += c;
-            yield return new WaitForSeconds(0.02f);
+            _dialogueText.text += c;
+            yield return _delayDuration;
         }
-        isTyping = false;
+        _isTyping = false;
     }
 
-    void NextLine()
+    private void NextLine()
     {
-        currentLine++;
+        _currentLine++;
         ShowLine();
     }
 
-    void EndDialogue()
+    private void EndDialogue()
     {
-        dialogueBox.SetActive(false);
-        isDialogueActive = false;
-    }
-}
+        _dialogueBox.SetActive(false);
+        _isDialogueActive = false;
 
+        // Buscar PlayerInput si aún no está referenciado
+        if (_playerInput == null)
+        {
+            _playerInput = FindFirstObjectByType<PlayerInput>();
+            if (_playerInput != null)
+                Debug.Log("[DialogoManager] PlayerInput found at EndDialogue: " + _playerInput.gameObject.name);
+            else
+                Debug.LogWarning("[DialogoManager] PlayerInput not found at EndDialogue.");
+        }
+
+        if (_playerInput != null)
+            _playerInput.enabled = true; // Reactiva el InputSystem
+    }
+    #endregion
+}
