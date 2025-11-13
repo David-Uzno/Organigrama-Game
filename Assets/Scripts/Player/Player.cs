@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
@@ -11,7 +10,7 @@ public class Player : MonoBehaviour, IDamageable, IHealable
     [SerializeField] PlayerInput _playerInput;
     [SerializeField] private Rigidbody2D _RB;
     [SerializeField] private float _speed = 5f;
-    
+
     [Header("Life")]
     [SerializeField] private int _life = 3;
     [SerializeField] private SpriteRenderer _spriteRenderer;

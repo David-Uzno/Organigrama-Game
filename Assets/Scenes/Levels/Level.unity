@@ -7325,37 +7325,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &553288184
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 553288185}
-  m_Layer: 0
-  m_Name: Point (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &553288185
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 553288184}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8, y: 2.15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 753577594}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &636094848
 GameObject:
   m_ObjectHideFlags: 0
@@ -7938,37 +7907,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a442c785ac18f2a4e9c7644b92644141, type: 3}
---- !u!1 &733748134
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 733748135}
-  m_Layer: 0
-  m_Name: Point
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &733748135
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733748134}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8, y: 3.15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 753577594}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &742397437
 GameObject:
   m_ObjectHideFlags: 0
@@ -8077,8 +8015,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2092951301}
-  - {fileID: 733748135}
-  - {fileID: 553288185}
   m_Father: {fileID: 545725230}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &766234882
@@ -22021,24 +21957,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a967ae5f42442b543be919a9db297324, type: 3}
---- !u!114 &91422328655782625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3026538337963911782}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2bb51eec32a42041af4c903f82665ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _life: 1
-  _dropConfig: {fileID: 11400000, guid: 9e8b7c29980fc9b46bf23cefe6551bf0, type: 2}
-  _rb: {fileID: 1207492978073223095}
-  _moveSpeed: 3
-  _changeDirectionTime: 3
-  _boundaryBuffer: 0.5
 --- !u!50 &1207492978073223095
 Rigidbody2D:
   serializedVersion: 5
@@ -22145,7 +22063,6 @@ GameObject:
   - component: {fileID: 1207492978073223095}
   - component: {fileID: 1904544245756608012}
   - component: {fileID: 8971975495277558968}
-  - component: {fileID: 91422328655782625}
   - component: {fileID: 8971975495277558969}
   m_Layer: 0
   m_Name: Programmer
@@ -22569,9 +22486,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db2958799309d254ab0a025cd6918f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _patrolPoints:
-  - {fileID: 733748135}
-  - {fileID: 553288185}
+  _minDistanceToPlayer: 2
+  _reactionTime: 0.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
