@@ -22489,6 +22489,9 @@ MonoBehaviour:
   _minDistanceToPlayer: 2
   _reactionTime: 0.5
   _visionRadius: 7.75
+  _randomMoveRadius: 10
+  _patrolSpeed: 3
+  _chaseSpeed: 4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

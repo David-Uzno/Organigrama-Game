@@ -6,12 +6,22 @@ using UnityEngine.AI;
 public class PatrollingAI : MonoBehaviour
 {
     private Player _player;
+
+    [Header("Player Detection")]
     [SerializeField] private float _minDistanceToPlayer = 2f;
     [SerializeField] private float _reactionTime = 0.5f;
     [SerializeField] private float _visionRadius = 7.5f;
 
+    [Header("Patrol")]
+    [SerializeField] private float _randomMoveRadius = 10f;
+    [SerializeField] private float _patrolSpeed = 3f;
+
+    [Header("Persecution")]
+    [SerializeField] private float _chaseSpeed = 4f;
+
     private NavMeshAgent _agent;
     private float _reactionTimer = 0f;
+    private bool _isChasingPlayer = false;
 
     private void Start()
     {
@@ -24,6 +34,7 @@ public class PatrollingAI : MonoBehaviour
         _agent = GetComponent<NavMeshAgent>();
         _agent.updatePosition = false;
         _agent.updateUpAxis = false;
+        _agent.speed = _patrolSpeed;
     }
 
     private void FindPlayer()
@@ -49,9 +60,9 @@ public class PatrollingAI : MonoBehaviour
     private void UpdatePositionAndRotation()
     {
         // Actualiza la posición del GameObject manualmente y fuerza Z a 0
-        var nextPos = _agent.nextPosition;
-        nextPos.z = 0f;
-        transform.position = nextPos;
+        var nextPosition = _agent.nextPosition;
+        nextPosition.z = 0f;
+        transform.position = nextPosition;
 
         // Evita la rotación en el eje Z
         var rotationEulerAngles = transform.rotation.eulerAngles;
@@ -66,6 +77,8 @@ public class PatrollingAI : MonoBehaviour
         // Solo se acerca si el Player está dentro del campo de visión
         if (distanceToPlayer <= _visionRadius)
         {
+            _isChasingPlayer = true;
+            _agent.speed = _chaseSpeed;
             if (distanceToPlayer > _minDistanceToPlayer && _reactionTimer >= _reactionTime)
             {
                 _agent.SetDestination(_player.transform.position);
@@ -74,8 +87,24 @@ public class PatrollingAI : MonoBehaviour
         }
         else
         {
-            // Si el Player está fuera del campo de visión, se detiene
-            _agent.ResetPath();
+            // Si el Player está fuera del campo de visión, patrulla de forma aleatoria
+            if (_isChasingPlayer || !_agent.hasPath || _agent.remainingDistance < 0.5f)
+            {
+                SetRandomDestination();
+                _isChasingPlayer = false;
+                _agent.speed = _patrolSpeed;
+            }
+        }
+    }
+
+    private void SetRandomDestination()
+    {
+        Vector2 randomDirection = Random.insideUnitCircle * _randomMoveRadius;
+        Vector3 randomPosition = new(transform.position.x + randomDirection.x, transform.position.y + randomDirection.y, 0f);
+
+        if (NavMesh.SamplePosition(randomPosition, out NavMeshHit hit, _randomMoveRadius, NavMesh.AllAreas))
+        {
+            _agent.SetDestination(hit.position);
         }
     }
 
