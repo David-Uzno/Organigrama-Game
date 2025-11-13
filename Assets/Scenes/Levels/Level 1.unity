@@ -22336,7 +22336,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2, y: 2}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -22378,7 +22378,7 @@ GameObject:
   - component: {fileID: 8971975495277558968}
   - component: {fileID: 91422328655782625}
   - component: {fileID: 8971975495277558969}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Programming
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -22627,15 +22627,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 19
-  m_Sprite: {fileID: 21300000, guid: aec2a4a33a30c464d9169957343f8eb7, type: 3}
+  m_Sprite: {fileID: -1575260128182699952, guid: 18b10e5fdf276ab4aa8baa0bc023f68b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &7243975756365600756
@@ -22800,9 +22800,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db2958799309d254ab0a025cd6918f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _patrolPoints:
-  - {fileID: 733748135}
-  - {fileID: 553288185}
+  _minDistanceToPlayer: 2
+  _reactionTime: 0.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

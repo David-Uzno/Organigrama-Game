@@ -1,27 +1,28 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using UnityEngine;
 
 public class PlayerMeleeAttack : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private GameObject meleeArea;     // El collider o hitbox del ataque
+    [SerializeField] private GameObject meleeArea;      // Collider o hitbox del ataque
     [SerializeField] private Transform playerTransform; // Referencia al jugador
 
     [Header("Attack Settings (Arco de Mouse)")]
-    [SerializeField] private float attackDuration = 0.2f;    // Pausa al final
-    [SerializeField] private float arcSweepAngle = 120f;     // ¡ngulo total del barrido
-    [SerializeField] private float rotationSpeed = 6f;       // Velocidad del swing
-    [SerializeField] private float attackRadius = 1f;        // Radio del arco (distancia al jugador)
+    [SerializeField] private float attackDuration = 0.2f;   // Pausa al final
+    [SerializeField] private float arcSweepAngle = 120f;    // √Ångulo total del barrido
+    [SerializeField] private float rotationSpeed = 6f;      // Velocidad del swing
+    [SerializeField] private float attackRadius = 1f;       // Radio del ataque
     [SerializeField] private KeyCode attackKey = KeyCode.J;
 
     private bool isAttacking = false;
     private Camera mainCamera;
+    private Transform followParent; // pivote temporal que sigue al jugador
 
     private void Start()
     {
         if (meleeArea == null)
         {
-            Debug.LogError("No se asignÛ el ·rea de ataque (meleeArea).");
+            Debug.LogError("No se asign√≥ el √°rea de ataque (meleeArea).");
             enabled = false;
             return;
         }
@@ -42,43 +43,54 @@ public class PlayerMeleeAttack : MonoBehaviour
     {
         isAttacking = true;
 
-        // --- 1. Obtener direcciÛn del mouse ---
+        // --- 1. Calcular direcci√≥n del mouse ---
         Vector3 mouseWorld = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mouseWorld.z = 0;
-        Vector3 direction = (mouseWorld - playerTransform.position).normalized;
 
-        // ¡ngulo hacia el mouse
+        Vector3 direction = (mouseWorld - playerTransform.position).normalized;
         float centerAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        // --- 2. Definir ·ngulo inicial y final del arco ---
-        float startAngle = centerAngle - arcSweepAngle / 2f;
-        float endAngle = centerAngle + arcSweepAngle / 2f;
+        // --- 2. Crear pivote temporal (simula ser el padre) ---
+        if (followParent == null)
+        {
+            GameObject pivot = new GameObject("MeleePivot");
+            followParent = pivot.transform;
+        }
 
-        float t = 0f;
+        followParent.position = playerTransform.position;
+        meleeArea.transform.SetParent(followParent); // ahora el arma ‚Äúsigue‚Äù al pivote
+
         meleeArea.SetActive(true);
 
-        // --- 3. Movimiento del arco (rotaciÛn alrededor del jugador) ---
+        float startAngle = centerAngle - arcSweepAngle / 2f;
+        float endAngle = centerAngle + arcSweepAngle / 2f;
+        float t = 0f;
+
+        // --- 3. Movimiento del arco (rotaci√≥n local respecto al pivote) ---
         while (t < 1f)
         {
+            // Hacer que el pivote siga al jugador cada frame
+            followParent.position = playerTransform.position;
+
             t += Time.deltaTime * rotationSpeed;
             float currentAngle = Mathf.Lerp(startAngle, endAngle, t);
 
-            // Calcular la posiciÛn en arco (basada en el radio)
-            Vector3 offset = new Vector3(
-                Mathf.Cos(currentAngle * Mathf.Deg2Rad),
-                Mathf.Sin(currentAngle * Mathf.Deg2Rad),
-                0
-            ) * attackRadius;
+            // Rotar el pivote, lo que mueve el arma
+            followParent.rotation = Quaternion.Euler(0, 0, currentAngle);
 
-            meleeArea.transform.position = playerTransform.position + offset;
-            meleeArea.transform.rotation = Quaternion.Euler(0, 0, currentAngle);
+            // La espada est√° a un radio fijo del centro
+            meleeArea.transform.localPosition = Vector3.right * attackRadius;
+            meleeArea.transform.localRotation = Quaternion.identity;
 
             yield return null;
         }
 
-        // --- 4. FinalizaciÛn ---
+        // --- 4. Finalizaci√≥n ---
         yield return new WaitForSeconds(attackDuration);
+
+        meleeArea.transform.SetParent(null); // quitar el ‚Äúparent temporal‚Äù
         meleeArea.SetActive(false);
+
         isAttacking = false;
     }
 }
