@@ -5,10 +5,10 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class PatrollingAI : MonoBehaviour
 {
-    [Header("Player Tracking")]
     private Player _player;
     [SerializeField] private float _minDistanceToPlayer = 2f;
     [SerializeField] private float _reactionTime = 0.5f;
+    [SerializeField] private float _visionRadius = 7.5f;
 
     private NavMeshAgent _agent;
     private float _reactionTimer = 0f;
@@ -63,10 +63,19 @@ public class PatrollingAI : MonoBehaviour
         _reactionTimer += Time.deltaTime;
         float distanceToPlayer = Vector3.Distance(transform.position, _player.transform.position);
 
-        if (distanceToPlayer > _minDistanceToPlayer && _reactionTimer >= _reactionTime)
+        // Solo se acerca si el Player está dentro del campo de visión
+        if (distanceToPlayer <= _visionRadius)
         {
-            _agent.SetDestination(_player.transform.position);
-            _reactionTimer = 0f;
+            if (distanceToPlayer > _minDistanceToPlayer && _reactionTimer >= _reactionTime)
+            {
+                _agent.SetDestination(_player.transform.position);
+                _reactionTimer = 0f;
+            }
+        }
+        else
+        {
+            // Si el Player está fuera del campo de visión, se detiene
+            _agent.ResetPath();
         }
     }
 
@@ -78,5 +87,11 @@ public class PatrollingAI : MonoBehaviour
         {
             _agent.ResetPath();
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, _visionRadius);
     }
 }
