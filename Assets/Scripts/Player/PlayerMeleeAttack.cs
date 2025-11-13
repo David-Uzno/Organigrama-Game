@@ -9,8 +9,6 @@ public class PlayerMeleeAttack : MonoBehaviour
     [SerializeField] private float rotationSpeed = 6f;
     [SerializeField] private float attackRadius = 1f;
     [SerializeField] private KeyCode attackKey = KeyCode.J;
-
-    [Header("Layer (opcional)")]
     [SerializeField] private string weaponLayerName = "PlayerWeapon";
     [SerializeField] private bool autoIgnorePlayerCollision = true;
 
@@ -42,6 +40,19 @@ public class PlayerMeleeAttack : MonoBehaviour
         originalParent = meleeArea.transform.parent;
         meleeArea.SetActive(false);
 
+        // Evitar que la hitbox esté taggeada como Enemy por error
+        if (meleeArea.CompareTag("Enemy"))
+        {
+            meleeArea.tag = "Untagged";
+            Debug.LogWarning("PlayerMeleeAttack: meleeArea tenía tag 'Enemy' — lo he puesto 'Untagged'. Usa una tag/layer específica para armas.");
+        }
+
+        // Forzar que el collider del arma sea Trigger (recomendado para hitboxes)
+        var col = meleeArea.GetComponent<Collider2D>();
+        if (col != null)
+            col.isTrigger = true;
+
+        // Asignar layer si existe
         if (!string.IsNullOrEmpty(weaponLayerName))
         {
             weaponLayer = LayerMask.NameToLayer(weaponLayerName);
@@ -52,7 +63,7 @@ public class PlayerMeleeAttack : MonoBehaviour
             else
             {
                 SetLayerRecursively(meleeArea.transform, weaponLayer);
-                if (autoIgnorePlayerCollision)
+                if (autoIgnorePlayerCollision && playerObj != null)
                 {
                     int playerLayer = playerObj.layer;
                     if (playerLayer != weaponLayer)
@@ -115,3 +126,4 @@ public class PlayerMeleeAttack : MonoBehaviour
             SetLayerRecursively(child, layer);
     }
 }
+        

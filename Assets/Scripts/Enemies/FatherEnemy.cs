@@ -7,23 +7,51 @@ public abstract class FatherEnemy : MonoBehaviour, IDamageable
     #region Variables
     [SerializeField] private float _life = 1f;
     [SerializeField] private EnemyDropConfig _dropConfig;
-    #endregion
+
+    // Layers
+    [SerializeField] private string playerLayerName = "Player";
+    [SerializeField] private string weaponLayerName = "PlayerWeapon";
+    private int playerLayer = -1;
+    private int weaponLayer = -1;
+        #endregion
+
+    private void Awake()
+    {
+        playerLayer = LayerMask.NameToLayer(playerLayerName);
+        weaponLayer = LayerMask.NameToLayer(weaponLayerName);
+
+        if (playerLayer == -1)
+            Debug.LogWarning($"FatherEnemy: la layer '{playerLayerName}' no existe.");
+        if (weaponLayer == -1)
+            Debug.LogWarning($"FatherEnemy: la layer '{weaponLayerName}' no existe.");
+    }
 
     #region Unity Methods
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Usar otherCollider para inspeccionar el objeto que chocó con el enemigo
         Collider2D otherCol = collision.otherCollider;
         if (otherCol == null) return;
 
-        // Si la colisión viene del hitbox del arma, NO contamos eso como "Player hit"
+        // Si la colisión viene del hitbox del arma (por layer o componente), ignorar
+        if (weaponLayer != -1 && otherCol.gameObject.layer == weaponLayer)
+        {
+            Debug.Log($"FatherEnemy: impacto de arma (layer) {otherCol.gameObject.name} ignorado.");
+            return;
+        }
         if (otherCol.GetComponentInParent<MeleeHit>() != null)
         {
-            Debug.Log($"FatherEnemy: impacto de arma {otherCol.gameObject.name} ignorado.");
+            Debug.Log($"FatherEnemy: impacto de arma (component) {otherCol.gameObject.name} ignorado.");
             return;
         }
 
-        // Si el otro pertenece al Player (directamente o en sus padres), perder vida
+        // Si el otro collider pertenece a la layer del Player, contar daño al jugador
+        if (playerLayer != -1 && otherCol.gameObject.layer == playerLayer)
+        {
+            GameManager.Instance.LoseLife();
+            return;
+        }
+
+        // Fallback: si el collider pertenece al Player por componente
         if (otherCol.GetComponentInParent<Player>() != null)
         {
             GameManager.Instance.LoseLife();

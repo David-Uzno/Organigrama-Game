@@ -24,6 +24,13 @@ public class Player : MonoBehaviour, IDamageable, IHealable
     [Header("Other Components")]
     [SerializeField] private Animator _animator;
 
+    [Header("Layers")]
+    [SerializeField] private string enemyLayerName = "Enemy"; // nombre de la layer que usan los enemigos
+    [SerializeField] private string weaponLayerName = "PlayerWeapon"; // layer del arma/hitbox
+
+    private int enemyLayer = -1;
+    private int weaponLayer = -1;
+
     private bool _isInvincible = false;
     private bool _isFlashing = false;
     #endregion
@@ -45,6 +52,14 @@ public class Player : MonoBehaviour, IDamageable, IHealable
         {
             _animator.SetBool("Walk", false);
         }
+
+        enemyLayer = LayerMask.NameToLayer(enemyLayerName);
+        weaponLayer = LayerMask.NameToLayer(weaponLayerName);
+
+        if (enemyLayer == -1)
+            Debug.LogWarning($"Player: la layer '{enemyLayerName}' no existe. Revisa __Project Settings > Tags and Layers__.");
+        if (weaponLayer == -1)
+            Debug.LogWarning($"Player: la layer '{weaponLayerName}' no existe. Revisa __Project Settings > Tags and Layers__.");
     }
 
     private void FixedUpdate()
@@ -52,28 +67,41 @@ public class Player : MonoBehaviour, IDamageable, IHealable
         HandleMovement();
     }
 
+    // Ahora usamos layers (y protección extra por componente) en lugar de tags
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision == null) return;
 
-        // 1) Si viene del hitbox del arma (o cualquier hitbox del Player), ignorar
+        // Ignorar cualquier collider que sea parte de la hitbox del arma
         if (collision.GetComponentInParent<MeleeHit>() != null) return;
 
-        // 2) Seguridad extra: ignorar colliders hijos del propio Player
+        // Ignorar colliders hijos del propio Player
         if (collision.transform.IsChildOf(transform)) return;
 
-        // 3) Comprobar por componente (FatherEnemy o derivada) en los padres del collider
+        // Si la layer del objeto que colisiona es la layer del arma, ignorar
+        if (weaponLayer != -1 && collision.gameObject.layer == weaponLayer) return;
+
+        // Si la layer del objeto que colisiona es la layer de enemigos, daño
+        if (enemyLayer != -1)
+        {
+            // permitir colisiones con hijos: subimos por la jerarquía buscando la layer
+            Transform t = collision.transform;
+            while (t != null)
+            {
+                if (t.gameObject.layer == enemyLayer)
+                {
+                    TakeDamage(1);
+                    return;
+                }
+                t = t.parent;
+            }
+        }
+
+        // Fallback por componente (si no hay layer configurada correctamente)
         if (collision.GetComponentInParent<FatherEnemy>() != null)
         {
             TakeDamage(1);
             return;
-        }
-
-        // 4) Fallback: si aún usas tags, avisar y aplicar (solo temporal)
-        if (collision.CompareTag("Enemy"))
-        {
-            Debug.LogWarning($"Player: trigger con objeto 'Enemy' {collision.gameObject.name}. Revisa que no sea la hitbox del arma.");
-            TakeDamage(1);
         }
     }
     #endregion

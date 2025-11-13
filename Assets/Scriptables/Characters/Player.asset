@@ -19,4 +19,3 @@ MonoBehaviour:
     Image: {fileID: 21300000, guid: 4a8442056c175594784dd07ea7acef18, type: 3}
   - _player: {fileID: 5021440252569274685, guid: b75486a4c50996340a2da9e4e8ab1859, type: 3}
     Image: {fileID: 21300000, guid: 3b8c06dbe23121142a612e89d58aec59, type: 3}
-  _prefabDefault: {fileID: 8712103025209775062, guid: 99c2efe1770121b41a5de66c56e89959, type: 3}
