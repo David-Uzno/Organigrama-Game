@@ -12,10 +12,25 @@ public abstract class FatherEnemy : MonoBehaviour, IDamageable
     #region Unity Methods
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        // Usar otherCollider para inspeccionar el objeto que chocó con el enemigo
+        Collider2D otherCol = collision.otherCollider;
+        if (otherCol == null) return;
+
+        // Si la colisión viene del hitbox del arma, NO contamos eso como "Player hit"
+        if (otherCol.GetComponentInParent<MeleeHit>() != null)
+        {
+            Debug.Log($"FatherEnemy: impacto de arma {otherCol.gameObject.name} ignorado.");
+            return;
+        }
+
+        // Si el otro pertenece al Player (directamente o en sus padres), perder vida
+        if (otherCol.GetComponentInParent<Player>() != null)
         {
             GameManager.Instance.LoseLife();
+            return;
         }
+
+        Debug.Log($"FatherEnemy colisionó con: {otherCol.gameObject.name} tag:{otherCol.gameObject.tag}");
     }
     #endregion
 

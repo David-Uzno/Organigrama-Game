@@ -54,9 +54,25 @@ public class Player : MonoBehaviour, IDamageable, IHealable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       
+        if (collision == null) return;
+
+        // 1) Si viene del hitbox del arma (o cualquier hitbox del Player), ignorar
+        if (collision.GetComponentInParent<MeleeHit>() != null) return;
+
+        // 2) Seguridad extra: ignorar colliders hijos del propio Player
+        if (collision.transform.IsChildOf(transform)) return;
+
+        // 3) Comprobar por componente (FatherEnemy o derivada) en los padres del collider
+        if (collision.GetComponentInParent<FatherEnemy>() != null)
+        {
+            TakeDamage(1);
+            return;
+        }
+
+        // 4) Fallback: si aún usas tags, avisar y aplicar (solo temporal)
         if (collision.CompareTag("Enemy"))
         {
+            Debug.LogWarning($"Player: trigger con objeto 'Enemy' {collision.gameObject.name}. Revisa que no sea la hitbox del arma.");
             TakeDamage(1);
         }
     }
