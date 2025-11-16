@@ -105,21 +105,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private IEnumerator PlayAudioClipsForLine(System.Collections.Generic.List<AudioClip> clips)
-    {
-        foreach (var clip in clips)
-        {
-            if (clip != null)
-            {
-                _audioSource.Stop();
-                _audioSource.clip = clip;
-                _audioSource.Play();
-                yield return new WaitForSeconds(clip.length);
-            }
-        }
-    }
-
-    IEnumerator TypeLine(string line)
+    private IEnumerator TypeLine(string line)
     {
         _isTyping = true;
         _dialogueText.text = "";
@@ -131,8 +117,44 @@ public class DialogueManager : MonoBehaviour
         _isTyping = false;
     }
 
+    private IEnumerator PlayAudioClipsForLine(System.Collections.Generic.List<DialogueData.DialogueAudio> clips)
+    {
+        foreach (var audio in clips)
+        {
+            if (audio != null && audio.clip != null)
+            {
+                _audioSource.Stop();
+                _audioSource.clip = audio.clip;
+                _audioSource.Play();
+                yield return new WaitForSeconds(audio.clip.length);
+            }
+        }
+    }
+
     private void NextLine()
     {
+        // Antes de avanzar, verifica si algún audio actual tiene dontInterruptOnNext en true
+        bool shouldInterrupt = true;
+        if (_dialogueData != null && _currentLine < _dialogueData.dialogueLines.Count)
+        {
+            var lineData = _dialogueData.dialogueLines[_currentLine];
+            if (lineData.audioClips != null)
+            {
+                foreach (var audio in lineData.audioClips)
+                {
+                    if (audio != null && audio.dontInterruptOnNext && _audioSource.isPlaying && _audioSource.clip == audio.clip)
+                    {
+                        shouldInterrupt = false;
+                        break;
+                    }
+                }
+            }
+        }
+        if (shouldInterrupt)
+        {
+            _audioSource.Stop();
+        }
+
         _currentLine++;
         ShowLine();
     }

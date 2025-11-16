@@ -5,11 +5,18 @@ using UnityEngine;
 public class DialogueData : ScriptableObject
 {
     [System.Serializable]
+    public class DialogueAudio
+    {
+        public AudioClip clip;
+        public bool dontInterruptOnNext = false;
+    }
+
+    [System.Serializable]
     public class DialogueLine
     {
         public string SpeakerName;
         [TextArea(2, 5)] public string Line;
-        public List<AudioClip> audioClips;
+        public List<DialogueAudio> audioClips;
     }
 
     public List<DialogueLine> dialogueLines;
