@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Lobby : MonoBehaviour
 {
+    public string sceneToLoad; // Nombre de la escena (debe estar en Build Settings)
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && sceneToLoad != "")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(sceneToLoad);
         }
     }
 }

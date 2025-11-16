@@ -186,7 +186,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Guitarra_0: 7408421365376670881
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
