@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1199b8403608a1d42a0627ae3bab90e2, type: 3}
+  m_Name: LobbyNpc
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - SpeakerName: Fan
+    Line: "\xA1Atenci\xF3n!\r\n"
+  - SpeakerName: Fan
+    Line: Como puede ser que el Cybertrash tenga tantos bugs, quiero hablar con el
+      jefe ya mismo
+  - SpeakerName: Recepcionista
+    Line: ...
+  - SpeakerName: Fan
+    Line: "C\xF3mo se atreven a ignorarme"
+  - SpeakerName: Recepcionista
+    Line: Ya callate por favor, me duele la cabeza
+  - SpeakerName: Fan
+    Line: "Quisiera hablar con el jefe de la compa\xF1\xEDa, no puede ser que mi
+      juego favorito el Cybertrash no tenga autos flotadores y objetos que atraviesan
+      las paredes. Necesito una explicaci\xF3n"
+  - SpeakerName: Recepcionista
+    Line: "Ese es el problema, la empresa no puede trabajar bien, hubo un mosquito
+      que estuvo molestando a todo el personal. Tendr\xE1s que detenerlo y ayudar
+      a la empresa si quieres lograr hablar con el jefe"
