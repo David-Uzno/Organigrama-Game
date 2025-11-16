@@ -19,9 +19,13 @@ public class PatrollingAI : MonoBehaviour
     [Header("Persecution")]
     [SerializeField] private float _chaseSpeed = 4f;
 
+    [Header("Attacks")]
+    [SerializeField] private float _attackCooldown = 1.5f;
+
     private NavMeshAgent _agent;
     private float _reactionTimer = 0f;
     private bool _isChasingPlayer = false;
+    private float _attackTimer = 0f;
 
     private void Start()
     {
@@ -55,6 +59,10 @@ public class PatrollingAI : MonoBehaviour
             HandlePlayerTracking();
             HandleAgentStop();
         }
+
+        // Actualiza el temporizador de ataque
+        if (_attackTimer > 0f)
+            _attackTimer -= Time.deltaTime;
     }
 
     private void UpdatePositionAndRotation()
@@ -115,6 +123,12 @@ public class PatrollingAI : MonoBehaviour
         if (distanceToPlayer <= _minDistanceToPlayer)
         {
             _agent.ResetPath();
+
+            if (_attackTimer <= 0f)
+            {
+                Debug.Log("¡Atacando al jugador!");
+                _attackTimer = _attackCooldown;
+            }
         }
     }
 
