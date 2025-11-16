@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -36,13 +35,17 @@ public class DialogueManager : MonoBehaviour
     private bool _isDialogueActive = false;
     private bool _isTyping = false;
 
-    private DialogueData _dialogueData; // Ahora privado y no serializado
+    private DialogueData _dialogueData;
+
+    private AudioSource _audioSource; // Nuevo AudioSource privado
     #endregion
 
     #region UnityMethods
     private void Start()
     {
         _dialogueBox.SetActive(false);
+        _audioSource = gameObject.AddComponent<AudioSource>();
+        _audioSource.playOnAwake = false;
     }
 
     private void Update()
@@ -84,9 +87,18 @@ public class DialogueManager : MonoBehaviour
     {
         if (_dialogueData != null && _currentLine < _dialogueData.dialogueLines.Count)
         {
-            _speakerText.text = _dialogueData.dialogueLines[_currentLine].SpeakerName;
+            var lineData = _dialogueData.dialogueLines[_currentLine];
+            _speakerText.text = lineData.SpeakerName;
             StopAllCoroutines();
-            StartCoroutine(TypeLine(_dialogueData.dialogueLines[_currentLine].Line));
+            StartCoroutine(TypeLine(lineData.Line));
+
+            // Reproduce el audio si está asignado
+            if (lineData.audioClip != null)
+            {
+                _audioSource.Stop();
+                _audioSource.clip = lineData.audioClip;
+                _audioSource.Play();
+            }
         }
         else
         {
