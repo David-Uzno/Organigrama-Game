@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4493366558314923567}
   - component: {fileID: 6223408506373943859}
   - component: {fileID: 4844714536414533416}
-  - component: {fileID: 1050060658200927136}
   - component: {fileID: 7774007605845028664}
+  - component: {fileID: 1050060658200927136}
   m_Layer: 7
-  m_Name: weapon
+  m_Name: Weapon
   m_TagString: PlayerWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,19 +136,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1.5728929}
   m_EdgeRadius: 0
---- !u!114 &1050060658200927136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3864726627619089508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 756f3232a0cdfc3479b5061c471b6deb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
 --- !u!50 &7774007605845028664
 Rigidbody2D:
   serializedVersion: 5
@@ -176,6 +163,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1050060658200927136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3864726627619089508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 756f3232a0cdfc3479b5061c471b6deb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &5225523559839293109
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +192,7 @@ GameObject:
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3059323981105453411
 Transform:
   m_ObjectHideFlags: 0
@@ -235,11 +235,11 @@ GameObject:
   m_Component:
   - component: {fileID: 9045617292924302925}
   - component: {fileID: 5376690822163976182}
+  - component: {fileID: 1231767221927225584}
   - component: {fileID: 7237787964837649235}
   - component: {fileID: 6897720930450900189}
   - component: {fileID: -929459849955156349}
   - component: {fileID: 1071627416316885279}
-  - component: {fileID: 1231767221927225584}
   - component: {fileID: 8579079235731649959}
   m_Layer: 3
   m_Name: PlayerBlack
@@ -320,6 +320,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1231767221927225584
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8712103025209775062}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1d56dac6366bd6d45aa7e4852392149e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!50 &7237787964837649235
 Rigidbody2D:
   serializedVersion: 5
@@ -456,7 +478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerInput: {fileID: -929459849955156349}
-  _RB: {fileID: 7237787964837649235}
+  _rigidbody: {fileID: 7237787964837649235}
   _speed: 5
   _life: 6
   _spriteRenderer: {fileID: 5376690822163976182}
@@ -465,30 +487,8 @@ MonoBehaviour:
   _damageFlashDuration: 0.75
   _originalColor: {r: 0, g: 0, b: 0, a: 0}
   _animator: {fileID: 1231767221927225584}
-  enemyLayerName: Enemy
-  weaponLayerName: PlayerWeapon
---- !u!95 &1231767221927225584
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8712103025209775062}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1d56dac6366bd6d45aa7e4852392149e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  _enemyLayerName: Enemy
+  _weaponLayerName: PlayerWeapon
 --- !u!114 &8579079235731649959
 MonoBehaviour:
   m_ObjectHideFlags: 0

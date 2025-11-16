@@ -1,48 +1,48 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StartPlayer : MonoBehaviour
 {
     [SerializeField] private CharacterData _characterData;
 
-    void Start()
+    private void Start()
     {
-        GameObject existingPlayer = GameObject.FindGameObjectWithTag("Player");
-
-        if (existingPlayer != null)
+        if (PlayerAlreadyExists())
         {
             Debug.LogWarning("Ya existe un GameObject con tag 'Player'. No se instanciará otro.");
-            transform.SetParent(existingPlayer.transform);
+            Destroy(gameObject);
             return;
         }
 
-        int _indexPlayer = PlayerPrefs.GetInt("PlayerIndex");
-        GameObject newParent;
+        InstantiateSelectedPlayer();
+        Destroy(gameObject);
+    }
 
-        if (_characterData != null && _indexPlayer < _characterData.Characters.Count && _indexPlayer >= 0)
+    private bool PlayerAlreadyExists()
+    {
+        return GameObject.FindGameObjectWithTag("Player") != null;
+    }
+
+    private void InstantiateSelectedPlayer()
+    {
+        int index = PlayerPrefs.GetInt("PlayerIndex");
+        GameObject playerPrefab = GetPlayerPrefab(index);
+        Instantiate(playerPrefab, transform.position, Quaternion.identity);
+    }
+
+    private GameObject GetPlayerPrefab(int index)
+    {
+        if (_characterData == null || _characterData.Characters == null || _characterData.Characters.Count == 0)
         {
-            newParent = Instantiate(_characterData.Characters[_indexPlayer]._player);
+            Debug.LogWarning("CharacterData no está asignado o la lista está vacía. No se puede instanciar el jugador.");
+            return null;
         }
-        else
+
+        if (index >= 0 && index < _characterData.Characters.Count)
         {
-            newParent = Instantiate(_characterData.Characters[0]._player);
-
-            if (_characterData == null)
-            {
-                Debug.LogWarning("Lista de CharacterData no está asignada. Usando prefab por defecto para el jugador.");
-            }
-            else if (_indexPlayer < 0 || _indexPlayer >= _characterData.Characters.Count)
-            {
-                Debug.LogWarning("Índice fuera de rango. Usando prefab por defecto para el jugador.");
-            }
-            else
-            {
-                Debug.LogWarning("Error. Usando prefab por defecto para el jugador.");
-            }
+            return _characterData.Characters[index]._player;
         }
 
-        newParent.transform.position = transform.position;
-        transform.SetParent(newParent.transform);
+        Debug.LogWarning("Índice fuera de rango. Usando prefab por defecto para el jugador.");
+        return _characterData.Characters[0]._player;
     }
 }

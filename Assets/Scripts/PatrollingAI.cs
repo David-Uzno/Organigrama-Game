@@ -26,7 +26,7 @@ public class PatrollingAI : MonoBehaviour
     private void Start()
     {
         InitAgent();
-        FindPlayer();
+        Invoke(nameof(FindPlayer), 0.1f);
     }
 
     private void InitAgent()

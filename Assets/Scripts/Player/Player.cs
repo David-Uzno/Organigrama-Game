@@ -5,10 +5,9 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour, IDamageable, IHealable
 {
-    #region Variables
     [Header("Movement")]
-    [SerializeField] PlayerInput _playerInput;
-    [SerializeField] private Rigidbody2D _RB;
+    [SerializeField] private PlayerInput _playerInput;
+    [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private float _speed = 5f;
 
     [Header("Life")]
@@ -17,49 +16,27 @@ public class Player : MonoBehaviour, IDamageable, IHealable
     [SerializeField] private Color _damageFlashColor = Color.red;
     [SerializeField] private int _damageFlashCount = 3;
     [SerializeField] private float _damageFlashDuration = 0.75f;
+
     private Coroutine _flashCoroutine;
-    public Color _originalColor;
-    private Color _currentColor;
+    [HideInInspector] public Color _originalColor;
+    private bool _isInvincible;
+    private bool _isFlashing;
 
     [Header("Other Components")]
     [SerializeField] private Animator _animator;
 
     [Header("Layers")]
-    [SerializeField] private string enemyLayerName = "Enemy"; // nombre de la layer que usan los enemigos
-    [SerializeField] private string weaponLayerName = "PlayerWeapon"; // layer del arma/hitbox
+    [SerializeField] private string _enemyLayerName = "Enemy";
+    [SerializeField] private string _weaponLayerName = "PlayerWeapon";
 
-    private int enemyLayer = -1;
-    private int weaponLayer = -1;
+    private int _enemyLayer = -1;
+    private int _weaponLayer = -1;
 
-    private bool _isInvincible = false;
-    private bool _isFlashing = false;
-    #endregion
-
-    #region Unity Methods
-    private void Start()
+    private void Awake()
     {
-        if (_spriteRenderer == null)
-        {
-            Debug.LogError("¡SpriteRenderer no está asignado!");
-            enabled = false;
-            return;
-        }
-
-        _originalColor = _spriteRenderer.color;
-        _currentColor = _originalColor;
-
-        if (_animator != null)
-        {
-            _animator.SetBool("Walk", false);
-        }
-
-        enemyLayer = LayerMask.NameToLayer(enemyLayerName);
-        weaponLayer = LayerMask.NameToLayer(weaponLayerName);
-
-        if (enemyLayer == -1)
-            Debug.LogWarning($"Player: la layer '{enemyLayerName}' no existe. Revisa __Project Settings > Tags and Layers__.");
-        if (weaponLayer == -1)
-            Debug.LogWarning($"Player: la layer '{weaponLayerName}' no existe. Revisa __Project Settings > Tags and Layers__.");
+        ValidateComponents();
+        InitializeColors();
+        CacheLayers();
     }
 
     private void FixedUpdate()
@@ -67,28 +44,19 @@ public class Player : MonoBehaviour, IDamageable, IHealable
         HandleMovement();
     }
 
-    // Ahora usamos layers (y protección extra por componente) en lugar de tags
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision == null) return;
-
-        // Ignorar cualquier collider que sea parte de la hitbox del arma
         if (collision.GetComponentInParent<MeleeHit>() != null) return;
-
-        // Ignorar colliders hijos del propio Player
         if (collision.transform.IsChildOf(transform)) return;
+        if (_weaponLayer != -1 && collision.gameObject.layer == _weaponLayer) return;
 
-        // Si la layer del objeto que colisiona es la layer del arma, ignorar
-        if (weaponLayer != -1 && collision.gameObject.layer == weaponLayer) return;
-
-        // Si la layer del objeto que colisiona es la layer de enemigos, daño
-        if (enemyLayer != -1)
+        if (_enemyLayer != -1)
         {
-            // permitir colisiones con hijos: subimos por la jerarquía buscando la layer
             Transform t = collision.transform;
             while (t != null)
             {
-                if (t.gameObject.layer == enemyLayer)
+                if (t.gameObject.layer == _enemyLayer)
                 {
                     TakeDamage(1);
                     return;
@@ -97,59 +65,38 @@ public class Player : MonoBehaviour, IDamageable, IHealable
             }
         }
 
-        // Fallback por componente (si no hay layer configurada correctamente)
         if (collision.GetComponentInParent<FatherEnemy>() != null)
         {
             TakeDamage(1);
-            return;
         }
     }
-    #endregion
 
-    #region Movement
     private void HandleMovement()
     {
         Vector2 movementInput = _playerInput.actions["Movement"].ReadValue<Vector2>();
-
-        _RB.linearVelocity = movementInput * _speed;
+        _rigidbody.linearVelocity = movementInput * _speed;
         HandleRotation(movementInput.x);
 
         if (_animator != null)
-        {
-            UpdateAnimations(movementInput);
-        }
+            _animator.SetBool("Walk", movementInput != Vector2.zero);
     }
 
     private void HandleRotation(float movementHorizontal)
     {
         if (movementHorizontal < 0)
-        {
             transform.localRotation = Quaternion.Euler(0, 180, 0);
-        }
         else if (movementHorizontal > 0)
-        {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
-        }
     }
-    #endregion
 
-    #region Animation
-    private void UpdateAnimations(Vector2 movementInput)
-    {
-        bool isWalking = movementInput != Vector2.zero;
-        _animator.SetBool("Walk", isWalking);
-    }
-    #endregion
-
-    #region Life
     public void RecoverLife(int amount)
     {
         int maxLife = GameManager.Instance.GetMaxLife();
-
         if (_life < maxLife)
         {
-            _life = Mathf.Min(_life + amount, maxLife);
-            GameManager.Instance.RecoverLife(amount);
+            int recoverAmount = Mathf.Min(amount, maxLife - _life);
+            _life += recoverAmount;
+            GameManager.Instance.RecoverLife(recoverAmount);
         }
     }
 
@@ -159,17 +106,13 @@ public class Player : MonoBehaviour, IDamageable, IHealable
 
         _life -= (int)damage;
         if (_flashCoroutine != null)
-        {
             StopCoroutine(_flashCoroutine);
-        }
-        GameManager.Instance.LoseLife();
 
+        GameManager.Instance.LoseLife();
         _flashCoroutine = StartCoroutine(FlashSpriteDamage());
 
         if (_life <= 0)
-        {
             SceneManager.LoadScene("GameOver");
-        }
     }
 
     private IEnumerator FlashSpriteDamage()
@@ -178,22 +121,16 @@ public class Player : MonoBehaviour, IDamageable, IHealable
         for (int i = 0; i < _damageFlashCount; i++)
         {
             if (!_isInvincible)
-            {
                 SetPlayerColor(_damageFlashColor);
-            }
             yield return new WaitForSeconds(_damageFlashDuration / 2);
 
             if (!_isInvincible)
-            {
                 SetPlayerColor(_originalColor);
-            }
             yield return new WaitForSeconds(_damageFlashDuration / 2);
         }
         _isFlashing = false;
         if (!_isInvincible)
-        {
             SetPlayerColor(_originalColor);
-        }
     }
 
     private void SetPlayerColor(Color color)
@@ -204,22 +141,45 @@ public class Player : MonoBehaviour, IDamageable, IHealable
     public void SetInvincibility(bool isInvincible, Color invincibleColor)
     {
         _isInvincible = isInvincible;
-
         if (isInvincible)
-        {
             SetPlayerColor(invincibleColor);
-        }
         else
+            SetPlayerColor(_isFlashing ? _damageFlashColor : _originalColor);
+    }
+
+    private void ValidateComponents()
+    {
+        if (_spriteRenderer == null)
         {
-            if (_isFlashing)
-            {
-                SetPlayerColor(_damageFlashColor);
-            }
-            else
-            {
-                SetPlayerColor(_originalColor);
-            }
+            Debug.LogError("¡SpriteRenderer no está asignado!");
+            enabled = false;
+        }
+        if (_rigidbody == null)
+        {
+            Debug.LogError("¡Rigidbody2D no está asignado!");
+            enabled = false;
+        }
+        if (_playerInput == null)
+        {
+            Debug.LogError("¡PlayerInput no está asignado!");
+            enabled = false;
         }
     }
-    #endregion
+
+    private void InitializeColors()
+    {
+        if (_spriteRenderer != null)
+            _originalColor = _spriteRenderer.color;
+    }
+
+    private void CacheLayers()
+    {
+        _enemyLayer = LayerMask.NameToLayer(_enemyLayerName);
+        _weaponLayer = LayerMask.NameToLayer(_weaponLayerName);
+
+        if (_enemyLayer == -1)
+            Debug.LogWarning($"Player: la layer '{_enemyLayerName}' no existe. Revisa __Project Settings > Tags and Layers__.");
+        if (_weaponLayer == -1)
+            Debug.LogWarning($"Player: la layer '{_weaponLayerName}' no existe. Revisa __Project Settings > Tags and Layers__.");
+    }
 }
