@@ -38,6 +38,8 @@ public class DialogueManager : MonoBehaviour
     private DialogueData _dialogueData;
 
     private AudioSource _audioSource; // Nuevo AudioSource privado
+    // Lista para manejar los audios no interrumpibles
+    private readonly System.Collections.Generic.List<AudioSource> _nonInterruptibleSources = new();
     #endregion
 
     #region UnityMethods
@@ -92,7 +94,7 @@ public class DialogueManager : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(TypeLine(lineData.Line));
 
-            // Reproduce todos los audios si hay asignados
+            // Reproduce los audios según su tipo
             if (lineData.audioClips != null && lineData.audioClips.Count > 0)
             {
                 StopCoroutine("PlayAudioClipsForLine");
@@ -123,37 +125,40 @@ public class DialogueManager : MonoBehaviour
         {
             if (audio != null && audio.clip != null)
             {
-                _audioSource.Stop();
-                _audioSource.clip = audio.clip;
-                _audioSource.Play();
-                yield return new WaitForSeconds(audio.clip.length);
+                if (audio.dontInterruptOnNext)
+                {
+                    // Crea un nuevo AudioSource para este clip si es no interrumpible
+                    var src = gameObject.AddComponent<AudioSource>();
+                    src.playOnAwake = false;
+                    src.clip = audio.clip;
+                    src.Play();
+                    _nonInterruptibleSources.Add(src);
+
+                    // Limpia el AudioSource cuando termina
+                    StartCoroutine(RemoveSourceWhenDone(src));
+                }
+                else
+                {
+                    _audioSource.Stop();
+                    _audioSource.clip = audio.clip;
+                    _audioSource.Play();
+                    yield return new WaitForSeconds(audio.clip.length);
+                }
             }
         }
     }
 
+    private IEnumerator RemoveSourceWhenDone(AudioSource src)
+    {
+        yield return new WaitWhile(() => src.isPlaying);
+        _nonInterruptibleSources.Remove(src);
+        Destroy(src);
+    }
+
     private void NextLine()
     {
-        // Antes de avanzar, verifica si algún audio actual tiene dontInterruptOnNext en true
-        bool shouldInterrupt = true;
-        if (_dialogueData != null && _currentLine < _dialogueData.dialogueLines.Count)
-        {
-            var lineData = _dialogueData.dialogueLines[_currentLine];
-            if (lineData.audioClips != null)
-            {
-                foreach (var audio in lineData.audioClips)
-                {
-                    if (audio != null && audio.dontInterruptOnNext && _audioSource.isPlaying && _audioSource.clip == audio.clip)
-                    {
-                        shouldInterrupt = false;
-                        break;
-                    }
-                }
-            }
-        }
-        if (shouldInterrupt)
-        {
-            _audioSource.Stop();
-        }
+        // Solo detiene el audio principal, nunca los no interrumpibles
+        _audioSource.Stop();
 
         _currentLine++;
         ShowLine();
