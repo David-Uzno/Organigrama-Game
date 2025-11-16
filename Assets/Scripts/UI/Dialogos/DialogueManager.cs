@@ -92,17 +92,30 @@ public class DialogueManager : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(TypeLine(lineData.Line));
 
-            // Reproduce el audio si está asignado
-            if (lineData.audioClip != null)
+            // Reproduce todos los audios si hay asignados
+            if (lineData.audioClips != null && lineData.audioClips.Count > 0)
             {
-                _audioSource.Stop();
-                _audioSource.clip = lineData.audioClip;
-                _audioSource.Play();
+                StopCoroutine("PlayAudioClipsForLine");
+                StartCoroutine(PlayAudioClipsForLine(lineData.audioClips));
             }
         }
         else
         {
             EndDialogue();
+        }
+    }
+
+    private IEnumerator PlayAudioClipsForLine(System.Collections.Generic.List<AudioClip> clips)
+    {
+        foreach (var clip in clips)
+        {
+            if (clip != null)
+            {
+                _audioSource.Stop();
+                _audioSource.clip = clip;
+                _audioSource.Play();
+                yield return new WaitForSeconds(clip.length);
+            }
         }
     }
 

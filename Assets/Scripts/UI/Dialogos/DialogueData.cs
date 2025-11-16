@@ -9,7 +9,7 @@ public class DialogueData : ScriptableObject
     {
         public string SpeakerName;
         [TextArea(2, 5)] public string Line;
-        public AudioClip audioClip;
+        public List<AudioClip> audioClips;
     }
 
     public List<DialogueLine> dialogueLines;
