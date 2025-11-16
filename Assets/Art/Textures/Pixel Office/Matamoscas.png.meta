@@ -186,7 +186,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Matamoscas_0: -5542549974355992671
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
