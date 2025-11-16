@@ -15,20 +15,38 @@ MonoBehaviour:
   dialogueLines:
   - SpeakerName: Fan
     Line: "\xA1Atenci\xF3n!\r\n"
+    audioClips:
+    - {fileID: 8300000, guid: d16db3146b015fe4ab8b8df4ee8778cf, type: 3}
   - SpeakerName: Fan
     Line: Como puede ser que el Cybertrash tenga tantos bugs, quiero hablar con el
       jefe ya mismo
+    audioClips:
+    - {fileID: 8300000, guid: d16db3146b015fe4ab8b8df4ee8778cf, type: 3}
   - SpeakerName: Recepcionista
     Line: ...
+    audioClips:
+    - {fileID: 0}
   - SpeakerName: Fan
     Line: "C\xF3mo se atreven a ignorarme"
+    audioClips:
+    - {fileID: 8300000, guid: d16db3146b015fe4ab8b8df4ee8778cf, type: 3}
   - SpeakerName: Recepcionista
     Line: Ya callate por favor, me duele la cabeza
+    audioClips:
+    - {fileID: 8300000, guid: de4afec32e7ae434390afa68f556d42c, type: 3}
   - SpeakerName: Fan
     Line: "Quisiera hablar con el jefe de la compa\xF1\xEDa, no puede ser que mi
       juego favorito el Cybertrash no tenga autos flotadores y objetos que atraviesan
       las paredes. Necesito una explicaci\xF3n"
+    audioClips:
+    - {fileID: 8300000, guid: d16db3146b015fe4ab8b8df4ee8778cf, type: 3}
+  - SpeakerName: 
+    Line: 
+    audioClips:
+    - {fileID: 8300000, guid: 4dd5cd201053bd348949c5b36ca91f31, type: 3}
   - SpeakerName: Recepcionista
     Line: "Ese es el problema, la empresa no puede trabajar bien, hubo un mosquito
       que estuvo molestando a todo el personal. Tendr\xE1s que detenerlo y ayudar
       a la empresa si quieres lograr hablar con el jefe"
+    audioClips:
+    - {fileID: 8300000, guid: de4afec32e7ae434390afa68f556d42c, type: 3}
