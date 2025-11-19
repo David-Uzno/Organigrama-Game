@@ -15,3 +15,7 @@ MonoBehaviour:
   dialogueLines:
   - SpeakerName: Fan
     Line: Cuanto desorden por un mosquito
+    audioClips: []
+  - SpeakerName: Fan
+    Line: xd
+    audioClips: []
