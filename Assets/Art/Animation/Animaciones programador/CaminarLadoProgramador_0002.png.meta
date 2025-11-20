@@ -186,7 +186,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CaminarLadoProgramador_0002_0: -1964916860719796224
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

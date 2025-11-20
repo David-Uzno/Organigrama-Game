@@ -186,7 +186,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CaminarDerechaArtista_0001_0: -5092824329767545733
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

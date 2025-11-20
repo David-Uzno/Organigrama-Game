@@ -186,7 +186,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AbajoCEO_0002_0: 7710582380108559715
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -186,7 +186,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CaminarAbajoSonidista_0004_0: 1178869640858365664
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

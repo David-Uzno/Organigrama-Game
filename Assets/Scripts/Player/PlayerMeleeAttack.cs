@@ -8,7 +8,7 @@ public class PlayerMeleeAttack : MonoBehaviour
     [SerializeField] private float arcSweepAngle = 120f;
     [SerializeField] private float rotationSpeed = 6f;
     [SerializeField] private float attackRadius = 1f;
-    [SerializeField] private KeyCode attackKey = KeyCode.J;
+    private KeyCode attackKey = KeyCode.Mouse0;
     [SerializeField] private string weaponLayerName = "PlayerWeapon";
     [SerializeField] private bool autoIgnorePlayerCollision = true;
 

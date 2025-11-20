@@ -186,7 +186,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CaminarDerechaCEO_0003_0: 4747411444936793858
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -186,7 +186,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CaminarAbajoProgramador.png_0004_0: 8844767341805856918
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

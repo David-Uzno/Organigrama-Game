@@ -186,7 +186,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CaminarAbajoArtista_0001_0: -3129604641533368180
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

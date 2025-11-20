@@ -506,6 +506,6 @@ MonoBehaviour:
   arcSweepAngle: 120
   rotationSpeed: 11.4
   attackRadius: 1
-  attackKey: 325
+  attackKey: 324
   weaponLayerName: PlayerWeapon
   autoIgnorePlayerCollision: 1
