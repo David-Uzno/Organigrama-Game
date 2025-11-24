@@ -1,49 +1,88 @@
 using UnityEngine;
+using UnityEngine.AI;
 
-public class Programmer : MonoBehaviour
+[RequireComponent(typeof(PatrollingAI))]
+public class ProgrammerEnemy : FatherEnemy
 {
+    [Header("Programmer")]
     [SerializeField] private GameObject _attackObject;
     [SerializeField] private float _attackDistance = 5f;
     [SerializeField] private float _attackDuration = 1f;
     [SerializeField] private Vector2 _attackDirection = Vector2.up;
+    [SerializeField] private float _attackDelay = 0.3f;
 
     private bool _isAttacking = false;
+    private PatrollingAI _patrollingAI;
 
     private void Start()
     {
+        _patrollingAI = GetComponent<PatrollingAI>();
+        if (_patrollingAI != null)
+        {
+            _patrollingAI.OnAttackRequested += HandleAttackRequested;
+        }
+
         if (_attackObject != null)
         {
             _attackObject.SetActive(false);
-        }   
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && !_isAttacking)
-        {
-            StartCoroutine(AttackUpwards());
         }
     }
 
-    private System.Collections.IEnumerator AttackUpwards()
+    private void OnDestroy()
     {
-        if (_attackObject == null) yield break;
+        if (_patrollingAI != null)
+        {
+            _patrollingAI.OnAttackRequested -= HandleAttackRequested;
+        }
+    }
+
+    private void HandleAttackRequested(NavMeshAgent agent, Player player)
+    {
+        if (_isAttacking) return;
+        // Iniciar coroutine de ataque con las referencias actuales
+        StartCoroutine(AttackUpwards(agent, player));
+    }
+
+    private System.Collections.IEnumerator AttackUpwards(NavMeshAgent agent, Player player)
+    {
+        if (_attackObject == null || agent == null || player == null) yield break;
 
         _isAttacking = true;
-        _attackObject.SetActive(true);
 
-        Vector3 initialAttackPosition = _attackObject.transform.position;
-        // Normalizar la dirección y convertir a Vector3
-        Vector3 direction = (Vector3)_attackDirection.normalized;
-        Vector3 endAttackPosition = initialAttackPosition + direction * _attackDistance;
+        // Detener movimiento mientras ataca
+        float prevSpeed = agent.speed;
+        agent.isStopped = true;
 
-        // Movimiento ida
-        yield return StartCoroutine(MoveAttackObject(initialAttackPosition, endAttackPosition));
-        // Movimiento vuelta
-        yield return StartCoroutine(MoveAttackObject(endAttackPosition, initialAttackPosition));
+        yield return StartCoroutine(AttackDelay());
+        yield return StartCoroutine(AttackForward());
+        yield return StartCoroutine(AttackReturn());
 
         _attackObject.SetActive(false);
         _isAttacking = false;
+
+        // Reanudar movimiento después del ataque
+        agent.isStopped = false;
+        agent.speed = prevSpeed;
+    }
+
+    private System.Collections.IEnumerator AttackDelay()
+    {
+        yield return new WaitForSeconds(_attackDelay);
+        _attackObject.SetActive(true);
+    }
+
+    private System.Collections.IEnumerator AttackForward()
+    {
+        Vector3 initialAttackPosition = _attackObject.transform.position;
+        Vector3 direction = (Vector3)_attackDirection.normalized;
+        Vector3 endAttackPosition = initialAttackPosition + direction * _attackDistance;
+        yield return StartCoroutine(MoveAttackObject(initialAttackPosition, endAttackPosition));
+    }
+
+    private System.Collections.IEnumerator AttackReturn()
+    {
+        Vector3 endAttackPosition = _attackObject.transform.position;
+        yield return StartCoroutine(MoveAttackObjectToLocalZero(endAttackPosition));
     }
 
     private System.Collections.IEnumerator MoveAttackObject(Vector3 startPosition, Vector3 targetPosition)
@@ -56,5 +95,18 @@ public class Programmer : MonoBehaviour
             yield return null;
         }
         _attackObject.transform.position = targetPosition;
+    }
+
+    private System.Collections.IEnumerator MoveAttackObjectToLocalZero(Vector3 startPosition)
+    {
+        float timeElapsed = 0f;
+        while (timeElapsed < 1f)
+        {
+            Vector3 targetPosition = transform.position;
+            _attackObject.transform.position = Vector3.Lerp(startPosition, targetPosition, timeElapsed);
+            timeElapsed += Time.deltaTime / _attackDuration;
+            yield return null;
+        }
+        _attackObject.transform.position = transform.position;
     }
 }
