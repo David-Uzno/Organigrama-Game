@@ -331,10 +331,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _life: 1
   _dropConfig: {fileID: 0}
-  playerLayerName: Player
-  weaponLayerName: PlayerWeapon
+  _playerLayerName: Player
+  _weaponLayerName: PlayerWeapon
   _attackObject: {fileID: 4406731061789868857}
-  _attackDistance: 5
-  _attackDuration: 1
-  _attackDirection: {x: 0, y: 1}
-  _attackDelay: 0.3
+  _cardinalDivisions: 4
+  _canShoot360: 0
+  _waitForReturn: 0
+  _distance: 5
+  _duration: 1
+  _delay: 0.3

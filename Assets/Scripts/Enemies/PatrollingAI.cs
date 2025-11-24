@@ -3,14 +3,12 @@ using NavMeshPlus.Extensions;
 using UnityEngine;
 using UnityEngine.AI;
 
-// Interfaz para consultar si el enemigo puede moverse
 public interface ICanMove
 {
     bool CanMove { get; }
 }
 
 [RequireComponent(typeof(NavMeshAgent))]
-[RequireComponent(typeof(ICanMove))]
 public class PatrollingAI : MonoBehaviour
 {
     protected Player _player;
@@ -37,14 +35,13 @@ public class PatrollingAI : MonoBehaviour
     protected float _attackTimer = 0f;
 
     // Evento que notifica cuando el agente debe ejecutar un ataque
-    public event Action<NavMeshAgent, Player> OnAttackRequested;
+    public event Action<NavMeshAgent, Player, Vector2, bool> OnAttackRequested;
 
     // Propiedades públicas mínimas para acceso externo si se necesita
     public NavMeshAgent Agent => _agent;
     public Player Player => _player;
     public float MinDistanceToPlayer => _minDistanceToPlayer;
 
-    // Cambia a protected virtual
     protected virtual void Start()
     {
         InitAgent();
@@ -143,22 +140,61 @@ public class PatrollingAI : MonoBehaviour
         }
     }
 
-    // Cambia a protected virtual para permitir override
     protected virtual void HandleAgentStop()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, _player.transform.position);
-        // Si está dentro de la distancia mínima, se detiene
         if (distanceToPlayer <= _minDistanceToPlayer)
         {
             _agent.ResetPath();
 
             if (_attackTimer <= 0f)
             {
-                // Notifica a quien esté suscrito que debe atacar (no mover lógica de ataque aquí)
-                OnAttackRequested?.Invoke(_agent, _player);
+                GetAttackConfig(out int divisions, out bool is360);
+                Vector2 direction = CalculateCardinalDirection(_player.transform.position - transform.position, divisions, is360);
+                OnAttackRequested?.Invoke(_agent, _player, direction, is360);
                 _attackTimer = _attackCooldown;
             }
         }
+    }
+
+    private void GetAttackConfig(out int divisions, out bool is360)
+    {
+        is360 = false;
+        divisions = 4;
+
+        if (OnAttackRequested != null)
+        {
+            foreach (var onAttackDelegate in OnAttackRequested.GetInvocationList())
+            {
+                var target = onAttackDelegate.Target as MonoBehaviour;
+                if (target != null)
+                {
+                    var programmer = target as ProgrammerEnemy;
+                    if (programmer != null)
+                    {
+                        if (programmer.CanShoot360)
+                        {
+                            is360 = true;
+                            break;
+                        }
+                        divisions = programmer.CardinalDivisions;
+                    }
+                }
+            }
+        }
+    }
+
+    private Vector2 CalculateCardinalDirection(Vector2 direction, int divisions, bool is360)
+    {
+        if (is360)
+            return direction.normalized;
+
+        float angle = Mathf.Atan2(direction.y, direction.x);
+        if (angle < 0) angle += 2 * Mathf.PI;
+        float sector = 2 * Mathf.PI / divisions;
+        int sectorIndex = Mathf.FloorToInt((angle + sector / 2f) / sector) % divisions;
+        float snappedAngle = sectorIndex * sector;
+        return new Vector2(Mathf.Cos(snappedAngle), Mathf.Sin(snappedAngle)).normalized;
     }
 
     private void OnDrawGizmos()
