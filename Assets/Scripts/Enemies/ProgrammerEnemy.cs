@@ -2,15 +2,8 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(PatrollingAI))]
-public class ProgrammerEnemy : FatherEnemy, ICanMove
+public class ProgrammerEnemy : RangedEnemy, ICanMove
 {
-    [Header("Programmer")]
-    private PatrollingAI _patrollingAI;
-    private bool _isAttacking = false;
-
-    [Header("Attack References")]
-    [SerializeField] private GameObject _attackObject;
-
     [Header("Attack Mode")]
     [Range(4, 100)]
     [SerializeField] private int _cardinalDivisions = 4;
@@ -19,13 +12,6 @@ public class ProgrammerEnemy : FatherEnemy, ICanMove
     public bool CanShoot360 => _canShoot360;
     [SerializeField] private bool _waitForReturn = false;
     public bool WaitForReturn => _waitForReturn;
-
-    [Header("Attack Settings")]
-    [SerializeField] private float _distance = 5f;
-    [SerializeField] private float _duration = 1f;
-    [SerializeField] private float _delay = 0.3f;
-
-    private Vector2 _currentDirection = Vector2.up;
 
     public bool CanMove
     {
@@ -37,36 +23,7 @@ public class ProgrammerEnemy : FatherEnemy, ICanMove
         }
     }
 
-    private void Start()
-    {
-        _patrollingAI = GetComponent<PatrollingAI>();
-        if (_patrollingAI != null)
-        {
-            _patrollingAI.OnAttackRequested += HandleAttackRequested;
-        }
-
-        if (_attackObject != null)
-        {
-            _attackObject.SetActive(false);
-        }
-    }
-
-    private void OnDestroy()
-    {
-        if (_patrollingAI != null)
-        {
-            _patrollingAI.OnAttackRequested -= HandleAttackRequested;
-        }
-    }
-
-    private void HandleAttackRequested(NavMeshAgent agent, Player player, Vector2 direction, bool is360)
-    {
-        if (_isAttacking) return;
-        _currentDirection = direction;
-        StartCoroutine(AttackUpwards(agent, player));
-    }
-
-    private System.Collections.IEnumerator AttackUpwards(NavMeshAgent agent, Player player)
+    protected override System.Collections.IEnumerator AttackRoutine(NavMeshAgent agent, Player player, bool is360)
     {
         if (_attackObject == null || agent == null || player == null) yield break;
 
@@ -97,8 +54,8 @@ public class ProgrammerEnemy : FatherEnemy, ICanMove
     private System.Collections.IEnumerator Forward()
     {
         Vector3 initialPosition = _attackObject.transform.position;
-        Vector3 dir = (Vector3)_currentDirection.normalized;
-        Vector3 endPosition = initialPosition + dir * _distance;
+        Vector3 movementDirection = (Vector3)_currentDirection.normalized;
+        Vector3 endPosition = initialPosition + movementDirection * _distance;
         yield return StartCoroutine(MoveObject(initialPosition, endPosition));
     }
 

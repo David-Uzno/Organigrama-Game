@@ -260,7 +260,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -334,9 +334,9 @@ MonoBehaviour:
   _playerLayerName: Player
   _weaponLayerName: PlayerWeapon
   _attackObject: {fileID: 4406731061789868857}
-  _cardinalDivisions: 4
-  _canShoot360: 0
-  _waitForReturn: 0
   _distance: 5
   _duration: 1
   _delay: 0.3
+  _cardinalDivisions: 4
+  _canShoot360: 0
+  _waitForReturn: 0
