@@ -3,7 +3,14 @@ using NavMeshPlus.Extensions;
 using UnityEngine;
 using UnityEngine.AI;
 
+// Interfaz para consultar si el enemigo puede moverse
+public interface ICanMove
+{
+    bool CanMove { get; }
+}
+
 [RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(ICanMove))]
 public class PatrollingAI : MonoBehaviour
 {
     protected Player _player;
@@ -19,6 +26,7 @@ public class PatrollingAI : MonoBehaviour
 
     [Header("Persecution")]
     [SerializeField] private float _chaseSpeed = 4f;
+    private ICanMove _canMoveComponent;
 
     [Header("Runtime State")]
     protected NavMeshAgent _agent;
@@ -36,6 +44,7 @@ public class PatrollingAI : MonoBehaviour
     {
         InitAgent();
         Invoke(nameof(FindPlayer), 0.1f);
+        _canMoveComponent = GetComponent<ICanMove>();
     }
 
     private void InitAgent()
@@ -80,6 +89,10 @@ public class PatrollingAI : MonoBehaviour
 
     private void HandlePlayerTracking()
     {
+        // Si existe un componente que controla el movimiento y no puede moverse, no hacer nada
+        if (_canMoveComponent != null && !_canMoveComponent.CanMove)
+            return;
+
         _reactionTimer += Time.deltaTime;
         float distanceToPlayer = Vector3.Distance(transform.position, _player.transform.position);
 
@@ -108,6 +121,10 @@ public class PatrollingAI : MonoBehaviour
 
     private void SetRandomDestination()
     {
+        // Si existe un componente que controla el movimiento y no puede moverse, no hacer nada
+        if (_canMoveComponent != null && !_canMoveComponent.CanMove)
+            return;
+
         Vector2 randomDirection = UnityEngine.Random.insideUnitCircle * _randomMoveRadius;
         Vector3 randomPosition = new(transform.position.x + randomDirection.x, transform.position.y + randomDirection.y, 0f);
 

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(PatrollingAI))]
-public class ProgrammerEnemy : FatherEnemy
+public class ProgrammerEnemy : FatherEnemy, ICanMove
 {
     [Header("Programmer")]
     private PatrollingAI _patrollingAI;
@@ -17,6 +17,8 @@ public class ProgrammerEnemy : FatherEnemy
     public int CardinalDivisions => Mathf.Max(_cardinalDivisions, 4);
     [SerializeField] private bool _canShoot360 = false;
     public bool CanShoot360 => _canShoot360;
+    [SerializeField] private bool _waitForReturn = false;
+    public bool WaitForReturn => _waitForReturn;
 
     [Header("Attack Settings")]
     [SerializeField] private float _distance = 5f;
@@ -24,6 +26,16 @@ public class ProgrammerEnemy : FatherEnemy
     [SerializeField] private float _delay = 0.3f;
 
     private Vector2 _currentDirection = Vector2.up;
+
+    public bool CanMove
+    {
+        get
+        {
+            if (!_waitForReturn) return true;
+            if (_attackObject == null) return true;
+            return !_attackObject.activeSelf;
+        }
+    }
 
     private void Start()
     {
