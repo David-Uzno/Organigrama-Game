@@ -2,27 +2,9 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(PatrollingAI))]
-public class ProgrammerEnemy : RangedEnemy, ICanMove
+public class ProgrammerEnemy : RangedEnemy
 {
-    [Header("Attack Mode")]
-    [Range(4, 100)]
-    [SerializeField] private int _cardinalDivisions = 4;
-    public int CardinalDivisions => Mathf.Max(_cardinalDivisions, 4);
-    [SerializeField] private bool _canShoot360 = false;
-    public bool CanShoot360 => _canShoot360;
-    [SerializeField] private bool _waitForReturn = false;
-    public bool WaitForReturn => _waitForReturn;
-
-    public bool CanMove
-    {
-        get
-        {
-            if (!_waitForReturn) return true;
-            if (_attackObject == null) return true;
-            return !_attackObject.activeSelf;
-        }
-    }
-
+    #region Attack Routine
     protected override System.Collections.IEnumerator AttackRoutine(NavMeshAgent agent, Player player, bool is360)
     {
         if (_attackObject == null || agent == null || player == null) yield break;
@@ -30,19 +12,24 @@ public class ProgrammerEnemy : RangedEnemy, ICanMove
         _isAttacking = true;
 
         // Detener movimiento mientras ataca
-        float prevSpeed = agent.speed;
+        float previousAgentSpeed = agent.speed;
         agent.isStopped = true;
 
         yield return StartCoroutine(Delay());
         yield return StartCoroutine(Forward());
         yield return StartCoroutine(Return());
 
+        if (WaitForAttackComplete && _attackObject != null)
+        {
+            yield return StartCoroutine(WaitForAttackObjectToReturn());
+        }
+
         _attackObject.SetActive(false);
         _isAttacking = false;
 
         // Reanudar movimiento después del ataque
         agent.isStopped = false;
-        agent.speed = prevSpeed;
+        agent.speed = previousAgentSpeed;
     }
 
     private System.Collections.IEnumerator Delay()
@@ -50,7 +37,9 @@ public class ProgrammerEnemy : RangedEnemy, ICanMove
         yield return new WaitForSeconds(_delay);
         _attackObject.SetActive(true);
     }
+    #endregion
 
+    #region Attack Movement
     private System.Collections.IEnumerator Forward()
     {
         Vector3 initialPosition = _attackObject.transform.position;
@@ -89,4 +78,18 @@ public class ProgrammerEnemy : RangedEnemy, ICanMove
         }
         _attackObject.transform.position = transform.position;
     }
+    #endregion
+
+    #region Helpers
+    private System.Collections.IEnumerator WaitForAttackObjectToReturn()
+    {
+        while (true)
+        {
+            Vector3 localAttackPosition = transform.InverseTransformPoint(_attackObject.transform.position);
+            if (Mathf.Approximately(localAttackPosition.x, 0f) && Mathf.Approximately(localAttackPosition.y, 0f))
+                break;
+            yield return null;
+        }
+    }
+    #endregion
 }
