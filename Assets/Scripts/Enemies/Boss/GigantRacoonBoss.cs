@@ -185,13 +185,16 @@ public class GigantRacoonBoss : MonoBehaviour, IDamageable
         // Destruye el GameObject Original
         Destroy(gameObject);
 
+        //Anuncia que el boss fue derrotado
+        GameManager.Instance.SetBossState("Nivel1", true);
+
         yield return null;
     }
 
     private IEnumerator LoadSceneAfterDelay()
     {
         yield return new WaitForSeconds(_delayBeforeLoad);
-        SceneManager.LoadScene("Winner");
+        SceneManager.LoadScene("LevelSelector");
 
         // Destruye el GameObject Temporal
         Destroy(gameObject);

@@ -1,83 +1,94 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
 public abstract class FatherEnemy : MonoBehaviour, IDamageable
 {
-    [Header("Stats")]
+    #region Variables
     [SerializeField] private float _life = 1f;
     [SerializeField] private EnemyDropConfig _dropConfig;
 
-    [Header("Layers")]
-    [SerializeField] private string _playerLayerName = "Player";
-    [SerializeField] private string _weaponLayerName = "PlayerWeapon";
-    private int _playerLayer = -1;
-    private int _weaponLayer = -1;
+    // Layers
+    [SerializeField] private string playerLayerName = "Player";
+    [SerializeField] private string weaponLayerName = "PlayerWeapon";
+    private int playerLayer = -1;
+    private int weaponLayer = -1;
+        #endregion
 
     private void Awake()
     {
-        _playerLayer = LayerMask.NameToLayer(_playerLayerName);
-        _weaponLayer = LayerMask.NameToLayer(_weaponLayerName);
+        playerLayer = LayerMask.NameToLayer(playerLayerName);
+        weaponLayer = LayerMask.NameToLayer(weaponLayerName);
 
-        if (_playerLayer == -1)
-            Debug.LogWarning($"FatherEnemy: Layer '{_playerLayerName}' no existe.");
-        if (_weaponLayer == -1)
-            Debug.LogWarning($"FatherEnemy: Layer '{_weaponLayerName}' no existe.");
+        if (playerLayer == -1)
+            Debug.LogWarning($"FatherEnemy: la layer '{playerLayerName}' no existe.");
+        if (weaponLayer == -1)
+            Debug.LogWarning($"FatherEnemy: la layer '{weaponLayerName}' no existe.");
     }
 
+    #region Unity Methods
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        var otherCollision = collision.otherCollider;
-        if (otherCollision == null) return;
+        Collider2D otherCol = collision.otherCollider;
+        if (otherCol == null) return;
 
-        if (IsWeaponCollision(otherCollision)) return;
-        if (IsPlayerCollision(otherCollision)) return;
-
-        Debug.Log($"FatherEnemy colisionÃ³ con: {otherCollision.gameObject.name} tag:{otherCollision.gameObject.tag}");
-    }
-
-    private bool IsWeaponCollision(Collider2D otherCollision)
-    {
-        if ((_weaponLayer != -1 && otherCollision.gameObject.layer == _weaponLayer) ||
-            otherCollision.GetComponentInParent<MeleeHit>() != null)
+        // Si la colisión viene del hitbox del arma (por layer o componente), ignorar
+        if (weaponLayer != -1 && otherCol.gameObject.layer == weaponLayer)
         {
-            Debug.Log($"FatherEnemy: Impacto de arma ignorado ({otherCollision.gameObject.name}).");
-            return true;
+            Debug.Log($"FatherEnemy: impacto de arma (layer) {otherCol.gameObject.name} ignorado.");
+            return;
         }
-        return false;
-    }
+        if (otherCol.GetComponentInParent<MeleeHit>() != null)
+        {
+            Debug.Log($"FatherEnemy: impacto de arma (component) {otherCol.gameObject.name} ignorado.");
+            return;
+        }
 
-    private bool IsPlayerCollision(Collider2D otherCollision)
-    {
-        if ((_playerLayer != -1 && otherCollision.gameObject.layer == _playerLayer) ||
-            otherCollision.GetComponentInParent<Player>() != null)
+        // Si el otro collider pertenece a la layer del Player, contar daño al jugador
+        if (playerLayer != -1 && otherCol.gameObject.layer == playerLayer)
         {
             GameManager.Instance.LoseLife();
-            return true;
+            return;
         }
-        return false;
-    }
 
+        // Fallback: si el collider pertenece al Player por componente
+        if (otherCol.GetComponentInParent<Player>() != null)
+        {
+            GameManager.Instance.LoseLife();
+            return;
+        }
+
+        Debug.Log($"FatherEnemy colisionó con: {otherCol.gameObject.name} tag:{otherCol.gameObject.tag}");
+    }
+    #endregion
+
+    #region Damage
     public void TakeDamage(float damage)
     {
         _life -= damage;
         if (_life <= 0)
         {
             DropItem();
-            Destroy(gameObject);
+           Destroy(gameObject);
         }
     }
+    #endregion
 
+    #region Drop
     private void DropItem()
     {
-        if (_dropConfig == null || _dropConfig.DropItems.Count == 0) return;
-
-        foreach (var dropItem in _dropConfig.DropItems)
+        if (_dropConfig != null && _dropConfig.DropItems.Count > 0)
         {
-            if (Random.value * 100 < dropItem.Chance)
+            foreach (var dropItem in _dropConfig.DropItems)
             {
-                Instantiate(dropItem.Item, transform.position, Quaternion.identity);
-                break;
+                float chance = Random.value * 100;
+                if (chance < dropItem.Chance)
+                {
+                    Instantiate(dropItem.Item, transform.position, Quaternion.identity);
+                    break;
+                }
             }
         }
     }
+    #endregion
 }

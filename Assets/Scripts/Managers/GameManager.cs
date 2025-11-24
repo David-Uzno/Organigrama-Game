@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<UnityEditor.SceneAsset> scenesToDestroyAssets;
     #endif
     private List<string> scenesToDestroyNames = new List<string>();
+   
     #endregion
 
     #region Singleton
@@ -71,6 +72,7 @@ public class GameManager : MonoBehaviour
     {
         // Verificar escena actual después de cargar
         CheckSceneDelete();
+
     }
 
     private void Start()
@@ -176,6 +178,25 @@ public class GameManager : MonoBehaviour
         int maxLife = GetMaxLife();
         _playerLifes = Mathf.Min(_playerLifes + amount, maxLife);
         UpdateHeartsCurrents();
+    }
+    #endregion
+
+    #region Boss Progress
+    // Guarda el estado de jefes (derrotado / no derrotado) en memoria durante la ejecución.
+    // Si necesitas persistencia entre sesiones, puedo añadir PlayerPrefs/archivo JSON.
+    private Dictionary<string, bool> bossesDerrotados = new Dictionary<string, bool>();
+
+    public void SetBossState(string nivel, bool derrotado)
+    {
+        if (string.IsNullOrEmpty(nivel)) return;
+        bossesDerrotados[nivel] = derrotado;
+        Debug.Log($"GameManager: SetBossState('{nivel}') = {derrotado}");
+    }
+
+    public bool GetBossState(string nivel)
+    {
+        if (string.IsNullOrEmpty(nivel)) return false;
+        return bossesDerrotados.ContainsKey(nivel) && bossesDerrotados[nivel];
     }
     #endregion
 }

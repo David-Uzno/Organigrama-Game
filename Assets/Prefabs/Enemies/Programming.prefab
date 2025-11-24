@@ -119,7 +119,7 @@ Transform:
   m_GameObject: {fileID: 9114241092314815873}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -7.5, y: -2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -260,7 +260,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -331,11 +331,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _life: 1
   _dropConfig: {fileID: 0}
-  _playerLayerName: Player
-  _weaponLayerName: PlayerWeapon
+  playerLayerName: Player
+  weaponLayerName: PlayerWeapon
   _attackObject: {fileID: 4406731061789868857}
-  _cardinalDivisions: 4
-  _canShoot360: 0
-  _distance: 5
-  _duration: 1
-  _delay: 0.3
+  _attackDistance: 5
+  _attackDuration: 1
+  _attackDirection: {x: 0, y: 1}
+  _attackDelay: 0.3

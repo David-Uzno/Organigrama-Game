@@ -28,18 +28,23 @@ public class PatrollingAI : MonoBehaviour
     [SerializeField] private float _chaseSpeed = 4f;
     private ICanMove _canMoveComponent;
 
-    [Header("Runtime State")]
+    [Header("Attacks")]
+    [SerializeField] protected float _attackCooldown = 1.5f;
+
     protected NavMeshAgent _agent;
     private float _reactionTimer = 0f;
     private bool _isChasingPlayer = false;
+    protected float _attackTimer = 0f;
 
-    public event Action<NavMeshAgent, Player, Vector2, bool> OnAttackRequested;
+    // Evento que notifica cuando el agente debe ejecutar un ataque
+    public event Action<NavMeshAgent, Player> OnAttackRequested;
 
     // Propiedades públicas mínimas para acceso externo si se necesita
     public NavMeshAgent Agent => _agent;
     public Player Player => _player;
     public float MinDistanceToPlayer => _minDistanceToPlayer;
 
+    // Cambia a protected virtual
     protected virtual void Start()
     {
         InitAgent();
@@ -73,6 +78,10 @@ public class PatrollingAI : MonoBehaviour
             HandlePlayerTracking();
             HandleAgentStop();
         }
+
+        // Actualiza el temporizador de ataque
+        if (_attackTimer > 0f)
+            _attackTimer -= Time.deltaTime;
     }
 
     private void UpdatePositionAndRotation()
@@ -134,57 +143,21 @@ public class PatrollingAI : MonoBehaviour
         }
     }
 
+    // Cambia a protected virtual para permitir override
     protected virtual void HandleAgentStop()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, _player.transform.position);
+        // Si está dentro de la distancia mínima, se detiene
         if (distanceToPlayer <= _minDistanceToPlayer)
         {
             _agent.ResetPath();
-            CalculateAttackDirection(out Vector2 direction, out bool is360);
-            if (OnAttackRequested != null)
+
+            if (_attackTimer <= 0f)
             {
-                OnAttackRequested(_agent, _player, direction, is360);
+                // Notifica a quien esté suscrito que debe atacar (no mover lógica de ataque aquí)
+                OnAttackRequested?.Invoke(_agent, _player);
+                _attackTimer = _attackCooldown;
             }
-        }
-    }
-
-    private void CalculateAttackDirection(out Vector2 direction, out bool is360)
-    {
-        is360 = false;
-        int divisions = 4;
-        direction = (_player.transform.position - transform.position);
-
-        // Consultar divisiones y 360°
-        if (OnAttackRequested != null)
-        {
-            foreach (var attackTargetDelegate in OnAttackRequested.GetInvocationList())
-            {
-                var target = attackTargetDelegate.Target as MonoBehaviour;
-                if (target != null)
-                {
-                    var programmer = target as ProgrammerEnemy;
-                    if (programmer != null)
-                    {
-                        if (programmer.CanShoot360)
-                        {
-                            is360 = true;
-                            break;
-                        }
-                        divisions = programmer.CardinalDivisions;
-                    }
-                }
-            }
-        }
-
-        if (!is360)
-        {
-            // Dirección cardinal configurable
-            float angle = Mathf.Atan2(direction.y, direction.x);
-            if (angle < 0) angle += 2 * Mathf.PI; // Asegura ángulo positivo
-            float sector = 2 * Mathf.PI / divisions;
-            int sectorIndex = Mathf.FloorToInt((angle + sector / 2f) / sector) % divisions;
-            float snappedAngle = sectorIndex * sector;
-            direction = new Vector2(Mathf.Cos(snappedAngle), Mathf.Sin(snappedAngle)).normalized;
         }
     }
 
