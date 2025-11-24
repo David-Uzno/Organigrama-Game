@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1199b8403608a1d42a0627ae3bab90e2, type: 3}
+  m_Name: Herramientas
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - SpeakerName: Programador de herramientas
+    Line: "Mientras otros programan el juego, yo programo para los programadores.\nHago
+      editores, sistemas autom\xE1ticos y gadgets que aceleran el desarrollo.\nSi
+      el equipo trabaja m\xE1s r\xE1pido y comete menos errores, probablemente sea
+      gracias a mis herramientas."
+    audioClips: []
