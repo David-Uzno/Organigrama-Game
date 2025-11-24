@@ -20,15 +20,11 @@ public class PatrollingAI : MonoBehaviour
     [Header("Persecution")]
     [SerializeField] private float _chaseSpeed = 4f;
 
-    [Header("Attacks")]
-    [SerializeField] protected float _attackCooldown = 1.5f;
-
+    [Header("Runtime State")]
     protected NavMeshAgent _agent;
     private float _reactionTimer = 0f;
     private bool _isChasingPlayer = false;
-    protected float _attackTimer = 0f;
 
-    // Evento que notifica cuando el agente debe ejecutar un ataque
     public event Action<NavMeshAgent, Player, Vector2, bool> OnAttackRequested;
 
     // Propiedades públicas mínimas para acceso externo si se necesita
@@ -68,10 +64,6 @@ public class PatrollingAI : MonoBehaviour
             HandlePlayerTracking();
             HandleAgentStop();
         }
-
-        // Actualiza el temporizador de ataque
-        if (_attackTimer > 0f)
-            _attackTimer -= Time.deltaTime;
     }
 
     private void UpdatePositionAndRotation()
@@ -131,48 +123,51 @@ public class PatrollingAI : MonoBehaviour
         if (distanceToPlayer <= _minDistanceToPlayer)
         {
             _agent.ResetPath();
-
-            if (_attackTimer <= 0f)
+            CalculateAttackDirection(out Vector2 direction, out bool is360);
+            if (OnAttackRequested != null)
             {
-                bool is360 = false;
-                int divisions = 4;
-                Vector2 direction = (_player.transform.position - transform.position);
+                OnAttackRequested(_agent, _player, direction, is360);
+            }
+        }
+    }
 
-                // Consultar divisiones y 360°
-                if (OnAttackRequested != null)
+    private void CalculateAttackDirection(out Vector2 direction, out bool is360)
+    {
+        is360 = false;
+        int divisions = 4;
+        direction = (_player.transform.position - transform.position);
+
+        // Consultar divisiones y 360°
+        if (OnAttackRequested != null)
+        {
+            foreach (var attackTargetDelegate in OnAttackRequested.GetInvocationList())
+            {
+                var target = attackTargetDelegate.Target as MonoBehaviour;
+                if (target != null)
                 {
-                    foreach (var attackTargetDelegate in OnAttackRequested.GetInvocationList())
+                    var programmer = target as ProgrammerEnemy;
+                    if (programmer != null)
                     {
-                        var target = attackTargetDelegate.Target as MonoBehaviour;
-                        if (target != null)
+                        if (programmer.CanShoot360)
                         {
-                            var programmer = target as ProgrammerEnemy;
-                            if (programmer != null)
-                            {
-                                if (programmer.CanShoot360)
-                                {
-                                    is360 = true;
-                                    break;
-                                }
-                                divisions = programmer.CardinalDivisions;
-                            }
+                            is360 = true;
+                            break;
                         }
+                        divisions = programmer.CardinalDivisions;
                     }
                 }
-
-                if (!is360)
-                {
-                    // Dirección cardinal configurable
-                    float angle = Mathf.Atan2(direction.y, direction.x);
-                    if (angle < 0) angle += 2 * Mathf.PI; // Asegura ángulo positivo
-                    float sector = 2 * Mathf.PI / divisions;
-                    int sectorIndex = Mathf.FloorToInt((angle + sector / 2f) / sector) % divisions;
-                    float snappedAngle = sectorIndex * sector;
-                    direction = new Vector2(Mathf.Cos(snappedAngle), Mathf.Sin(snappedAngle)).normalized;
-                }
-                OnAttackRequested?.Invoke(_agent, _player, direction, is360);
-                _attackTimer = _attackCooldown;
             }
+        }
+
+        if (!is360)
+        {
+            // Dirección cardinal configurable
+            float angle = Mathf.Atan2(direction.y, direction.x);
+            if (angle < 0) angle += 2 * Mathf.PI; // Asegura ángulo positivo
+            float sector = 2 * Mathf.PI / divisions;
+            int sectorIndex = Mathf.FloorToInt((angle + sector / 2f) / sector) % divisions;
+            float snappedAngle = sectorIndex * sector;
+            direction = new Vector2(Mathf.Cos(snappedAngle), Mathf.Sin(snappedAngle)).normalized;
         }
     }
 

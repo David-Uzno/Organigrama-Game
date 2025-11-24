@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public abstract class FatherEnemy : MonoBehaviour, IDamageable
 {
     [Header("Stats")]
