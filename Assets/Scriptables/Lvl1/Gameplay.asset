@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1199b8403608a1d42a0627ae3bab90e2, type: 3}
+  m_Name: Gameplay
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - SpeakerName: Programador de Gameplay
+    Line: "Hola, gracias por ayudarme a entrar en raz\xF3n. Yo soy el programador
+      de gameplay \xBFViste cuando tu personaje salta, pega o se desliza perfecto?\nBueno,
+      eso es gracias a m\xED. Me paso el d\xEDa ajustando f\xEDsicas, tiempos y movimientos\u2026\n\xA1Si
+      algo se siente bien en el juego, estoy haciendo bien mi trabajo!"
+    audioClips: []

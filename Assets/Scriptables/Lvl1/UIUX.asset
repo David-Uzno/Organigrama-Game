@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1199b8403608a1d42a0627ae3bab90e2, type: 3}
+  m_Name: UIUX
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - SpeakerName: Programador de Ui/Ux
+    Line: "\xBFViste los men\xFAs, la barra de vida, el inventario o las ventanas
+      de di\xE1logo?\nTodo eso lo programo yo.\n"
+    audioClips: []
+  - SpeakerName: Programador de Ui/Ux
+    Line: "Mi trabajo es que entiendas lo que pasa, que puedas controlar todo f\xE1cil,\ny
+      que el juego se vea claro y ordenado.\nSi algo es c\xF3modo de usar\u2026 bueno,
+      probablemente estuve yo detr\xE1s."
+    audioClips: []

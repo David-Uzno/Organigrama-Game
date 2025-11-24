@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1199b8403608a1d42a0627ae3bab90e2, type: 3}
+  m_Name: Jefe de area
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - SpeakerName: "Jefe de \xE1rea"
+    Line: "Ac\xE1 nos encargamos de darle vida al juego:\ndesde c\xF3mo te mov\xE9s,
+      hasta c\xF3mo piensan los enemigos,\npasando por las herramientas internas
+      y la estabilidad del proyecto."
+    audioClips: []
+  - SpeakerName: "Jefe de \xE1rea"
+    Line: 'Cada programador cumple un rol clave,
+
+      pero todos trabajamos con
+      el mismo objetivo:
+
+      que el juego funcione, sea fluido y te haga disfrutar
+      cada segundo.'
+    audioClips: []
+  - SpeakerName: "Jefe de \xE1rea"
+    Line: 'Si alguna parte del juego se siente bien,
+
+      alguien de este equipo
+      hizo un excelente trabajo.'
+    audioClips: []
