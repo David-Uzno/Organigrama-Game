@@ -1,3 +1,4 @@
+using System;
 using NavMeshPlus.Extensions;
 using UnityEngine;
 using UnityEngine.AI;
@@ -5,10 +6,10 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class PatrollingAI : MonoBehaviour
 {
-    private Player _player;
+    protected Player _player;
 
     [Header("Player Detection")]
-    [SerializeField] private float _minDistanceToPlayer = 2f;
+    [SerializeField] protected float _minDistanceToPlayer = 2f;
     [SerializeField] private float _reactionTime = 0.5f;
     [SerializeField] private float _visionRadius = 7.5f;
 
@@ -20,14 +21,23 @@ public class PatrollingAI : MonoBehaviour
     [SerializeField] private float _chaseSpeed = 4f;
 
     [Header("Attacks")]
-    [SerializeField] private float _attackCooldown = 1.5f;
+    [SerializeField] protected float _attackCooldown = 1.5f;
 
-    private NavMeshAgent _agent;
+    protected NavMeshAgent _agent;
     private float _reactionTimer = 0f;
     private bool _isChasingPlayer = false;
-    private float _attackTimer = 0f;
+    protected float _attackTimer = 0f;
 
-    private void Start()
+    // Evento que notifica cuando el agente debe ejecutar un ataque
+    public event Action<NavMeshAgent, Player> OnAttackRequested;
+
+    // Propiedades públicas mínimas para acceso externo si se necesita
+    public NavMeshAgent Agent => _agent;
+    public Player Player => _player;
+    public float MinDistanceToPlayer => _minDistanceToPlayer;
+
+    // Cambia a protected virtual
+    protected virtual void Start()
     {
         InitAgent();
         Invoke(nameof(FindPlayer), 0.1f);
@@ -107,7 +117,7 @@ public class PatrollingAI : MonoBehaviour
 
     private void SetRandomDestination()
     {
-        Vector2 randomDirection = Random.insideUnitCircle * _randomMoveRadius;
+        Vector2 randomDirection = UnityEngine.Random.insideUnitCircle * _randomMoveRadius;
         Vector3 randomPosition = new(transform.position.x + randomDirection.x, transform.position.y + randomDirection.y, 0f);
 
         if (NavMesh.SamplePosition(randomPosition, out NavMeshHit hit, _randomMoveRadius, NavMesh.AllAreas))
@@ -116,7 +126,8 @@ public class PatrollingAI : MonoBehaviour
         }
     }
 
-    private void HandleAgentStop()
+    // Cambia a protected virtual para permitir override
+    protected virtual void HandleAgentStop()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, _player.transform.position);
         // Si está dentro de la distancia mínima, se detiene
@@ -126,7 +137,8 @@ public class PatrollingAI : MonoBehaviour
 
             if (_attackTimer <= 0f)
             {
-                Debug.Log("¡Atacando al jugador!");
+                // Notifica a quien esté suscrito que debe atacar (no mover lógica de ataque aquí)
+                OnAttackRequested?.Invoke(_agent, _player);
                 _attackTimer = _attackCooldown;
             }
         }
