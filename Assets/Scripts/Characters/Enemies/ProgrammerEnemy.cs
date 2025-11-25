@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(PatrollingAI))]
-public class ProgrammerEnemy : RangedEnemy
+public class ProgrammerEnemy : RangedAttack
 {
     #region Attack Routine
     protected override System.Collections.IEnumerator AttackRoutine(NavMeshAgent agent, Player player, bool is360)

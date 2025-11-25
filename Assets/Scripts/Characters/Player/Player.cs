@@ -11,7 +11,7 @@ public class Player : MonoBehaviour, IDamageable, IHealable
     [SerializeField] private float _speed = 5f;
 
     [Header("Life")]
-    [SerializeField] private int _life = 3;
+    [SerializeField] private int _maxLife = 3;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Color _damageFlashColor = Color.red;
     [SerializeField] private int _damageFlashCount = 3;
@@ -92,10 +92,10 @@ public class Player : MonoBehaviour, IDamageable, IHealable
     public void RecoverLife(int amount)
     {
         int maxLife = GameManager.Instance.GetMaxLife();
-        if (_life < maxLife)
+        if (_maxLife < maxLife)
         {
-            int recoverAmount = Mathf.Min(amount, maxLife - _life);
-            _life += recoverAmount;
+            int recoverAmount = Mathf.Min(amount, maxLife - _maxLife);
+            _maxLife += recoverAmount;
             GameManager.Instance.RecoverLife(recoverAmount);
         }
     }
@@ -104,14 +104,14 @@ public class Player : MonoBehaviour, IDamageable, IHealable
     {
         if (_isInvincible) return;
 
-        _life -= (int)damage;
+        _maxLife -= (int)damage;
         if (_flashCoroutine != null)
             StopCoroutine(_flashCoroutine);
 
         GameManager.Instance.LoseLife();
         _flashCoroutine = StartCoroutine(FlashSpriteDamage());
 
-        if (_life <= 0)
+        if (_maxLife <= 0)
             SceneManager.LoadScene("GameOver");
     }
 

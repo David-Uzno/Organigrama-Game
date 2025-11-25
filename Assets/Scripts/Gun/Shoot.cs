@@ -1,23 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Shoot : MonoBehaviour, IShootable
 {
     #region Variables
-    [SerializeField] PlayerInput _playerInput;
-    [SerializeField] Transform _shootingControl;
-    [SerializeField] Transform _bullet;
-    [SerializeField] GameManager _gameManager;
+    [SerializeField] private PlayerInput _playerInput;
+    [SerializeField] private Transform _shootingControl;
+    [SerializeField] private Transform _bullet;
+    [SerializeField] private GameManager _gameManager;
     private RectTransform _virtualCursor;
 
     [Header("Mouse")]
-    Vector3 _objetive;
-    Camera _mainCamera;
+    private Vector3 _objetive;
+    private Camera _mainCamera;
 
     [Header("Time of Shoot")]
-    [SerializeField] float _shotCooldown = 0.25f;
+    [SerializeField] private float _shotCooldown = 0.25f;
     float _shotTime = 0;
     #endregion
 

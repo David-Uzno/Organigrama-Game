@@ -176,55 +176,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
---- !u!1 &5225523559839293109
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3059323981105453411}
-  - component: {fileID: 4916284738945882792}
-  m_Layer: 0
-  m_Name: FirePoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &3059323981105453411
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5225523559839293109}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.1, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 9045617292924302925}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4916284738945882792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5225523559839293109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43f9f1d79fa9b0740b8b5413253c0e54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerInput: {fileID: -929459849955156349}
-  _shootingControl: {fileID: 3059323981105453411}
-  _bullet: {fileID: 5678428310395112900, guid: fe1410e2a657882469f65aa588749005, type: 3}
-  _gameManager: {fileID: 0}
-  _shotCooldown: 0.25
 --- !u!1 &8712103025209775062
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,7 +212,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3059323981105453411}
   - {fileID: 4493366558314923567}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -501,11 +451,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03595393de8f74741955dfd91d70f286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeArea: {fileID: 3864726627619089508}
-  attackDuration: 0.2
-  arcSweepAngle: 120
-  rotationSpeed: 11.4
-  attackRadius: 1
-  attackKey: 324
-  weaponLayerName: PlayerWeapon
-  autoIgnorePlayerCollision: 1
+  _meleeHitbox: {fileID: 3864726627619089508}
+  _attackActiveTime: 0.2
+  _attackArcAngle: 120
+  _attackArcSpeed: 11.5
+  _attackDistance: 1
+  _weaponLayer: PlayerWeapon
+  _ignorePlayerCollision: 1

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(PatrollingAI))]
-public class ArtistEnemy : RangedEnemy
+public class ArtistEnemy : RangedAttack
 {
     #region Variables
     [Header("Artist")]

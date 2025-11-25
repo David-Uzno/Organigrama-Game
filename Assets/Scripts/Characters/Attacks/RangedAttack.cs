@@ -1,17 +1,17 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public abstract class RangedEnemy : FatherEnemy, ICanMove
+public abstract class RangedAttack : FatherEnemy, ICanMove
 {
-    [Header("Ranged Attack References")]
+    [Header("References")]
     [SerializeField] protected GameObject _attackObject;
 
-    [Header("Ranged Attack Settings")]
+    [Header("Attack Settings")]
     [SerializeField] protected float _distance = 5f;
     [SerializeField] protected float _duration = 1f;
     [SerializeField] protected float _delay = 0.3f;
 
-    [Header("Ranged Attack Mode")]
+    [Header("Attack Mode")]
     [Range(4, 100)]
     [SerializeField] protected int _cardinalDivisions = 4;
     [SerializeField] protected bool _canShoot360 = false;
