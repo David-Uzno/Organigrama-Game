@@ -180,4 +180,8 @@ public class DialogueManager : MonoBehaviour
         }
     }
     #endregion
+    public bool IsDialogueActive()
+    {
+        return _isDialogueActive;
+    }
 }
