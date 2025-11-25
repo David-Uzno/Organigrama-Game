@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1199b8403608a1d42a0627ae3bab90e2, type: 3}
   m_Name: Animador
   m_EditorClassIdentifier: 
-  dialogueLines: []
+  dialogueLines:
+  - SpeakerName: Animador 2D
+    Line: "\xBFViste cuando el personaje corre, ataca o toma da\xF1o?\nBueno, yo
+      hago que esas im\xE1genes cobren vida.\nCada gesto, cada salto, cada ataque\u2026\nson
+      un mont\xF3n de dibujitos que encajan perfecto."
+    audioClips: []

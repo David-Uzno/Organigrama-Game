@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1199b8403608a1d42a0627ae3bab90e2, type: 3}
   m_Name: "Dise\xF1ador UIUX"
   m_EditorClassIdentifier: 
-  dialogueLines: []
+  dialogueLines:
+  - SpeakerName: "Dise\xF1ador UI/UX"
+    Line: "Si los men\xFAs son f\xE1ciles de usar y los \xEDconos se entienden al
+      instante,\nentonces mi trabajo est\xE1 bien hecho.\nBusco que el jugador nunca
+      se pierda\u2026\na menos que el nivel est\xE9 dise\xF1ado para eso."
+    audioClips: []

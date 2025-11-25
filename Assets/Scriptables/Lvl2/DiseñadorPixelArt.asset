@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1199b8403608a1d42a0627ae3bab90e2, type: 3}
   m_Name: "Dise\xF1adorPixelArt"
   m_EditorClassIdentifier: 
-  dialogueLines: []
+  dialogueLines:
+  - SpeakerName: "Dise\xF1ador Pixel art"
+    Line: "Cada personaje, enemigo y objeto del mundo\u2026\nnace de puntitos que
+      coloco uno por uno.\nMi trabajo es que el juego se vea lindo, \xFAnico\ny con
+      una est\xE9tica que te haga querer seguir explorando."
+    audioClips: []

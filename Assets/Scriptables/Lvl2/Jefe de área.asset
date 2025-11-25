@@ -12,4 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1199b8403608a1d42a0627ae3bab90e2, type: 3}
   m_Name: "Jefe de \xE1rea"
   m_EditorClassIdentifier: 
-  dialogueLines: []
+  dialogueLines:
+  - SpeakerName: "Jefe de \xE1rea"
+    Line: "Aqu\xED damos identidad visual al juego:\npersonajes, escenarios, animaciones,
+      colores, atm\xF3sfera\u2026\n"
+    audioClips: []
+  - SpeakerName: "Jefe de \xE1rea"
+    Line: "todo lo que entra por tus ojos nace en este lugar.\nNuestro objetivo es
+      simple:\nque cada rinc\xF3n del juego sea memorable."
+    audioClips: []

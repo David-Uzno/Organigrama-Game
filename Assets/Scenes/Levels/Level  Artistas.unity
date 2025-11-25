@@ -13038,7 +13038,7 @@ Transform:
   m_GameObject: {fileID: 690330164}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.1367057, w: 0.99061173}
-  m_LocalPosition: {x: 0.95787406, y: -4.316453, z: 0}
+  m_LocalPosition: {x: 0.95787406, y: -3.7444525, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13125,7 +13125,7 @@ Transform:
   m_GameObject: {fileID: 691897284}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.06, y: -3.9, z: 0}
+  m_LocalPosition: {x: 1.06, y: -3.328, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18069,7 +18069,7 @@ GameObject:
   - component: {fileID: 939502630}
   - component: {fileID: 939502629}
   m_Layer: 0
-  m_Name: CaminarDerechaArtista_0001
+  m_Name: Animador 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18203,7 +18203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 125e9920691cdaa4bba80921123e11d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueData: {fileID: 0}
+  _dialogueData: {fileID: 11400000, guid: 32d90c9c0aa870a409e090ebaae9ec02, type: 2}
   triggerCooldown: 0.45
 --- !u!1 &946494360
 GameObject:
@@ -21952,7 +21952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPosJugadorB: {fileID: 878499342}
   startPosCamaraB: {fileID: 958586592}
-  forceStartInB: 0
+  forceStartInB: 1
 --- !u!4 &1106479216
 Transform:
   m_ObjectHideFlags: 0
@@ -22280,7 +22280,7 @@ GameObject:
   - component: {fileID: 1116108206}
   - component: {fileID: 1116108205}
   m_Layer: 0
-  m_Name: CaminarDerechaArtista_0001 (2)
+  m_Name: "Dise\xF1ador UIUX"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22414,7 +22414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 125e9920691cdaa4bba80921123e11d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueData: {fileID: 0}
+  _dialogueData: {fileID: 11400000, guid: 1bd1f865a961a0c42a3a9aa459de1c7e, type: 2}
   triggerCooldown: 0.45
 --- !u!1 &1123369611
 GameObject:
@@ -22775,7 +22775,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 1
   m_Sprite: {fileID: 39153548765281415, guid: dc753c81d03a3bf4b857361e1d273efe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -25792,7 +25792,7 @@ GameObject:
   - component: {fileID: 1245005001}
   - component: {fileID: 1245005000}
   m_Layer: 0
-  m_Name: CaminarDerechaArtista_0001 (1)
+  m_Name: Artista Pixel Art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25880,7 +25880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 125e9920691cdaa4bba80921123e11d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueData: {fileID: 0}
+  _dialogueData: {fileID: 11400000, guid: 2dd2334cb9d2e3c44bdf94c9dbd19876, type: 2}
   triggerCooldown: 0.45
 --- !u!61 &1245005001
 BoxCollider2D:
@@ -26370,7 +26370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 125e9920691cdaa4bba80921123e11d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueData: {fileID: 0}
+  _dialogueData: {fileID: 11400000, guid: 7cdeb25aca82f114bb985b8a055e1cf3, type: 2}
   triggerCooldown: 0.45
 --- !u!1 &1282764747
 GameObject:
@@ -27295,7 +27295,7 @@ GameObject:
   - component: {fileID: 1336021012}
   - component: {fileID: 1336021011}
   m_Layer: 0
-  m_Name: CaminarDerechaArtista_0001 (3)
+  m_Name: Artista conceptual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27383,7 +27383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 125e9920691cdaa4bba80921123e11d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueData: {fileID: 0}
+  _dialogueData: {fileID: 11400000, guid: b3dec9eef0285194ab7ff82192203512, type: 2}
   triggerCooldown: 0.45
 --- !u!61 &1336021012
 BoxCollider2D:
@@ -32265,7 +32265,7 @@ Transform:
   m_GameObject: {fileID: 1504275028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.25, y: -4.218902, z: 0}
+  m_LocalPosition: {x: 1.25, y: -3.6469016, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33141,7 +33141,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 3
   m_Sprite: {fileID: -386728607022801062, guid: dc753c81d03a3bf4b857361e1d273efe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

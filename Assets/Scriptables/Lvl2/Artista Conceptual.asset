@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1199b8403608a1d42a0627ae3bab90e2, type: 3}
   m_Name: Artista Conceptual
   m_EditorClassIdentifier: 
-  dialogueLines: []
+  dialogueLines:
+  - SpeakerName: Artista Conceptual
+    Line: "Cuando un personaje existe solo como una idea,\nyo lo dibujo por primera
+      vez.\nDoy forma a mundos enteros antes de que existan en el juego.\nMi l\xE1piz
+      es la chispa que enciende todo lo dem\xE1s."
+    audioClips: []
