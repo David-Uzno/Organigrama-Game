@@ -179,10 +179,10 @@ TextureImporter:
       name: Sound Engineer_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 63
-        width: 25
-        height: 26
+        x: 0
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,10 +201,10 @@ TextureImporter:
       name: Sound Engineer_1
       rect:
         serializedVersion: 2
-        x: 36
-        y: 63
-        width: 25
-        height: 25
+        x: 32
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,10 +223,10 @@ TextureImporter:
       name: Sound Engineer_2
       rect:
         serializedVersion: 2
-        x: 68
-        y: 63
-        width: 25
-        height: 25
+        x: 64
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,10 +245,10 @@ TextureImporter:
       name: Sound Engineer_3
       rect:
         serializedVersion: 2
-        x: 4
-        y: 31
-        width: 25
-        height: 26
+        x: 0
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,10 +267,10 @@ TextureImporter:
       name: Sound Engineer_4
       rect:
         serializedVersion: 2
-        x: 36
-        y: 31
-        width: 25
-        height: 25
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,10 +289,10 @@ TextureImporter:
       name: Sound Engineer_5
       rect:
         serializedVersion: 2
-        x: 68
-        y: 31
-        width: 25
-        height: 25
+        x: 64
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,10 +311,10 @@ TextureImporter:
       name: Sound Engineer_6
       rect:
         serializedVersion: 2
-        x: 6
+        x: 0
         y: 0
-        width: 20
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -333,10 +333,10 @@ TextureImporter:
       name: Sound Engineer_7
       rect:
         serializedVersion: 2
-        x: 38
+        x: 32
         y: 0
-        width: 20
-        height: 26
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -355,10 +355,10 @@ TextureImporter:
       name: Sound Engineer_8
       rect:
         serializedVersion: 2
-        x: 70
+        x: 64
         y: 0
-        width: 20
-        height: 26
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
