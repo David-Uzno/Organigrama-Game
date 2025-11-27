@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class OrganizationChart : MonoBehaviour
 {
+    private static WaitForSeconds _waitForSeconds0_5 = new WaitForSeconds(0.5f);
     [SerializeField] private GameObject _targetObject;
     [SerializeField] private bool _pauseTimeOnShow = true;
     private string _playerTag = "Player";
@@ -10,19 +12,21 @@ public class OrganizationChart : MonoBehaviour
     private PlayerInput _playerInput;
     private InputAction _actionInput;
 
-    private void Awake()
+    private void Start()
     {
+        StartCoroutine(FindPlayerInputDelayed());
+    }
+
+    private IEnumerator FindPlayerInputDelayed()
+    {
+        yield return _waitForSeconds0_5;
         _playerInput = FindFirstObjectByType<PlayerInput>();
         if (_playerInput != null)
         {
             _actionInput = _playerInput.actions["Action"];
+            if (_actionInput != null)
+                _actionInput.performed += OnActionPerformed;
         }
-    }
-
-    private void OnEnable()
-    {
-        if (_actionInput != null)
-            _actionInput.performed += OnActionPerformed;
     }
 
     private void OnDisable()
@@ -31,7 +35,7 @@ public class OrganizationChart : MonoBehaviour
             _actionInput.performed -= OnActionPerformed;
     }
 
-    private void OnTriggerStay2D(Collider2D collider)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag(_playerTag))
         {
