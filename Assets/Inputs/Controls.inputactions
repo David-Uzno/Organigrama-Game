@@ -33,10 +33,19 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Action",
+                    "type": "Button",
+                    "id": "1706da35-5a96-4dad-b22e-924bb5817925",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Pause",
                     "type": "Button",
                     "id": "e0f99b3c-87b5-4e60-a7b9-ef58a8b36b32",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -45,7 +54,7 @@
                     "name": "FPS",
                     "type": "Button",
                     "id": "30a83cb6-4628-4cef-bd84-e9037e9ad4fd",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -143,7 +152,7 @@
                 {
                     "name": "",
                     "id": "f5d726f5-3ef7-4639-9d54-23fcf8b55f50",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -203,6 +212,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "FPS",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "327c875f-6bb0-4fcd-b642-14a3f10a7ca9",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6d4ab58a-7774-4a3e-bd54-048fb0e299d6",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
