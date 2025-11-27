@@ -173,21 +173,25 @@ public class GigantRacoonBoss : MonoBehaviour, IDamageable
         }
     }
 
+    public class SceneLoaderDelay : MonoBehaviour
+    {
+        public float delay = 2f;
+
+        private IEnumerator Start()
+        {
+            yield return new WaitForSeconds(delay);
+            SceneManager.LoadScene("LevelSelector");
+        }
+    }
     private IEnumerator HandleDeath()
     {
-        // GameObject Temporal
-        GameObject tempObject = new GameObject("TempObjectForSceneLoad");
-        GigantRacoonBoss tempScript = tempObject.AddComponent<GigantRacoonBoss>();
-
-        // Corrutina de la Instancia Temporal
-        tempScript.StartCoroutine(tempScript.LoadSceneAfterDelay());
-
-        // Destruye el GameObject Original
-        Destroy(gameObject);
-
-        //Anuncia que el boss fue derrotado
         GameManager.Instance.SetBossState("Nivel1", true);
 
+        GameObject temp = new GameObject("SceneLoader");
+        SceneLoaderDelay loader = temp.AddComponent<SceneLoaderDelay>();
+        loader.delay = _delayBeforeLoad;
+
+        Destroy(gameObject);
         yield return null;
     }
 

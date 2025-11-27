@@ -17,4 +17,6 @@ MonoBehaviour:
     Line: "Cada personaje, enemigo y objeto del mundo\u2026\nnace de puntitos que
       coloco uno por uno.\nMi trabajo es que el juego se vea lindo, \xFAnico\ny con
       una est\xE9tica que te haga querer seguir explorando."
-    audioClips: []
+    audioClips:
+    - clip: {fileID: 8300000, guid: ef0bcd3493907434dbfd933590c2703f, type: 3}
+      dontInterruptOnNext: 0

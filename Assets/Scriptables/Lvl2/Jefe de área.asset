@@ -16,8 +16,12 @@ MonoBehaviour:
   - SpeakerName: "Jefe de \xE1rea"
     Line: "Aqu\xED damos identidad visual al juego:\npersonajes, escenarios, animaciones,
       colores, atm\xF3sfera\u2026\n"
-    audioClips: []
+    audioClips:
+    - clip: {fileID: 8300000, guid: ef0bcd3493907434dbfd933590c2703f, type: 3}
+      dontInterruptOnNext: 0
   - SpeakerName: "Jefe de \xE1rea"
     Line: "todo lo que entra por tus ojos nace en este lugar.\nNuestro objetivo es
       simple:\nque cada rinc\xF3n del juego sea memorable."
-    audioClips: []
+    audioClips:
+    - clip: {fileID: 8300000, guid: ef0bcd3493907434dbfd933590c2703f, type: 3}
+      dontInterruptOnNext: 0

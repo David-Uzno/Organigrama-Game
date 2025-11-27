@@ -186,32 +186,38 @@ public class GerenteGeneral : MonoBehaviour, IDamageable
     // ==========================================================
     private IEnumerator SemiCircleRoutine()
     {
-        if (_projectilePrefab == null) yield break;
+        if (_projectilePrefab == null || _playerTransform == null) yield break;
 
+        // Vector desde el boss hacia el jugador
+        Vector2 toPlayer = (_playerTransform.position - transform.position).normalized;
+
+        // Calculamos el ángulo central en grados
+        float baseAngle = Mathf.Atan2(toPlayer.y, toPlayer.x) * Mathf.Rad2Deg;
+
+        // Separación angular de los proyectiles (por ejemplo, 180 grados de semicírculo)
         float angleStep = 180f / Mathf.Max(1, _projectileCount - 1);
 
         for (int i = 0; i < _projectileCount; i++)
         {
-            float angle = -90f + (angleStep * i);
+            float angle = baseAngle - 90f + angleStep * i; // distribuimos sobre 180 grados
+            float rad = angle * Mathf.Deg2Rad;
 
-            Vector2 dir = new Vector2(
-                Mathf.Cos(angle * Mathf.Deg2Rad),
-                Mathf.Sin(angle * Mathf.Deg2Rad)
-            ).normalized;
+            Vector2 dir = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad)).normalized;
 
             GameObject p = Instantiate(_projectilePrefab, transform.position, Quaternion.identity);
             Rigidbody2D rb = p.GetComponent<Rigidbody2D>();
 
             if (rb != null)
             {
-                rb.linearVelocity = Vector2.zero;
-                rb.AddForce(dir * _projectileSpeed, ForceMode2D.Impulse);
+                rb.linearVelocity = dir * _projectileSpeed;
             }
 
             Destroy(p, 2.5f);
             yield return new WaitForSeconds(_delayBetweenShots);
         }
     }
+
+   
 
     // ==========================================================
     //                        DAÑO EN ÁREA

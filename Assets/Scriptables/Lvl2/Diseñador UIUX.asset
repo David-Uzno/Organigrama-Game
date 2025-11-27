@@ -17,4 +17,6 @@ MonoBehaviour:
     Line: "Si los men\xFAs son f\xE1ciles de usar y los \xEDconos se entienden al
       instante,\nentonces mi trabajo est\xE1 bien hecho.\nBusco que el jugador nunca
       se pierda\u2026\na menos que el nivel est\xE9 dise\xF1ado para eso."
-    audioClips: []
+    audioClips:
+    - clip: {fileID: 8300000, guid: ef0bcd3493907434dbfd933590c2703f, type: 3}
+      dontInterruptOnNext: 0

@@ -18,4 +18,6 @@ MonoBehaviour:
       de gameplay \xBFViste cuando tu personaje salta, pega o se desliza perfecto?\nBueno,
       eso es gracias a m\xED. Me paso el d\xEDa ajustando f\xEDsicas, tiempos y movimientos\u2026\n\xA1Si
       algo se siente bien en el juego, estoy haciendo bien mi trabajo!"
-    audioClips: []
+    audioClips:
+    - clip: {fileID: 8300000, guid: ef0bcd3493907434dbfd933590c2703f, type: 3}
+      dontInterruptOnNext: 0

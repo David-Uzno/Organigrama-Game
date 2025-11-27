@@ -15,4 +15,6 @@ MonoBehaviour:
   dialogueLines:
   - SpeakerName: Gato
     Line: Miau
-    audioClips: []
+    audioClips:
+    - clip: {fileID: 8300000, guid: ef0bcd3493907434dbfd933590c2703f, type: 3}
+      dontInterruptOnNext: 0

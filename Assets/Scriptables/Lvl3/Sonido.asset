@@ -17,4 +17,6 @@ MonoBehaviour:
     Line: "\xBFEscuchaste ese slash, ese boom, ese clic del men\xFA?\nTodo eso lo
       hago yo.\nA veces grabo cosas raras: romper latas, golpear maderas, soplar
       botellas\u2026\nsi suena bien, sirve."
-    audioClips: []
+    audioClips:
+    - clip: {fileID: 8300000, guid: ef0bcd3493907434dbfd933590c2703f, type: 3}
+      dontInterruptOnNext: 0

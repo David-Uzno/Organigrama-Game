@@ -16,8 +16,12 @@ MonoBehaviour:
   - SpeakerName: Ingeniero de Audio
     Line: "Mi trabajo es que todo suene claro y en el balance perfecto:\nque la m\xFAsica
       no tape a los efectos,\nque los pasos no sean m\xE1s fuertes que un boss,\n"
-    audioClips: []
+    audioClips:
+    - clip: {fileID: 8300000, guid: ef0bcd3493907434dbfd933590c2703f, type: 3}
+      dontInterruptOnNext: 0
   - SpeakerName: Ingeniero de Audio
     Line: "y que puedas disfrutar el sonido sin distraerte.\nSi el juego suena limpio\u2026
       estoy haciendo bien mi trabajo."
-    audioClips: []
+    audioClips:
+    - clip: {fileID: 8300000, guid: ef0bcd3493907434dbfd933590c2703f, type: 3}
+      dontInterruptOnNext: 0
