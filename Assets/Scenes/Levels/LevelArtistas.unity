@@ -11892,6 +11892,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1128013968}
+  - {fileID: 1352439601}
   - {fileID: 840855024}
   - {fileID: 1590851704}
   m_Father: {fileID: 958586592}
@@ -22032,9 +22033,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1876c1a0195baaa4cb2d15a4eda420ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPosJugadorB: {fileID: 878499342}
-  startPosCamaraB: {fileID: 958586592}
-  forceStartInB: 0
+  bossIDRequired: Nivel2
+  playerSpawn: {fileID: 1352439601}
+  cameraSpawn: {fileID: 958586592}
+  forceSpawn: 0
 --- !u!4 &1106479216
 Transform:
   m_ObjectHideFlags: 0
@@ -27832,6 +27834,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1352439600
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1352439601}
+  m_Layer: 0
+  m_Name: Tp 1b axuliar (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1352439601
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352439600}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.48, y: 3.21, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 636094849}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1353724528
 GameObject:
   m_ObjectHideFlags: 0

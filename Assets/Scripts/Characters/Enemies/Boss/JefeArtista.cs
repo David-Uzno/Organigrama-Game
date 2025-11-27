@@ -104,7 +104,7 @@ public class JefeArtista : MonoBehaviour, IDamageable
         tempScript.StartCoroutine(tempScript.LoadSceneAfterDelay());
 
         // Marca que el boss fue derrotado
-        GameManager.Instance.SetBossState("Nivel1", true);
+        GameManager.Instance.SetBossState("Nivel2", true);
 
         // Destruye el GameObject Original
         Destroy(gameObject);

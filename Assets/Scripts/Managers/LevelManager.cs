@@ -1,59 +1,53 @@
-﻿using UnityEngine;
-
+﻿using System.Collections.Generic;
+using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
-    [Header("Spawn Sección B")]
-    public Transform startPosJugadorB;     // Posición del jugador en la sección B
-    public Transform startPosCamaraB;      // Posición de la cámara en la sección B
+    [Header("Qué boss habilita este spawn")]
+    public string bossIDRequired = "Nivel1";   // ejemplo: "Nivel2", "BossFinal"
 
-    [Header("Debug / Testing")]
-    public bool forceStartInB = false;
+    [Header("Spawn de esta escena")]
+    public Transform playerSpawn;
+    public Transform cameraSpawn;
+
+    [Header("Debug")]
+    public bool forceSpawn = false;
 
     private void Start()
     {
-        bool bossDerrotado = GameManager.Instance.GetBossState("Nivel1");
+        bool defeated = GameManager.Instance.GetBossState(bossIDRequired);
 
-        // Si está activado el modo test o el boss murió → ir a B
-        if (forceStartInB || bossDerrotado)
+        if (forceSpawn || defeated)
         {
-            SpawnInB();
+            ApplySpawn();
         }
     }
 
-    private void SpawnInB()
+    private void ApplySpawn()
     {
-
-        if (startPosJugadorB == null)
+        if (playerSpawn == null || cameraSpawn == null)
         {
-            Debug.LogError("LevelManager: startPosJugadorB no está asignado en el inspector.");
+            Debug.LogError("LevelManager: No asignaste playerSpawn o cameraSpawn.");
             return;
         }
-
-        if (startPosCamaraB == null)
-        {
-            Debug.LogError("LevelManager: startPosCamaraB no está asignado en el inspector.");
-            return;
-        }
-
 
         var player = GameObject.FindGameObjectWithTag("Player");
-
         if (player == null)
         {
-            Debug.LogError("LevelManager: No se encontró un GameObject con tag 'Player'.");
+            Debug.LogError("LevelManager: No se encontró Player en la escena.");
             return;
         }
 
-        player.transform.position = startPosJugadorB.position;
+        // Mover jugador
+        player.transform.position = playerSpawn.position;
 
+        // Mover cámara
         if (Camera.main != null)
         {
             Camera.main.transform.position = new Vector3(
-                startPosCamaraB.position.x,
-                startPosCamaraB.position.y,
-                Camera.main.transform.position.z  // mantenemos su Z original
+                cameraSpawn.position.x,
+                cameraSpawn.position.y,
+                Camera.main.transform.position.z
             );
         }
     }
 }
-
