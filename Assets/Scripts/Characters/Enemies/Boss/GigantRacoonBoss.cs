@@ -191,7 +191,7 @@ public class GigantRacoonBoss : MonoBehaviour, IDamageable
         yield return null;
     }
 
-    public IEnumerator LoadSceneAfterDelay()
+    private IEnumerator LoadSceneAfterDelay()
     {
         yield return new WaitForSeconds(_delayBeforeLoad);
         SceneManager.LoadScene("LevelSelector");
