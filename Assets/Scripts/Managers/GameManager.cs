@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -134,6 +135,8 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Player Lifes
+    // Evento que se dispara cuando el jugador se queda sin vidas.
+    public event Action OnPlayerDead;
     public int GetMaxLife()
     {
         return _currentHeartCount * _maxLifeMultiplier;
@@ -174,6 +177,16 @@ public class GameManager : MonoBehaviour
     {
         _playerLifes = Mathf.Max(0, _playerLifes - 1);
         UpdateHeartsCurrents();
+
+        // Si las vidas llegan a 0, ir a la pantalla de GameOver.
+        if (_playerLifes <= 0)
+        {
+            // Disparar evento para que otros sistemas reaccionen (animaciones, audio, freeze, etc.)
+            OnPlayerDead?.Invoke();
+
+            // Mantener comportamiento previo: cargar GameOver por defecto.
+            SceneManager.LoadScene("GameOver");
+        }
     }
 
     public void RecoverLife(int amount)
@@ -185,7 +198,7 @@ public class GameManager : MonoBehaviour
     private void RelinkHUD()
 {
     // Busca el nuevo HUD en la escena actual
-    var hud = Object.FindFirstObjectByType<HUDManager>();
+    var hud = UnityEngine.Object.FindFirstObjectByType<HUDManager>();
     if (hud == null)
     {
         Debug.LogWarning("HUD no encontrado en esta escena");
@@ -203,7 +216,7 @@ public class GameManager : MonoBehaviour
     #region Boss Progress
     // Guarda el estado de jefes (derrotado / no derrotado) en memoria durante la ejecución.
     // Si necesitas persistencia entre sesiones, puedo añadir PlayerPrefs/archivo JSON.
-    private Dictionary<string, bool> bossesDerrotados = new Dictionary<string, bool>();
+    private readonly Dictionary<string, bool> bossesDerrotados = new Dictionary<string, bool>();
 
     public void SetBossState(string nivel, bool derrotado)
     {
