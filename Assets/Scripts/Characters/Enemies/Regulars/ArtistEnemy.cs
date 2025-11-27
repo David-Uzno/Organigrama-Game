@@ -57,6 +57,13 @@ public class ArtistEnemy : RangedAttack
     private GameObject CreateAttackInstance()
     {
         var instance = Instantiate(_attackObject, transform.position, Quaternion.identity);
+
+        // Dirección hacia donde va a disparar
+        float angle = Mathf.Atan2(_currentDirection.y, _currentDirection.x) * Mathf.Rad2Deg;
+
+        // Como el sprite apunta ARRIBA, sumamos 90 grados
+        instance.transform.rotation = Quaternion.Euler(0, 0, angle - 90f + 180f);
+
         instance.SetActive(true);
         return instance;
     }

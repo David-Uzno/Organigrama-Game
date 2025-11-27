@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
     {
         // Asegura que _currentHeartCount y _playerLifes estén dentro de los límites establecidos
         _currentHeartCount = Mathf.Clamp(_currentHeartCount, _minHeartCount, _maxHeartCount);
-        _playerLifes = Mathf.Clamp(_playerLifes, 1, _currentHeartCount * 2);
+       
 
         // Asignación de maxLifeMultiplier al número de elementos de _heartStatuses
         _maxLifeMultiplier = Mathf.Max(0, _heartStatuses.Length - 1);
@@ -138,7 +138,10 @@ public class GameManager : MonoBehaviour
     {
         return _currentHeartCount * _maxLifeMultiplier;
     }
-
+    public int GetPlayerLifes()
+    {
+        return _playerLifes;
+    }
     private void UpdateHeartsCurrents()
     {
         int lifePointsRemaining = _playerLifes;

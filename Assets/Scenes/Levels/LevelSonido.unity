@@ -6230,7 +6230,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogueData: {fileID: 11400000, guid: 8bb5cce6c83ddb243a38b53512286503, type: 2}
-  triggerCooldown: 0.45
 --- !u!61 &389949098
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16700,7 +16699,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogueData: {fileID: 11400000, guid: a55eea8d7e61bda4c8c684f94d8471d3, type: 2}
-  triggerCooldown: 0.45
 --- !u!61 &993251415
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17552,9 +17550,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1876c1a0195baaa4cb2d15a4eda420ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPosJugadorB: {fileID: 878499342}
-  startPosCamaraB: {fileID: 958586592}
-  forceStartInB: 1
+  bossIDRequired: Nivel1
+  playerSpawn: {fileID: 0}
+  cameraSpawn: {fileID: 0}
+  forceSpawn: 0
 --- !u!4 &1106479216
 Transform:
   m_ObjectHideFlags: 0
@@ -17843,7 +17842,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogueData: {fileID: 11400000, guid: 1bd1f865a961a0c42a3a9aa459de1c7e, type: 2}
-  triggerCooldown: 0.45
 --- !u!1 &1123369611
 GameObject:
   m_ObjectHideFlags: 0
@@ -21254,7 +21252,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogueData: {fileID: 11400000, guid: b99219e4361200342b783607ada35a23, type: 2}
-  triggerCooldown: 0.45
 --- !u!1001 &1278239859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21927,7 +21924,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogueData: {fileID: 11400000, guid: b3dec9eef0285194ab7ff82192203512, type: 2}
-  triggerCooldown: 0.45
 --- !u!61 &1336021012
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28454,7 +28450,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogueData: {fileID: 11400000, guid: a65103d18a1bfa24f838b99c61ec084c, type: 2}
-  triggerCooldown: 0.45
 --- !u!1 &1697575031
 GameObject:
   m_ObjectHideFlags: 0
@@ -34335,7 +34330,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogueData: {fileID: 11400000, guid: 4b27e37007dfd9d43a99bcb2a6c4299d, type: 2}
-  triggerCooldown: 0.45
 --- !u!1 &2099127819
 GameObject:
   m_ObjectHideFlags: 0
@@ -34832,7 +34826,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2478582734314615212, guid: f04b6b3915743d84caeba89503028761, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5360906595430169860, guid: f04b6b3915743d84caeba89503028761, type: 3}
       propertyPath: m_LocalPosition.x

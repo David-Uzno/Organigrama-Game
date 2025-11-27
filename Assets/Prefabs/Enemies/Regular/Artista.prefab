@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 9199215365524276706}
   - component: {fileID: 2959869436321115137}
-  - component: {fileID: 4541963174424778121}
+  - component: {fileID: 6417454790909000895}
   m_Layer: 6
   m_Name: Circle
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b3727a0ec97aa594aaeed1cca954596d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 530d93c8eb20bca4bad9181f3772e35c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4541963174424778121
+--- !u!61 &6417454790909000895
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,17 +122,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.067043364, y: -0.1083011}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 0.28125, y: 2.125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.4327086, y: 0.7313322}
+  m_Size: {x: 0.28125, y: 2.125}
   m_EdgeRadius: 0
 --- !u!1 &9114241092314815873
 GameObject:
@@ -149,9 +149,9 @@ GameObject:
   - component: {fileID: 4834318978747068309}
   - component: {fileID: 9147075839376638239}
   - component: {fileID: 1377053333099895698}
-  - component: {fileID: -9178906423290266491}
+  - component: {fileID: 7666458630396351042}
   m_Layer: 6
-  m_Name: Programming
+  m_Name: Artista
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -165,14 +165,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9114241092314815873}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.053066578, y: -0, z: -0, w: -0.998591}
   m_LocalPosition: {x: -7.5, y: -2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9199215365524276706}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -366.084, y: 0, z: 0}
 --- !u!212 &8456461474149983383
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -217,7 +217,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 19
-  m_Sprite: {fileID: -1575260128182699952, guid: 6c43c2123568b61408aa4a139e299b7d, type: 3}
+  m_Sprite: {fileID: -9148468469438646979, guid: af8034c813990e043a6e011fe48e0ba6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -238,7 +238,7 @@ Animator:
   m_GameObject: {fileID: 9114241092314815873}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5a2a17b06b9aad74bb6d295dd51f9c1f, type: 2}
+  m_Controller: {fileID: 9100000, guid: f8cc2c85852b695408c46ab4603f2622, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -357,14 +357,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db2958799309d254ab0a025cd6918f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minDistanceToPlayer: 2
+  _minDistanceToPlayer: 4
   _reactionTime: 0.5
   _visionRadius: 7.5
   _randomMoveRadius: 10
   _patrolSpeed: 3
   _chaseSpeed: 4
-  _attackCooldown: 1.5
---- !u!114 &-9178906423290266491
+  _attackCooldown: 1
+--- !u!114 &7666458630396351042
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -373,14 +373,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 9114241092314815873}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 809e10a3d39b37d4eb9b116aa4e810bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 2cfc1830c4ccc714f94f9e105bb3731e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _life: 1
+  _life: 2
   _dropConfig: {fileID: 11400000, guid: 9e8b7c29980fc9b46bf23cefe6551bf0, type: 2}
   _playerLayerName: Player
   _weaponLayerName: PlayerWeapon
-  _attackObject: {fileID: 4406731061789868857}
+  _attackObject: {fileID: 4616416665733366353, guid: 88ca4a612ce319c44aa949947e747184, type: 3}
   _distance: 5
   _duration: 1
   _delay: 0.3
@@ -388,3 +388,6 @@ MonoBehaviour:
   _canShoot360: 0
   _postAttackMoveDelay: 0
   _waitForAttackComplete: 0
+  _shotsPerAttack: 1
+  _delayBetweenShots: 0.1
+  _destroyDelay: 0

@@ -104,15 +104,19 @@ public class Player : MonoBehaviour, IDamageable, IHealable
     {
         if (_isInvincible) return;
 
-        _maxLife -= (int)damage;
-        if (_flashCoroutine != null)
-            StopCoroutine(_flashCoroutine);
+    // Resta 1 vida REAL
+    GameManager.Instance.LoseLife();
 
-        GameManager.Instance.LoseLife();
-        _flashCoroutine = StartCoroutine(FlashSpriteDamage());
+    if (_flashCoroutine != null)
+        StopCoroutine(_flashCoroutine);
 
-        if (_maxLife <= 0)
-            SceneManager.LoadScene("GameOver");
+    _flashCoroutine = StartCoroutine(FlashSpriteDamage());
+
+    // Si ya no quedan vidas reales → morir
+    if (GameManager.Instance.GetPlayerLifes() <= 0)
+    {
+        SceneManager.LoadScene("GameOver");
+    }
     }
 
     private IEnumerator FlashSpriteDamage()

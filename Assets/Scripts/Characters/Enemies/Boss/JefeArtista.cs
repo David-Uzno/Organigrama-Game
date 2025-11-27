@@ -184,7 +184,8 @@ public class JefeArtista : MonoBehaviour, IDamageable
         yield return new WaitForSeconds(_delayBeforeDescend);
 
         // BAJA
-        Vector3 fallPos = new Vector3(_playerTransform.position.x, start.y, 0);
+        Vector3 fallPos = new Vector3(_playerTransform.position.x, _playerTransform.position.y, 0);
+
         yield return MoveSmooth(peak, fallPos, _jumpDuration);
 
         _animator?.SetBool("Jump", false);
