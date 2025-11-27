@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
     {
         // Verificar escena actual después de cargar
         CheckSceneDelete();
-
+        RelinkHUD();
     }
 
     private void Start()
@@ -182,6 +182,22 @@ public class GameManager : MonoBehaviour
         _playerLifes = Mathf.Min(_playerLifes + amount, maxLife);
         UpdateHeartsCurrents();
     }
+    private void RelinkHUD()
+{
+    // Busca el nuevo HUD en la escena actual
+    var hud = Object.FindFirstObjectByType<HUDManager>();
+    if (hud == null)
+    {
+        Debug.LogWarning("HUD no encontrado en esta escena");
+        return;
+    }
+
+    _heartImages = hud.GetHeartImages();
+    _heartStatuses = hud.GetHeartStatuses();
+
+    UpdateHeartsCurrents();
+}
+
     #endregion
 
     #region Boss Progress
