@@ -357,7 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db2958799309d254ab0a025cd6918f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minDistanceToPlayer: 2
+  _minDistanceToPlayer: 3.5
   _reactionTime: 0.5
   _visionRadius: 7.5
   _randomMoveRadius: 10
