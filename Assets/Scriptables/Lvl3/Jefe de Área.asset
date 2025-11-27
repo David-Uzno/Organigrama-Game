@@ -16,8 +16,12 @@ MonoBehaviour:
   - SpeakerName: "Jefe De \xC1rea"
     Line: "Bienvenido al departamento de Sonido.\nNosotros le damos alma al juego:\nm\xFAsica
       que emociona, efectos que impactan\n"
-    audioClips: []
+    audioClips:
+    - clip: {fileID: 8300000, guid: ef0bcd3493907434dbfd933590c2703f, type: 3}
+      dontInterruptOnNext: 0
   - SpeakerName: "Jefe De \xC1rea"
     Line: "y ambientes que te sumergen en otro mundo.\nUn buen sonido hace que un
       juego sea inolvidable,\ny aqu\xED trabajamos para lograr justamente eso."
-    audioClips: []
+    audioClips:
+    - clip: {fileID: 8300000, guid: ef0bcd3493907434dbfd933590c2703f, type: 3}
+      dontInterruptOnNext: 0

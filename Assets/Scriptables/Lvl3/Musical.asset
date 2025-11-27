@@ -17,4 +17,6 @@ MonoBehaviour:
     Line: "Cada nivel, cada boss y cada emoci\xF3n necesita su propia m\xFAsica.\nYo
       creo esas melod\xEDas que te acompa\xF1an sin que te des cuenta\u2026\ny a
       veces, cuando la situaci\xF3n lo amerita, tambi\xE9n te hacen temblar."
-    audioClips: []
+    audioClips:
+    - clip: {fileID: 8300000, guid: ef0bcd3493907434dbfd933590c2703f, type: 3}
+      dontInterruptOnNext: 0

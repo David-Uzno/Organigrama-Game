@@ -18,4 +18,6 @@ MonoBehaviour:
       RAM.\nAjusto el motor, optimizo c\xF3digo, administro memoria y aseguro que
       todo funcione fluido.\nSi el juego corre a 60 FPS\u2026 pod\xE9s agradecerme
       despu\xE9s."
-    audioClips: []
+    audioClips:
+    - clip: {fileID: 8300000, guid: ef0bcd3493907434dbfd933590c2703f, type: 3}
+      dontInterruptOnNext: 0

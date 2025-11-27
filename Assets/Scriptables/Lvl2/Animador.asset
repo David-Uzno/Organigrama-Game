@@ -17,4 +17,6 @@ MonoBehaviour:
     Line: "\xBFViste cuando el personaje corre, ataca o toma da\xF1o?\nBueno, yo
       hago que esas im\xE1genes cobren vida.\nCada gesto, cada salto, cada ataque\u2026\nson
       un mont\xF3n de dibujitos que encajan perfecto."
-    audioClips: []
+    audioClips:
+    - clip: {fileID: 8300000, guid: ef0bcd3493907434dbfd933590c2703f, type: 3}
+      dontInterruptOnNext: 0

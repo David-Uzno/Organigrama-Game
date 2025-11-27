@@ -18,21 +18,35 @@ MonoBehaviour:
       hacerme entrar en raz\xF3n.\nPuede parecer una tonter\xEDa, pero estaba realmente
       alterado y tu intervenci\xF3n evit\xF3 que perdiera el foco en un momento clave.
       Aprecio ese tipo de gestos."
-    audioClips: []
+    audioClips:
+    - clip: {fileID: 8300000, guid: ef0bcd3493907434dbfd933590c2703f, type: 3}
+      dontInterruptOnNext: 0
   - SpeakerName: Gerente General
     Line: "Ac\xE1 trabajamos para que cada \xE1rea funcione en armon\xEDa, y esas
       peque\xF1as actitudes hablan del tipo de equipo que somos: personas que se
       apoyan, incluso en detalles m\xEDnimos, para que todos podamos dar lo mejor."
-    audioClips: []
+    audioClips:
+    - clip: {fileID: 8300000, guid: ef0bcd3493907434dbfd933590c2703f, type: 3}
+      dontInterruptOnNext: 0
   - SpeakerName: Gerente General
     Line: "Mi rol es asegurar que cada departamento tenga lo necesario para avanzar
       y que la visi\xF3n general del estudio se mantenga firme.\nPero nada de eso
       sirve sin gente comprometida, atenta y dispuesta a colaborar cuando hace falta."
-    audioClips: []
+    audioClips:
+    - clip: {fileID: 8300000, guid: ef0bcd3493907434dbfd933590c2703f, type: 3}
+      dontInterruptOnNext: 0
   - SpeakerName: Gerente General
     Line: 'Gracias por tu profesionalismo y por estar dispuesto a ayudar, incluso
       en situaciones inesperadas.
 
       Sigamos construyendo un estudio fuerte,
       creativo y unido.'
-    audioClips: []
+    audioClips:
+    - clip: {fileID: 8300000, guid: ef0bcd3493907434dbfd933590c2703f, type: 3}
+      dontInterruptOnNext: 0
+  - SpeakerName: Fan
+    Line: "Gracias, pero yo no trabajo aca. Solo quer\xEDa que se pusieran a trabajar.\n*SALTA
+      ESCENA FINAL DEL JUEGO QUE NO SE PROGAMO POR TIEMPO*"
+    audioClips:
+    - clip: {fileID: 8300000, guid: ef0bcd3493907434dbfd933590c2703f, type: 3}
+      dontInterruptOnNext: 0

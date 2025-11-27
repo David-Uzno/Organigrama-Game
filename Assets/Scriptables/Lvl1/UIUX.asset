@@ -16,9 +16,13 @@ MonoBehaviour:
   - SpeakerName: Programador de Ui/Ux
     Line: "\xBFViste los men\xFAs, la barra de vida, el inventario o las ventanas
       de di\xE1logo?\nTodo eso lo programo yo.\n"
-    audioClips: []
+    audioClips:
+    - clip: {fileID: 8300000, guid: ef0bcd3493907434dbfd933590c2703f, type: 3}
+      dontInterruptOnNext: 0
   - SpeakerName: Programador de Ui/Ux
     Line: "Mi trabajo es que entiendas lo que pasa, que puedas controlar todo f\xE1cil,\ny
       que el juego se vea claro y ordenado.\nSi algo es c\xF3modo de usar\u2026 bueno,
       probablemente estuve yo detr\xE1s."
-    audioClips: []
+    audioClips:
+    - clip: {fileID: 8300000, guid: ef0bcd3493907434dbfd933590c2703f, type: 3}
+      dontInterruptOnNext: 0

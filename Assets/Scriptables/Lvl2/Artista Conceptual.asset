@@ -17,4 +17,6 @@ MonoBehaviour:
     Line: "Cuando un personaje existe solo como una idea,\nyo lo dibujo por primera
       vez.\nDoy forma a mundos enteros antes de que existan en el juego.\nMi l\xE1piz
       es la chispa que enciende todo lo dem\xE1s."
-    audioClips: []
+    audioClips:
+    - clip: {fileID: 8300000, guid: ef0bcd3493907434dbfd933590c2703f, type: 3}
+      dontInterruptOnNext: 0

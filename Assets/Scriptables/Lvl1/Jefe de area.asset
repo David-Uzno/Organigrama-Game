@@ -17,7 +17,9 @@ MonoBehaviour:
     Line: "Ac\xE1 nos encargamos de darle vida al juego:\ndesde c\xF3mo te mov\xE9s,
       hasta c\xF3mo piensan los enemigos,\npasando por las herramientas internas
       y la estabilidad del proyecto."
-    audioClips: []
+    audioClips:
+    - clip: {fileID: 8300000, guid: ef0bcd3493907434dbfd933590c2703f, type: 3}
+      dontInterruptOnNext: 0
   - SpeakerName: "Jefe de \xE1rea"
     Line: 'Cada programador cumple un rol clave,
 
@@ -26,10 +28,14 @@ MonoBehaviour:
 
       que el juego funcione, sea fluido y te haga disfrutar
       cada segundo.'
-    audioClips: []
+    audioClips:
+    - clip: {fileID: 8300000, guid: ef0bcd3493907434dbfd933590c2703f, type: 3}
+      dontInterruptOnNext: 0
   - SpeakerName: "Jefe de \xE1rea"
     Line: 'Si alguna parte del juego se siente bien,
 
       alguien de este equipo
       hizo un excelente trabajo.'
-    audioClips: []
+    audioClips:
+    - clip: {fileID: 8300000, guid: ef0bcd3493907434dbfd933590c2703f, type: 3}
+      dontInterruptOnNext: 0

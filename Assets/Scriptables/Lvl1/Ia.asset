@@ -17,4 +17,6 @@ MonoBehaviour:
     Line: "\xBFLos enemigos que te persiguen? \xBFEl aliado que te ayuda? \xBFEl
       boss que aprende tus patrones?\nS\xED. Todo eso lo programo yo.\nMe encargo
       de que reaccionen, piensen\u2026 y a veces, que te sorprendan."
-    audioClips: []
+    audioClips:
+    - clip: {fileID: 8300000, guid: ef0bcd3493907434dbfd933590c2703f, type: 3}
+      dontInterruptOnNext: 0
