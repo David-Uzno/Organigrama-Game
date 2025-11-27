@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/LevelSonido.unity
     guid: cfdc3466d2b520649be1242139294a7f
   - enabled: 1
+    path: Assets/Scenes/Levels/LevelJefeGeneral.unity
+    guid: 3666f003468707241b60a94003773615
+  - enabled: 1
     path: Assets/Scenes/Winner.unity
     guid: 1a92ccd608cbc1342a87ea4a657ddd36
   - enabled: 1
