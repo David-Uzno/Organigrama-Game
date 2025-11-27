@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _meleeHitbox: {fileID: 7711485644042201593}
-  _attackActiveTime: 0.2
+  _attackActiveTime: 0.5
   _attackArcAngle: 120
   _attackArcSpeed: 11.5
   _attackDistance: 1

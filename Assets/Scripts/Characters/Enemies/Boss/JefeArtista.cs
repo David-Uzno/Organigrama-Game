@@ -49,7 +49,7 @@ public class JefeArtista : MonoBehaviour, IDamageable
     [SerializeField] private GameObject _poisonPrefab;
     [SerializeField] private float _poisonOffsetY = -1f;
 
-    [SerializeField] private float _delayBeforeLoad = 2f;
+    [SerializeField] public float _delayBeforeLoad = 2f;
     private void Start()
     {
         if (_playerTransform == null)
