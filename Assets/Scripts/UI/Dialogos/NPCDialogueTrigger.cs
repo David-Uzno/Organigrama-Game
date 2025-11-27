@@ -4,35 +4,28 @@ using System.Collections;
 public class NPCDialogueTrigger : MonoBehaviour
 {
     [SerializeField] private DialogueData _dialogueData;
-    [SerializeField] private float triggerCooldown = 0.45f;
 
     private bool _playerInRange = false;
-    private bool _canTrigger = true;
+    private bool _dialogueCompleted = false; // Nuevo flag
 
     private void Update()
     {
-        if (_playerInRange && Input.GetKeyDown(KeyCode.E))
+        if (_playerInRange && !_dialogueCompleted && Input.GetKeyDown(KeyCode.E))
         {
             if (DialogueManager.Instance == null) return;
 
             if (!DialogueManager.Instance.IsDialogueActive())
             {
-                DialogueManager.Instance.StartDialogue(_dialogueData);
-                StartCoroutine(TemporaryDisableTrigger());
+                DialogueManager.Instance.StartDialogue(_dialogueData, this);
             }
         }
-    }
-    private IEnumerator TemporaryDisableTrigger()
-    {
-        _canTrigger = false;
-        yield return new WaitForSeconds(triggerCooldown);
-        _canTrigger = true;
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             _playerInRange = true;
+            _dialogueCompleted = false; // Permite volver a hablar solo si el jugador sale y entra
             Debug.Log("Presiona E para hablar");
         }
     }
@@ -42,6 +35,13 @@ public class NPCDialogueTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _playerInRange = false;
+            _dialogueCompleted = false; // Resetea el flag al salir
         }
+    }
+
+    // Nuevo método para marcar el diálogo como completado
+    public void MarkDialogueCompleted()
+    {
+        _dialogueCompleted = true;
     }
 }

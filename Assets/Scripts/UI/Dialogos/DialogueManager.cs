@@ -40,6 +40,8 @@ public class DialogueManager : MonoBehaviour
     private AudioSource _audioSource; // Nuevo AudioSource privado
     // Lista para manejar los audios no interrumpibles
     private readonly System.Collections.Generic.List<AudioSource> _nonInterruptibleSources = new();
+
+    private NPCDialogueTrigger _currentTrigger;
     #endregion
 
     #region UnityMethods
@@ -64,7 +66,7 @@ public class DialogueManager : MonoBehaviour
     #endregion
 
     #region InternalDialogueLogic
-    public void StartDialogue(DialogueData dialogueData)
+    public void StartDialogue(DialogueData dialogueData, NPCDialogueTrigger trigger)
     {
         if (_isDialogueActive) return; // Evita reiniciar si ya está abierto
         _isDialogueActive = true;
@@ -72,6 +74,7 @@ public class DialogueManager : MonoBehaviour
         _dialogueBox.SetActive(true);
 
         _dialogueData = dialogueData; // Asigna el DialogueData recibido
+        _currentTrigger = trigger;
 
         // Buscar PlayerInput si aún no está referenciado
         if (_playerInput == null)
@@ -177,6 +180,12 @@ public class DialogueManager : MonoBehaviour
         if (_playerInput != null)
         {
             _playerInput.enabled = true;
+        }
+
+        if (_currentTrigger != null)
+        {
+            _currentTrigger.MarkDialogueCompleted();
+            _currentTrigger = null;
         }
     }
     #endregion

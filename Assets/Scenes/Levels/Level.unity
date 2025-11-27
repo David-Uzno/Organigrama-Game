@@ -3871,7 +3871,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogueData: {fileID: 11400000, guid: e36455cc08dc820418ebafeb2319e164, type: 2}
-  triggerCooldown: 0.15
 --- !u!61 &126990262
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6749,7 +6748,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogueData: {fileID: 11400000, guid: bd6146dadf3c884478548552920cf821, type: 2}
-  triggerCooldown: 0.45
 --- !u!61 &334483303
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7327,11 +7325,11 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.046666667
   m_BuildHeightMesh: 0
   m_MinRegionArea: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: f7a7221e02c7ae84b8948bfeba3201d9, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: f0ff6f539c45f50458cffde5292cc292, type: 2}
 --- !u!1 &382401918
 GameObject:
   m_ObjectHideFlags: 0
@@ -8887,7 +8885,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogueData: {fileID: 11400000, guid: b0cc8425bdda789498be36b88d6b39e2, type: 2}
-  triggerCooldown: 0.15
 --- !u!61 &478837616
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9395,7 +9392,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogueData: {fileID: 11400000, guid: 943bc81804dfaf44ba6843f2fad55233, type: 2}
-  triggerCooldown: 0.15
 --- !u!61 &520597297
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20869,7 +20865,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogueData: {fileID: 11400000, guid: 0ba485212b7b6884c84ea977b3dc2818, type: 2}
-  triggerCooldown: 0.15
 --- !u!61 &1033812057
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22081,7 +22076,7 @@ Transform:
   m_GameObject: {fileID: 1106479214}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.289767, y: -31.850313, z: -0.17025298}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22558,7 +22553,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogueData: {fileID: 0}
-  triggerCooldown: 0.15
 --- !u!61 &1138077512
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25042,7 +25036,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogueData: {fileID: 11400000, guid: 7a670f5660dee5448ba73b4fc1c1aa49, type: 2}
-  triggerCooldown: 0.15
 --- !u!61 &1200146592
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32482,7 +32475,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogueData: {fileID: 0}
-  triggerCooldown: 0.15
 --- !u!61 &1570686148
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33691,7 +33683,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogueData: {fileID: 11400000, guid: ba994e5a3bcebad4fb4fdc4f7466e344, type: 2}
-  triggerCooldown: 1
 --- !u!61 &1629870601
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38860,7 +38851,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogueData: {fileID: 11400000, guid: f840a7735202cc747a760aca236acee1, type: 2}
-  triggerCooldown: 0.15
 --- !u!61 &1859323878
 BoxCollider2D:
   m_ObjectHideFlags: 0
