@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1199b8403608a1d42a0627ae3bab90e2, type: 3}
+  m_Name: JefeGeneral
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - SpeakerName: Gerente General
+    Line: "Bienvenido a ChickenStudios.\nAntes de seguir, quiero agradecerte por
+      hacerme entrar en raz\xF3n.\nPuede parecer una tonter\xEDa, pero estaba realmente
+      alterado y tu intervenci\xF3n evit\xF3 que perdiera el foco en un momento clave.
+      Aprecio ese tipo de gestos."
+    audioClips: []
+  - SpeakerName: Gerente General
+    Line: "Ac\xE1 trabajamos para que cada \xE1rea funcione en armon\xEDa, y esas
+      peque\xF1as actitudes hablan del tipo de equipo que somos: personas que se
+      apoyan, incluso en detalles m\xEDnimos, para que todos podamos dar lo mejor."
+    audioClips: []
+  - SpeakerName: Gerente General
+    Line: "Mi rol es asegurar que cada departamento tenga lo necesario para avanzar
+      y que la visi\xF3n general del estudio se mantenga firme.\nPero nada de eso
+      sirve sin gente comprometida, atenta y dispuesta a colaborar cuando hace falta."
+    audioClips: []
+  - SpeakerName: Gerente General
+    Line: 'Gracias por tu profesionalismo y por estar dispuesto a ayudar, incluso
+      en situaciones inesperadas.
+
+      Sigamos construyendo un estudio fuerte,
+      creativo y unido.'
+    audioClips: []

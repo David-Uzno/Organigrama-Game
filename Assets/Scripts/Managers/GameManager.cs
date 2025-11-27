@@ -79,10 +79,10 @@ public class GameManager : MonoBehaviour
     {
         // Asegura que _currentHeartCount y _playerLifes estén dentro de los límites establecidos
         _currentHeartCount = Mathf.Clamp(_currentHeartCount, _minHeartCount, _maxHeartCount);
-       
+
 
         // Asignación de maxLifeMultiplier al número de elementos de _heartStatuses
-        _maxLifeMultiplier = Mathf.Max(0, _heartStatuses.Length - 1);
+        _maxLifeMultiplier = _heartStatuses.Length - 1;
 
         // Actualización de corazones en el HUD
         UpdateHeartsCurrents();
@@ -166,8 +166,8 @@ public class GameManager : MonoBehaviour
     private Sprite GetStatusHearts(int lifePoints)
     {
         // Obtener el sprite correspondiente al estado actual de los corazones
-        int statusIndex = Mathf.Clamp(lifePoints, 0, _heartStatuses.Length - 1);
-        return _heartStatuses[statusIndex];
+        int index = Mathf.Clamp(lifePoints, 0, _maxLifeMultiplier);
+        return _heartStatuses[index];
     }
 
     public void LoseLife()
