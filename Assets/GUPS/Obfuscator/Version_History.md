@@ -1,5 +1,14 @@
 ﻿# Version History:
 
+## 2026.1.2: Maintenance - Update
+Improvements:
+- [Imprv-2026-3] When adding namespaces that are to be skipped by obfuscation (or vice versa included), empty entries are now filtered out, those are always added by mistake [thanks Gleb].
+- [Imprv-2026-2] Refactoring of string obfuscation to split string methods into multiple types, so that the 65k method limit of IL2CPP does not cause problems, also optimized performance when reading the string [thanks Pierre].
+
+Bug Fixes:
+- [Bug-2026-5] Fixed a burst compiler error. Burst error BC1347: Invalid first argument (code: Call) of string.Format(format, ...). Expecting a const/literal string. Burst compiled code is not valid with string obfuscation, so the string obfuscation module checks for that [thanks Gleb & Lee].
+- [Bug-2026-4] Fixed an issue where post-processing (Unity 6000.2 and above) might trigger an exception: Unsupported asset class type name '...'[thanks Nikita].
+
 ## 2026.1.1: Maintenance - Update
 Improvements:
 - [Imprv-2026-1] Scenes must be added to the build settings to be included in the obfuscator analysis. Unanalyzed scenes can lead to incorrectly functioning UI events (or similiar). Now, a warning is displayed if a scene is skipped when it is opened in the editor but is not included in the build settings [thanks Jiyong].

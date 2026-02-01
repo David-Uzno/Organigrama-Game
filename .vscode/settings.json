@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "TP-Organigrama.sln"
+    "dotnet.defaultSolution": "Organigrama-Game.sln"
 }
