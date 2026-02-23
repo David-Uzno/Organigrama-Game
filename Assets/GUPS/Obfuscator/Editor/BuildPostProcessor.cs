@@ -36,13 +36,21 @@ namespace GUPS.Obfuscator
             var_BuildSettings.BuildTarget = UnityEditor.EditorUserBuildSettings.activeBuildTarget;
             var_BuildSettings.BuildTargetGroup = UnityEditor.EditorUserBuildSettings.selectedBuildTargetGroup;
             var_BuildSettings.UnityBuildReport = _Report;
-
-            var var_NamedBuildTarget = UnityEditor.Build.NamedBuildTarget.FromBuildTargetGroup(UnityEditor.EditorUserBuildSettings.selectedBuildTargetGroup);
-
-            var_BuildSettings.IsIL2CPPBuild = PlayerSettings.GetScriptingBackend(var_NamedBuildTarget) == ScriptingImplementation.IL2CPP;
-            var_BuildSettings.Compression = _Report.summary.options.HasFlag(BuildOptions.CompressWithLz4) ? GUPS.Editor.Settings.Unity.Build.CompressionType.Lz4 :
+            var_BuildSettings.IsIL2CPPBuild = PlayerSettings.GetScriptingBackend(UnityEditor.EditorUserBuildSettings.selectedBuildTargetGroup) == ScriptingImplementation.IL2CPP;
+            
+			if (_Report == null)
+			{
+				var_BuildSettings.Compression = (GUPS.Editor.Settings.Unity.Build.CompressionType) typeof(UnityEditor.EditorUserBuildSettings)
+					.GetMethod("GetCompressionType", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static)
+					.Invoke(null, new object[] { UnityEditor.EditorUserBuildSettings.selectedBuildTargetGroup });
+			}
+			else
+			{			
+				var_BuildSettings.Compression = _Report.summary.options.HasFlag(BuildOptions.CompressWithLz4) ? GUPS.Editor.Settings.Unity.Build.CompressionType.Lz4 :
                            _Report.summary.options.HasFlag(BuildOptions.CompressWithLz4HC) ? GUPS.Editor.Settings.Unity.Build.CompressionType.Lz4HC :
                            GUPS.Editor.Settings.Unity.Build.CompressionType.None;
+			}						   
+						   
             var_BuildSettings.BuildIntoProject = (UnityEditor.EditorUserBuildSettings.activeBuildTarget == BuildTarget.StandaloneOSX && UnityEditor.EditorUserBuildSettings.GetPlatformSettings("OSXUniversal", "CreateXcodeProject").Equals("true"))
                 || (UnityEditor.EditorUserBuildSettings.activeBuildTarget == BuildTarget.StandaloneWindows && UnityEditor.EditorUserBuildSettings.GetPlatformSettings("Standalone", "CreateSolution").Equals("true"))
                 || (UnityEditor.EditorUserBuildSettings.activeBuildTarget == BuildTarget.StandaloneWindows64 && UnityEditor.EditorUserBuildSettings.GetPlatformSettings("Standalone", "CreateSolution").Equals("true"))

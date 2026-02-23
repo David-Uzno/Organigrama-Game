@@ -121,7 +121,7 @@
         },
         {
           "Type" : "Bool",
-          "Key" : "Enable_Try_Find_Inspector_Animation_Methods_In_AnimatorControllers",
+          "Key" : "Enable_Try_Find_Inspector_Animation_Methods_In_Models",
           "Value" : "True",
           "Values" : null
         },
@@ -133,7 +133,7 @@
         },
         {
           "Type" : "Bool",
-          "Key" : "Enable_Try_Find_Inspector_Animation_Methods_In_Models",
+          "Key" : "Enable_Try_Find_Inspector_Animation_Methods_In_AnimatorControllers",
           "Value" : "True",
           "Values" : null
         }
@@ -218,13 +218,13 @@
         },
         {
           "Type" : "Bool",
-          "Key" : "Obfuscate_Class_Enum",
+          "Key" : "Obfuscate_Class_Struct",
           "Value" : "False",
           "Values" : null
         },
         {
           "Type" : "Bool",
-          "Key" : "Obfuscate_Class_Struct",
+          "Key" : "Obfuscate_Class_Enum",
           "Value" : "False",
           "Values" : null
         }
@@ -522,6 +522,11 @@
           "Value" : "True",
           "Values" : null
         }
+      ]
+    },
+    {
+      "Settings_Name" : "Default_Compatibility_Component_UnityPurchasing",
+      "SettingElement_Array" : [
       ]
     },
     {

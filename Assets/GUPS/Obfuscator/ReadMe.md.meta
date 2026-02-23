@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ca7f6488a1eedf9488a4117c71c8cd89
+guid: 3bb0f182ebb4afc4b9ed300afff31538
 TextScriptImporter:
   externalObjects: {}
   userData: 
@@ -11,4 +11,4 @@ AssetOrigin:
   packageName: Obfuscator Free | Plug and Play Code Protection | v2026
   packageVersion: 2026.1.2
   assetPath: Assets/GUPS/Obfuscator/ReadMe.md
-  uploadId: 855396
+  uploadId: 855394

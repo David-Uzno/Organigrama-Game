@@ -29,17 +29,7 @@
 [Debug][OPS.OBF][OnAnalyse_Assets] Found methods in animation file at path 'Packages/com.unity.timeline/Editor/StyleSheets/res/HumanoidDefault.anim' (0):
 
 [Info][OPS.OBF][OnProcess_Assets] Process component Analyse Unity Animation Methods
-[Debug][OPS.OBF][OnAnalyse_Component_Scenes] Iterate components in loaded build scene .
-[Debug][OPS.OBF][OnAnalyse_Component_Scenes] Found 2 Root GameObjects in Scene 
-[Debug][OPS.OBF][OnAnalyse_Component_Scenes] Found 5 Components in Scene 
-[Info][OPS.OBF][OnAnalyse_Component_Scenes] Process component Analyse Unity Event Component
-[Debug][OPS.OBF][OnAnalyse_Component_Scenes] Find unity event methods in component 'Main Camera' of type 'UnityEngine.Transform'.
-[Debug][OPS.OBF][OnAnalyse_Component_Scenes] Find unity event methods in component 'Main Camera' of type 'UnityEngine.Camera'.
-[Debug][OPS.OBF][OnAnalyse_Component_Scenes] Find unity event methods in component 'Main Camera' of type 'UnityEngine.AudioListener'.
-[Debug][OPS.OBF][OnAnalyse_Component_Scenes] Find unity event methods in component 'Directional Light' of type 'UnityEngine.Transform'.
-[Debug][OPS.OBF][OnAnalyse_Component_Scenes] Find unity event methods in component 'Directional Light' of type 'UnityEngine.Light'.
-[Info][OPS.OBF][OnAnalyse_Component_Scenes] Process component Analyse MonoScript
-[Debug][OPS.OBF][OnAnalyse_Component_Scenes] Iterate components in not loaded build scene Assets/Scenes/SampleScene.unity.
+[Debug][OPS.OBF][OnAnalyse_Component_Scenes] Iterate components in loaded build scene Assets/Scenes/SampleScene.unity.
 [Debug][OPS.OBF][OnAnalyse_Component_Scenes] Found 2 Root GameObjects in Scene Assets/Scenes/SampleScene.unity
 [Debug][OPS.OBF][OnAnalyse_Component_Scenes] Found 5 Components in Scene Assets/Scenes/SampleScene.unity
 [Info][OPS.OBF][OnAnalyse_Component_Scenes] Process component Analyse Unity Event Component
@@ -49,53 +39,7 @@
 [Debug][OPS.OBF][OnAnalyse_Component_Scenes] Find unity event methods in component 'Directional Light' of type 'UnityEngine.Transform'.
 [Debug][OPS.OBF][OnAnalyse_Component_Scenes] Find unity event methods in component 'Directional Light' of type 'UnityEngine.Light'.
 [Info][OPS.OBF][OnAnalyse_Component_Scenes] Process component Analyse MonoScript
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Found '2' Prefabs.
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Found '10' Components in the prefab at path 'Packages/com.unity.analytics/DataPrivacy/DataPrivacyButton.prefab'.
-[Info][OPS.OBF][OnAnalyse_Component_Prefabs] Process component Analyse Unity Event Component
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'DataPrivacyButton' of type 'UnityEngine.RectTransform'.
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'DataPrivacyButton' of type 'UnityEngine.CanvasRenderer'.
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'DataPrivacyButton' of type 'UnityEngine.UI.Image'.
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'DataPrivacyButton' of type 'UnityEngine.Analytics.DataPrivacyButton'.
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Text' of type 'UnityEngine.RectTransform'.
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Text' of type 'UnityEngine.CanvasRenderer'.
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Text' of type 'UnityEngine.UI.Text'.
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Image' of type 'UnityEngine.RectTransform'.
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Image' of type 'UnityEngine.CanvasRenderer'.
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Image' of type 'UnityEngine.UI.Image'.
-[Info][OPS.OBF][OnAnalyse_Component_Prefabs] Process component Analyse MonoScript
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Found mono script reference 'UnityEngine.UI.Image' for component 'DataPrivacyButton'.
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Found mono script reference in serialized properties for component 'DataPrivacyButton' (1):
-  - UnityEngine.UI.Image
-
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Found mono script reference 'UnityEngine.Analytics.DataPrivacyButton' for component 'DataPrivacyButton'.
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Found mono script reference in serialized properties for component 'DataPrivacyButton' (1):
-  - UnityEngine.Analytics.DataPrivacyButton
-
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Found mono script reference 'UnityEngine.UI.Text' for component 'Text'.
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Found mono script reference in serialized properties for component 'Text' (1):
-  - UnityEngine.UI.Text
-
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Found mono script reference 'UnityEngine.UI.Image' for component 'Image'.
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Found mono script reference in serialized properties for component 'Image' (1):
-  - UnityEngine.UI.Image
-
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Found '6' Components in the prefab at path 'Packages/com.unity.xr.legacyinputhelpers/Prefabs/XRRig.prefab'.
-[Info][OPS.OBF][OnAnalyse_Component_Prefabs] Process component Analyse Unity Event Component
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'XRRig' of type 'UnityEngine.Transform'.
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'XRRig' of type 'UnityEditor.XR.LegacyInputHelpers.CameraOffset'.
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Camera Offset' of type 'UnityEngine.Transform'.
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Main Camera' of type 'UnityEngine.Transform'.
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Main Camera' of type 'UnityEngine.Camera'.
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Main Camera' of type 'UnityEngine.SpatialTracking.TrackedPoseDriver'.
-[Info][OPS.OBF][OnAnalyse_Component_Prefabs] Process component Analyse MonoScript
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Found mono script reference 'UnityEditor.XR.LegacyInputHelpers.CameraOffset' for component 'XRRig'.
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Found mono script reference in serialized properties for component 'XRRig' (1):
-  - UnityEditor.XR.LegacyInputHelpers.CameraOffset
-
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Found mono script reference 'UnityEngine.SpatialTracking.TrackedPoseDriver' for component 'Main Camera'.
-[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Found mono script reference in serialized properties for component 'Main Camera' (1):
-  - UnityEngine.SpatialTracking.TrackedPoseDriver
-
+[Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Found '0' Prefabs.
 [Info][OPS.OBF][OnAnalyse_Component_Prefabs] Unload Project
 [Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Unload Asset Cache
 [Debug][OPS.OBF][OnAnalyse_Component_Prefabs] Unload Pipeline
@@ -157,34 +101,27 @@
 [Debug][OPS.OBF][Setup] Found to obfuscate assemblies (0):
 
 [Debug][OPS.OBF][Setup] Found helper assemblies (1):
-  - D:\Tim\UnityAssets\GUPS.Obfuscator\Version_5\Unity\Obfuscator_2023.1_Free\Temp\StagingArea\Data\Managed\OPS.Obfuscator.dll
+  - D:\Tim\UnityAssets\GUPS.Obfuscator\Version_5\Unity\Obfuscator_2021.3_Free\Temp\StagingArea\Data\Managed\OPS.Obfuscator.dll
 
-[Debug][OPS.OBF][Setup] Found dependency directories (25):
-  - C:\Program Files\Unity\Hub\Editor\2023.1.20f1\Editor\Data\MonoBleedingEdge\lib\mono\unityjit-win32
-  - C:\Program Files\Unity\Hub\Editor\2023.1.20f1\Editor\Data\Managed\UnityEngine
-  - C:\Program Files\Unity\Hub\Editor\2023.1.20f1\Editor\Data\MonoBleedingEdge\lib\mono\unityjit-win32\Facades
-  - C:\Program Files\Unity\Hub\Editor\2023.1.20f1\Editor\Data\Managed
-  - C:\Program Files\Unity\Hub\Editor\2023.1.20f1\Editor\Data\PlaybackEngines\MacStandaloneSupport
-  - C:\Program Files\Unity\Hub\Editor\2023.1.20f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport
-  - C:\Program Files\Unity\Hub\Editor\2023.1.20f1\Editor\Data\PlaybackEngines\LinuxStandaloneSupport
-  - D:\Tim\UnityAssets\GUPS.Obfuscator\Version_5\Unity\Obfuscator_2023.1_Free\Library\ScriptAssemblies
-  - D:\Tim\UnityAssets\GUPS.Obfuscator\Version_5\Unity\Obfuscator_2023.1_Free\Library\PackageCache\com.unity.ext.nunit@2.0.3\net40\unity-custom
-  - D:\Tim\UnityAssets\GUPS.Obfuscator\Version_5\Unity\Obfuscator_2023.1_Free\Library\PackageCache\com.unity.analytics@3.8.1
-  - D:\Tim\UnityAssets\GUPS.Obfuscator\Version_5\Unity\Obfuscator_2023.1_Free\Assets\OPS\Editor\Plugins\Mono.Cecil
-  - D:\Tim\UnityAssets\GUPS.Obfuscator\Version_5\Unity\Obfuscator_2023.1_Free\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM
-  - D:\Tim\UnityAssets\GUPS.Obfuscator\Version_5\Unity\Obfuscator_2023.1_Free\Assets\OPS\Obfuscator\Editor\Plugins
-  - D:\Tim\UnityAssets\GUPS.Obfuscator\Version_5\Unity\Obfuscator_2023.1_Free\Library\PackageCache\com.unity.ide.rider@3.0.26\Rider\Editor
-  - D:\Tim\UnityAssets\GUPS.Obfuscator\Version_5\Unity\Obfuscator_2023.1_Free\Assets\OPS\Plugins\Json
-  - D:\Tim\UnityAssets\GUPS.Obfuscator\Version_5\Unity\Obfuscator_2023.1_Free\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime
-  - D:\Tim\UnityAssets\GUPS.Obfuscator\Version_5\Unity\Obfuscator_2023.1_Free\Library\PackageCache\com.unity.analytics@3.8.1\AnalyticsStandardEvents
-  - C:\Program Files\Unity\Hub\Editor\2023.1.20f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\Variations\mono\Managed
+[Debug][OPS.OBF][Setup] Found dependency directories (18):
+  - C:\Program Files\Unity\Hub\Editor\2021.3.30f1\Editor\Data\MonoBleedingEdge\lib\mono\unityjit-win32
+  - C:\Program Files\Unity\Hub\Editor\2021.3.30f1\Editor\Data\Managed\UnityEngine
+  - C:\Program Files\Unity\Hub\Editor\2021.3.30f1\Editor\Data\Managed
+  - C:\Program Files\Unity\Hub\Editor\2021.3.30f1\Editor\Data\MonoBleedingEdge\lib\mono\unityjit-win32\Facades
+  - C:\Program Files\Unity\Hub\Editor\2021.3.30f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport
+  - D:\Tim\UnityAssets\GUPS.Obfuscator\Version_5\Unity\Obfuscator_2021.3_Free\Library\ScriptAssemblies
+  - D:\Tim\UnityAssets\GUPS.Obfuscator\Version_5\Unity\Obfuscator_2021.3_Free\Library\PackageCache\com.unity.collab-proxy@2.0.7\Lib\Editor\PlasticSCM
+  - D:\Tim\UnityAssets\GUPS.Obfuscator\Version_5\Unity\Obfuscator_2021.3_Free\Assets\OPS\Plugins\Json
+  - D:\Tim\UnityAssets\GUPS.Obfuscator\Version_5\Unity\Obfuscator_2021.3_Free\Assets\OPS\Editor\Plugins\Mono.Cecil
+  - D:\Tim\UnityAssets\GUPS.Obfuscator\Version_5\Unity\Obfuscator_2021.3_Free\Assets\OPS\Obfuscator\Editor\Plugins
+  - D:\Tim\UnityAssets\GUPS.Obfuscator\Version_5\Unity\Obfuscator_2021.3_Free\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom
+  - C:\Program Files\Unity\Hub\Editor\2021.3.30f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\Variations\mono\Managed
+  - C:\Program Files\Unity\Hub\Editor\2021.3.30f1\Editor\Data\NetStandard\ref\2.1.0
+  - C:\Program Files\Unity\Hub\Editor\2021.3.30f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard
+  - C:\Program Files\Unity\Hub\Editor\2021.3.30f1\Editor\Data\NetStandard\Extensions\2.0.0
+  - C:\Program Files\Unity\Hub\Editor\2021.3.30f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx
   - Assets\OPS\Plugins\Json
-  - D:\Tim\UnityAssets\GUPS.Obfuscator\Version_5\Unity\Obfuscator_2023.1_Free\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\AOT
-  - C:\Program Files\Unity\Hub\Editor\2023.1.20f1\Editor\Data\NetStandard\ref\2.1.0
-  - C:\Program Files\Unity\Hub\Editor\2023.1.20f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard
-  - C:\Program Files\Unity\Hub\Editor\2023.1.20f1\Editor\Data\NetStandard\Extensions\2.0.0
-  - C:\Program Files\Unity\Hub\Editor\2023.1.20f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx
-  - C:\Program Files\Unity\Hub\Editor\2023.1.20f1\Editor\Managed
+  - C:\Program Files\Unity\Hub\Editor\2021.3.30f1\Editor\Managed
 
 [Debug][OPS.OBF][Setup] Load Assembly Resolver
 [Info][OPS.OBF][Setup] Prepare Assemblies
@@ -335,7 +272,7 @@
 [Debug][OPS.OBF][OnPostObfuscate_Assemblies] Unload RenameManager
 [Debug][OPS.OBF][OnPostObfuscate_Assemblies] Unload Cache
 [Debug][OPS.OBF][OnPostObfuscate_Assemblies] Unload Assemblies
-[Info][OPS.OBF][OnPostObfuscate_Assemblies] Unloaded assembly successfully: D:\Tim\UnityAssets\GUPS.Obfuscator\Version_5\Unity\Obfuscator_2023.1_Free\Temp\StagingArea\Data\Managed\OPS.Obfuscator.dll
+[Info][OPS.OBF][OnPostObfuscate_Assemblies] Unloaded assembly successfully: D:\Tim\UnityAssets\GUPS.Obfuscator\Version_5\Unity\Obfuscator_2021.3_Free\Temp\StagingArea\Data\Managed\OPS.Obfuscator.dll
 [Debug][OPS.OBF][OnPostObfuscate_Assemblies] Unload Assembly Resolver
 [Info][OPS.OBF][OnPostObfuscate_Assemblies] Unloaded successfully the AssemblyResolver.
 [Debug][OPS.OBF][OnPostObfuscate_Assemblies] Unload Pipeline
@@ -343,24 +280,6 @@
 [Debug][OPS.OBF][OnPostObfuscate_Assemblies] Unload ObfuscatorSettings
 [Debug][OPS.OBF][OnPostObfuscate_Assemblies] Unload DataContainer
 [Info][OPS.OBF][OnPostObfuscate_Assemblies] Finished PostAssemblyBuild!
-[Info][OPS.OBF][Setup] Active Editor Platform: WindowsEditorPlatform
-[Info][OPS.OBF][Setup] Active Build Platform: DefaultBuildPlatform
-[Info][OPS.OBF][Setup] Start 'PostAssetsBuild' process.
-[Info][OPS.OBF][Setup] Load Project
-[Debug][OPS.OBF][Setup] Load DataContainer
-[Debug][OPS.OBF][Setup] Load Obfuscator Settings
-[Debug][OPS.OBF][Setup] Load Pipeline Components
-[Debug][OPS.OBF][Setup] Found Components (1):
-  - Post Process Unity MonoBehaviour Assets (Post Process Unity MonoBehaviour Assets)
-
-[Debug][OPS.OBF][Setup] Load Pipeline
-[Info][OPS.OBF][OnPostAssetsBuild] Skip component Post Process Unity MonoBehaviour Assets
-[Info][OPS.OBF][OnPostAssetsBuild] Unload Project
-[Debug][OPS.OBF][OnPostAssetsBuild] Unload Pipeline
-[Debug][OPS.OBF][OnPostAssetsBuild] Unload Pipeline Components
-[Debug][OPS.OBF][OnPostAssetsBuild] Unload Obfuscator Settings
-[Debug][OPS.OBF][OnPostAssetsBuild] Unload DataContainer
-[Info][OPS.OBF][OnPostAssetsBuild] Finished PostAssetsBuild!
 [Info][OPS.OBF][Setup] Active Editor Platform: WindowsEditorPlatform
 [Info][OPS.OBF][Setup] Active Build Platform: DefaultBuildPlatform
 [Info][OPS.OBF][Setup] Start 'PostBuild' process.
